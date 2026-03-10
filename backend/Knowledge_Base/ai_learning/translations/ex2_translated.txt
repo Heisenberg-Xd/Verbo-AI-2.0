@@ -1,0 +1,11 @@
+1. Basic Principles of Artificial Intelligence
+Artificial intelligence can be divided into two main types. One is Narrow AI and General AI. Narrow AI is also known as weak AI. It only performs certain tasks like voice recognition and photo analysis. In contrast, General can easily accomplish many tasks by replicating human intelligence. But, at present it is in theoretical form.
+
+The technology includes a variety of techniques and tools, including machine learning, deep learning, and neural networks. Machine learning involves algorithms that allow computers to learn from data and improve their performance over time. Deep learning is a form of machine learning that uses neural networks to analyze data, identify patterns, and make decisions based on that.
+
+Important information about Machine Learning, Deep Learning and Neural Networks
+Machine learning is the backbone of modern AI. In this, algorithms analyze data and predict probabilities. It involves supervised learning. In this, models are trained based on specific data. Whereas unsupervised learning works to identify hidden patterns based on available data.
+
+Deep learning goes a step further. It works like the human brain using neural networks. These networks work in certain layers. From each level the information reaches the next level step by step. This helps deep learning to recognize complex patterns in data, photos and speech.
+
+Neural networks are an integral part of deep learning, consisting of interconnected nodes or neurons. Each connection has a characteristic, which is useful for pattern recognition and decision making. More advanced neural networks have greatly benefited the development of AI, helping to achieve goals in many fields.

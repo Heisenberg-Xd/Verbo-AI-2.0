@@ -1,0 +1,31 @@
+{
+  "cluster_id": 5,
+  "cluster_name": "sports_social",
+  "summary": "Beyond just physical benefits, engaging in sports fosters mental well-being. In addition, sports contribute significantly to social development. They offer countless benefits, from fostering physical and mental health to shaping character, cultivating social bonds, and even driving global economies.",
+  "sentiment": {
+    "positive": 21.8,
+    "negative": 3.9,
+    "neutral": 74.3,
+    "compound": 0.9996
+  },
+  "language_distribution": {
+    "en": 2
+  },
+  "keywords": [
+    "sports",
+    "social",
+    "athletes",
+    "physical",
+    "like",
+    "global",
+    "mental",
+    "health",
+    "development",
+    "benefits"
+  ],
+  "document_count": 2,
+  "files": [
+    "f1.txt",
+    "f2.txt"
+  ]
+}
