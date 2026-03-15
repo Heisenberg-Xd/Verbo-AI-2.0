@@ -1,0 +1,35 @@
+{
+  "cluster_id": 0,
+  "cluster_name": "blockchain_cryptocurrency",
+  "summary": "Blockchain is a decentralized digital ledger that records transactions. Ethereum is the most popular blockchain for smart contracts. Ethereum, launched in 2015, introduced smart contracts and programmable blockchain technology.",
+  "sentiment": {
+    "positive": 11.3,
+    "negative": 4.8,
+    "neutral": 83.9,
+    "compound": 0.9968
+  },
+  "language_distribution": {
+    "en": 2,
+    "mr": 1,
+    "hi": 1
+  },
+  "keywords": [
+    "blockchain",
+    "cryptocurrency",
+    "crypto",
+    "market",
+    "digital",
+    "ethereum",
+    "transactions",
+    "bitcoin",
+    "data",
+    "trading"
+  ],
+  "document_count": 4,
+  "files": [
+    "Blockchain_Advanced_Concepts.txt",
+    "Blockchain_Parichay_Marathi.txt",
+    "Crypto_Introduction.txt",
+    "Crypto_Trading_Hindi.txt"
+  ]
+}

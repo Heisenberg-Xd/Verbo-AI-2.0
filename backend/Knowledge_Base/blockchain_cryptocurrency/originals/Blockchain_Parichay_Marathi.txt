@@ -1,0 +1,29 @@
+========================================
+       ब्लॉकचेन - संपूर्ण परिचय
+       Blockchain - Sampurna Parichay
+========================================
+
+1. ब्लॉकचेन एक विकेंद्रीकृत डिजिटल खातेवही (ledger) आहे जी व्यवहार नोंदवते.
+2. यामध्ये डेटा "blocks" मध्ये साठवला जातो आणि हे blocks एकमेकांशी जोडलेले असतात.
+3. एकदा ब्लॉकचेनमध्ये डेटा नोंदवला गेला की तो बदलणे किंवा हटवणे जवळपास अशक्य आहे.
+4. Bitcoin ही पहिली यशस्वी ब्लॉकचेन अॅप्लिकेशन होती, जी 2009 मध्ये सुरू झाली.
+5. ब्लॉकचेन तंत्रज्ञान Satoshi Nakamoto यांनी विकसित केले असे मानले जाते.
+6. प्रत्येक block मध्ये transaction data, timestamp आणि previous block चा hash असतो.
+7. Hash एक unique digital fingerprint आहे जी प्रत्येक block ला वेगळी ओळख देते.
+8. Decentralization म्हणजे कोणत्याही एकाच संस्थेकडे नियंत्रण नसणे.
+9. Consensus mechanism सर्व network nodes मध्ये agreement निर्माण करते.
+10. Proof of Work मध्ये miners complex mathematical problems सोडवतात.
+11. Proof of Stake मध्ये validators त्यांच्या holdings च्या आधारावर निवडले जातात.
+12. Smart Contracts हे self-executing programs आहेत जे blockchain वर चालतात.
+13. Ethereum ही smart contracts साठी सर्वात लोकप्रिय blockchain आहे.
+14. Public blockchain सर्वांसाठी खुली असते, तर private blockchain फक्त अधिकृत users साठी.
+15. Hyperledger Fabric एक enterprise-grade private blockchain framework आहे.
+16. ब्लॉकचेन supply chain management मध्ये transparency आणतो.
+17. Healthcare मध्ये ब्लॉकचेन रुग्णांच्या records सुरक्षित ठेवण्यासाठी वापरले जाते.
+18. Voting systems मध्ये ब्लॉकचेन fraud रोखण्यास मदत करू शकते.
+19. DeFi (Decentralized Finance) ब्लॉकचेनवर आधारित आर्थिक सेवा प्रदान करते.
+20. NFT (Non-Fungible Token) ब्लॉकचेनवर unique digital ownership सिद्ध करते.
+21. Web3 हे internet चे भविष्य आहे जे ब्लॉकचेन तंत्रज्ञानावर आधारित आहे.
+22. Gas fees म्हणजे blockchain वर transactions करण्यासाठी द्यावे लागणारे शुल्क.
+23. Layer 2 solutions blockchain च्या scalability आणि speed च्या समस्या सोडवतात.
+24. ब्लॉकचेन तंत्रज्ञान भविष्यात banking, governance आणि identity management बदलेल.

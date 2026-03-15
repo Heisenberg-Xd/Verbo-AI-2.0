@@ -1,0 +1,30 @@
+{
+  "cluster_id": 1,
+  "cluster_name": "data_strict",
+  "summary": "Security and Data Privacy\n\nEnglish\n\nTechnova follows strict data protection standards including encryption,\ncompliance frameworks, and secure infrastructure.",
+  "sentiment": {
+    "positive": 20.2,
+    "negative": 0.0,
+    "neutral": 79.8,
+    "compound": 0.5859
+  },
+  "language_distribution": {
+    "en": 1
+  },
+  "keywords": [
+    "data",
+    "strict",
+    "security",
+    "secure",
+    "protection",
+    "standards",
+    "privacy",
+    "infrastructure",
+    "frameworks",
+    "including"
+  ],
+  "document_count": 1,
+  "files": [
+    "07_security_privacy.txt"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "cluster_id": 2,
+  "cluster_name": "learning_data",
+  "summary": "Machine Learning and Deep Learning: Today, the most important part of AI is Machine Learning and Deep Learning. Deep learning is a form of machine learning that uses neural networks to analyze data, identify patterns, and make decisions based on that. Important information about Machine Learning, Deep Learning and Neural Networks\nMachine learning is the backbone of modern AI.",
+  "sentiment": {
+    "positive": 17.6,
+    "negative": 4.1,
+    "neutral": 78.3,
+    "compound": 0.9997
+  },
+  "language_distribution": {
+    "hi": 1,
+    "mr": 1,
+    "en": 2
+  },
+  "keywords": [
+    "learning",
+    "data",
+    "systems",
+    "deep",
+    "networks",
+    "machine",
+    "human",
+    "neural",
+    "jobs",
+    "intelligence"
+  ],
+  "document_count": 4,
+  "files": [
+    "ex1.txt",
+    "ex2.txt",
+    "f7.txt",
+    "f8.txt"
+  ]
+}

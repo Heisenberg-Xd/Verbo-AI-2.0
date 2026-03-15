@@ -77,9 +77,9 @@ class RAGStore:
         self.metadata  = []
         chunk_embeddings: List[np.ndarray] = []
 
-        # Import the embedding model from main module at runtime to avoid
-        # circular-import issues and reuse the already-loaded model.
-        import main as _main
+        # ── Updated to use new service modules ───────────────────────
+        from services.preprocessing_service import preprocess_text
+        from services.embedding_service import embedding_model
 
         for i, (fname, text) in enumerate(zip(file_names, raw_texts)):
             cluster_id   = int(labels[i])
@@ -104,12 +104,12 @@ class RAGStore:
                     doc_chunks.append(' '.join(sentences[-window:]))
 
             # Encode chunks
-            preprocessed_chunks = [_main.preprocess_text(ch) for ch in doc_chunks]
+            preprocessed_chunks = [preprocess_text(ch) for ch in doc_chunks]
             if len(doc_chunks) == 1:
                 # Reuse the already-computed document embedding
                 chunk_embs = embeddings[i:i+1]
             else:
-                chunk_embs = _main.embedding_model.encode(
+                chunk_embs = embedding_model.encode(
                     preprocessed_chunks, show_progress_bar=False
                 )
 
@@ -370,9 +370,10 @@ def register_rag(app: FastAPI) -> None:
                 })
 
             # ① Embed the query
-            import main as _main
-            preprocessed_query = _main.preprocess_text(request.query)
-            query_emb = _main.embedding_model.encode(
+            from services.preprocessing_service import preprocess_text
+            from services.embedding_service import embedding_model
+            preprocessed_query = preprocess_text(request.query)
+            query_emb = embedding_model.encode(
                 [preprocessed_query], show_progress_bar=False
             )[0]
 

@@ -1,0 +1,31 @@
+{
+  "cluster_id": 2,
+  "cluster_name": "systems_intelligence",
+  "summary": "Artificial Intelligence (AI) refers to the simulation of human intelligence in machines. AI can be broadly classified into Narrow AI, General AI, and Super AI. Super AI is a hypothetical form of AI that surpasses human intelligence in all aspects.",
+  "sentiment": {
+    "positive": 10.21,
+    "negative": 2.4,
+    "neutral": 87.39,
+    "compound": 0.9871
+  },
+  "language_distribution": {
+    "en": 2
+  },
+  "keywords": [
+    "systems",
+    "intelligence",
+    "human",
+    "language",
+    "learning",
+    "perform",
+    "machines",
+    "future",
+    "data",
+    "models"
+  ],
+  "document_count": 2,
+  "files": [
+    "AI_Applications_and_Future.txt",
+    "AI_Introduction.txt"
+  ]
+}
