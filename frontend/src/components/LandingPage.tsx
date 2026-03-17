@@ -10,7 +10,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     <div className="w-full">
       <Hero
         trustBadge={{
-          text: "Intelligent document exploration platform.",
+          text: "VerboAI - Intelligent document exploration platform.",
           icons: ["✨"]
         }}
         headline={{

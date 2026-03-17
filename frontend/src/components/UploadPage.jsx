@@ -307,7 +307,7 @@ function KnowledgeGraphCanvas({ entities, relationships }) {
 // ══════════════════════════════════════════════════════════════════════════════
 // MAIN COMPONENT
 // ══════════════════════════════════════════════════════════════════════════════
-export default function UploadPage() {
+export default function UploadPage({ onComplete }) {
   // ── Core state ──────────────────────────────────────────────────────────────
   const [files,             setFiles]             = useState([]);
   const [fileThumbs,        setFileThumbs]         = useState([]);
@@ -569,46 +569,86 @@ export default function UploadPage() {
 
   // ── 2D Viz canvas ─────────────────────────────────────────────────────────────
   useEffect(() => {
-    if (!vizData.length || !canvasRef.current) return;
+    if (!vizData.length || !canvasRef.current || activeTab !== "viz") return;
     const canvas = canvasRef.current;
     const ctx    = canvas.getContext("2d");
-    const W = canvas.width, H = canvas.height;
+    
+    // High-DPI Support
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.scale(dpr, dpr);
+    
+    const W = rect.width, H = rect.height;
     ctx.clearRect(0, 0, W, H);
+    
     const xs = vizData.map(d => d.x), ys = vizData.map(d => d.y);
     const xMin = Math.min(...xs), xMax = Math.max(...xs);
+    const xMax_ = Math.max(xMax, xMin + 0.0001); // avoid div zero
     const yMin = Math.min(...ys), yMax = Math.max(...ys);
-    const pad  = 44;
-    const toX  = v => pad + ((v-xMin)/(xMax-xMin||1)) * (W-2*pad);
-    const toY  = v => H-pad - ((v-yMin)/(yMax-yMin||1)) * (H-2*pad);
-    ctx.strokeStyle = "rgba(255,255,255,0.04)"; ctx.lineWidth = 1;
-    for (let i = 0; i <= 6; i++) {
-      const x = pad+(i/6)*(W-2*pad), y = pad+(i/6)*(H-2*pad);
+    const yMax_ = Math.max(yMax, yMin + 0.0001);
+    
+    const pad  = 60;
+    const toX  = v => pad + ((v-xMin)/(xMax_-xMin)) * (W-2*pad);
+    const toY  = v => H-pad - ((v-yMin)/(yMax_-yMin)) * (H-2*pad);
+    
+    // Grid
+    ctx.strokeStyle = "rgba(255,255,255,0.03)"; ctx.lineWidth = 1;
+    for (let i = 0; i <= 8; i++) {
+      const x = pad+(i/8)*(W-2*pad);
       ctx.beginPath(); ctx.moveTo(x,pad); ctx.lineTo(x,H-pad); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(pad,y); ctx.lineTo(W-pad,y); ctx.stroke();
     }
+    for (let i = 0; i <= 5; i++) {
+        const y = pad+(i/5)*(H-2*pad);
+        ctx.beginPath(); ctx.moveTo(pad,y); ctx.lineTo(W-pad,y); ctx.stroke();
+    }
+    
     const groups = {};
     vizData.forEach(d => { (groups[d.cluster_id] = groups[d.cluster_id]||[]).push(d); });
+    
+    // 1. Draw soft cluster glows
     Object.entries(groups).forEach(([cid, pts]) => {
       const col = VIZ_COLORS[parseInt(cid) % VIZ_COLORS.length];
       const cx  = pts.reduce((s,p)=>s+toX(p.x),0)/pts.length;
       const cy  = pts.reduce((s,p)=>s+toY(p.y),0)/pts.length;
-      const r   = Math.max(...pts.map(p=>Math.hypot(toX(p.x)-cx,toY(p.y)-cy)))+18;
-      const g   = ctx.createRadialGradient(cx,cy,0,cx,cy,r);
-      g.addColorStop(0, col+"1e"); g.addColorStop(1, col+"00");
-      ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.fillStyle=g; ctx.fill();
+      const r   = Math.max(...pts.map(p=>Math.hypot(toX(p.x)-cx,toY(p.y)-cy))) + 40;
+      
+      const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+      g.addColorStop(0, col + "12"); 
+      g.addColorStop(0.5, col + "08");
+      g.addColorStop(1, col + "00");
+      ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2); ctx.fillStyle = g; ctx.fill();
     });
+    
+    // 2. Draw dots and labels
     vizData.forEach(d => {
-      const x=toX(d.x), y=toY(d.y);
+      const x = toX(d.x), y = toY(d.y);
       const col = VIZ_COLORS[d.cluster_id % VIZ_COLORS.length];
-      ctx.beginPath(); ctx.arc(x,y,5.5,0,Math.PI*2);
-      ctx.fillStyle = col+"cc"; ctx.fill();
-      ctx.strokeStyle = col; ctx.lineWidth = 1.2; ctx.stroke();
-      ctx.fillStyle = "rgba(255,255,255,0.5)";
-      ctx.font = "8px 'JetBrains Mono', monospace";
-      const lbl = d.filename.length > 14 ? d.filename.slice(0,13)+"…" : d.filename;
-      ctx.fillText(lbl, x+8, y+3);
+      
+      // Dot glow
+      ctx.shadowBlur = 8; ctx.shadowColor = col;
+      ctx.beginPath(); ctx.arc(x, y, 4.5, 0, Math.PI*2);
+      ctx.fillStyle = col; ctx.fill();
+      ctx.shadowBlur = 0; // reset
+      
+      ctx.strokeStyle = "rgba(255,255,255,0.8)"; ctx.lineWidth = 1.5;
+      ctx.stroke();
+      
+      // Label
+      ctx.fillStyle = "rgba(255,255,255,0.85)";
+      ctx.font = "500 10px 'Outfit', sans-serif";
+      ctx.textAlign = "left";
+      
+      const lbl = d.filename.length > 20 ? d.filename.slice(0,18)+"…" : d.filename;
+      
+      // Text outline for readability
+      ctx.strokeStyle = "rgba(0,0,0,0.6)";
+      ctx.lineWidth = 2.5;
+      ctx.strokeText(lbl, x + 10, y + 3.5);
+      ctx.fillText(lbl, x + 10, y + 3.5);
     });
-  }, [vizData]);
+  }, [vizData, activeTab]);
 
   // ── Helpers ───────────────────────────────────────────────────────────────────
   const getLangTag  = fn => fileLangs[fn] ? `${fileLangs[fn].source?.toUpperCase()}→EN` : translatedFiles[fn] ? "→EN" : null;
