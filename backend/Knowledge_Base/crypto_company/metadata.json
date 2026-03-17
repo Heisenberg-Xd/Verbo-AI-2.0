@@ -1,0 +1,31 @@
+{
+  "cluster_id": 0,
+  "cluster_name": "crypto_company",
+  "summary": "USD Coin, issued by Circle Internet Financial and originally co-developed with Coinbase, has grown to roughly $35 billion in circulation and has cultivated a reputation for regulatory compliance and reserve transparency through regular attestation reports from accounting firms. Crypto Regulation in 2024: A Patchwork of Rules Across Global Markets\n\nThe global regulatory landscape for cryptocurrency in 2024 resembles a mosaic rather than a framework. The Markets in Crypto-Assets regulation, known as MiCA, came into full effect across European Union member states in December 2024.",
+  "sentiment": {
+    "positive": 9.8,
+    "negative": 6.1,
+    "neutral": 84.1,
+    "compound": 0.9778
+  },
+  "language_distribution": {
+    "en": 2
+  },
+  "keywords": [
+    "crypto",
+    "company",
+    "dollar",
+    "circle",
+    "tether",
+    "billion",
+    "regulatory",
+    "sec",
+    "markets",
+    "mica"
+  ],
+  "document_count": 2,
+  "files": [
+    "stablecoin_wars.txt",
+    "crypto_regulation_global.txt"
+  ]
+}

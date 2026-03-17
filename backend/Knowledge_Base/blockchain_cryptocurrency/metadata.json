@@ -1,5 +1,5 @@
 {
-  "cluster_id": 0,
+  "cluster_id": 2,
   "cluster_name": "blockchain_cryptocurrency",
   "summary": "Blockchain is a decentralized digital ledger that records transactions. Ethereum is the most popular blockchain for smart contracts. Ethereum, launched in 2015, introduced smart contracts and programmable blockchain technology.",
   "sentiment": {
@@ -27,9 +27,9 @@
   ],
   "document_count": 4,
   "files": [
-    "Blockchain_Advanced_Concepts.txt",
-    "Blockchain_Parichay_Marathi.txt",
-    "Crypto_Introduction.txt",
-    "Crypto_Trading_Hindi.txt"
+    "f17.txt",
+    "f18.txt",
+    "f19.txt",
+    "f20.txt"
   ]
 }

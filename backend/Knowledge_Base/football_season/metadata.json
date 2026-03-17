@@ -1,0 +1,32 @@
+{
+  "cluster_id": 6,
+  "cluster_name": "football_season",
+  "summary": "The NBA and the evolution of modern global basketball\n\nThe 2023-2024 NBA season confirmed the growing internationalization of basketball, with more than one hundred and thirty foreign players regularly participating in matches. European clubs are calling for more calendar reforms to better integrate European competitions into this globalized sporting landscape. The season also highlighted growing concerns around player welfare, with national team managers calling for greater regulation of the club calendar.",
+  "sentiment": {
+    "positive": 18.2,
+    "negative": 2.0,
+    "neutral": 79.8,
+    "compound": 0.9985
+  },
+  "language_distribution": {
+    "fr": 1,
+    "en": 1
+  },
+  "keywords": [
+    "football",
+    "season",
+    "nba",
+    "basketball",
+    "european",
+    "global",
+    "sport",
+    "players",
+    "player",
+    "club"
+  ],
+  "document_count": 2,
+  "files": [
+    "sports_basketball_fr.txt",
+    "sports_football_en.txt"
+  ]
+}

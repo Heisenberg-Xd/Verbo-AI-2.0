@@ -1,0 +1,31 @@
+{
+  "cluster_id": 3,
+  "cluster_name": "balances_federal",
+  "summary": "SAVE caps monthly payments at five percent of discretionary income for undergraduate loans \u2014 down from ten percent under the previous REPAYE plan \u2014 and provides forgiveness after ten years for borrowers with original balances under $12,000, with the forgiveness period extending by one year for each additional $1,000 borrowed. America's Credit Card Debt Crisis: $1 Trillion and Climbing\n\nIn the third quarter of 2023, total US credit card debt crossed $1 trillion for the first time in history \u2014 a threshold that Federal Reserve economists and consumer advocates had been tracking with growing alarm throughout the year. The figure represents the aggregate balance carried across hundreds of millions of active credit card accounts, and it arrived at a moment when average interest rates on those balances were at their highest levels since the Federal Reserve began tracking them.",
+  "sentiment": {
+    "positive": 14.59,
+    "negative": 7.39,
+    "neutral": 78.02,
+    "compound": 0.9979
+  },
+  "language_distribution": {
+    "en": 2
+  },
+  "keywords": [
+    "balances",
+    "federal",
+    "credit",
+    "card",
+    "debt",
+    "income",
+    "borrowers",
+    "reserve",
+    "loan",
+    "forgiveness"
+  ],
+  "document_count": 2,
+  "files": [
+    "student_loan_repayment.txt",
+    "credit_card_debt_crisis.txt"
+  ]
+}

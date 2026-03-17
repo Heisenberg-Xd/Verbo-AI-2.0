@@ -1,0 +1,36 @@
+{
+  "cluster_id": 1,
+  "cluster_name": "market_short",
+  "summary": "OpenAI closed a $10 billion investment from Microsoft in early 2023, valuing the company at roughly $29 billion. ARM Holdings, the British chip IP company that SoftBank acquired for $32 billion in 2016, went public in 2023 at a valuation exceeding $54 billion after a proposed $40 billion sale to Nvidia collapsed under antitrust scrutiny. OYO, the Indian hospitality company, went public at a significantly reduced valuation after Vision Fund had invested at a $10 billion peak.",
+  "sentiment": {
+    "positive": 11.0,
+    "negative": 6.2,
+    "neutral": 82.8,
+    "compound": 0.9993
+  },
+  "language_distribution": {
+    "en": 7
+  },
+  "keywords": [
+    "market",
+    "short",
+    "billion",
+    "nvidia",
+    "company",
+    "seed",
+    "ipo",
+    "fund",
+    "microsoft",
+    "vision"
+  ],
+  "document_count": 7,
+  "files": [
+    "ipo_market_2024.txt",
+    "nvidia_ai_stock_surge.txt",
+    "seed_funding_trends.txt",
+    "ai_startup_funding_boom.txt",
+    "short_selling_strategies.txt",
+    "softbank_vision_fund.txt",
+    "sp500_bull_run_2024.txt"
+  ]
+}

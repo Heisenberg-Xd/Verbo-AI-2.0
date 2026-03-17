@@ -1,0 +1,30 @@
+{
+  "cluster_id": 5,
+  "cluster_name": "training_winter",
+  "summary": "The Winter Olympics and global skiing\n\nThe Alpine Ski World Cup of the 2023-2024 season once again demonstrated the exceptionally high level of competition in top international sport. Technical development in alpine ski racing is progressing rapidly. At the Olympic Games in Beijing in 2022, athletes from geothermal power regions in Asia caused a stir for the first time, underlining the universal nature of winter sports.",
+  "sentiment": {
+    "positive": 12.8,
+    "negative": 0.8,
+    "neutral": 86.4,
+    "compound": 0.9851
+  },
+  "language_distribution": {
+    "de": 1
+  },
+  "keywords": [
+    "training",
+    "winter",
+    "high",
+    "alpine",
+    "ski",
+    "work",
+    "closely",
+    "youth",
+    "world",
+    "increasingly"
+  ],
+  "document_count": 1,
+  "files": [
+    "sports_skiing_de.txt"
+  ]
+}

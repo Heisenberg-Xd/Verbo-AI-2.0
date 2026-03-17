@@ -1,2 +1,2 @@
-Machine Learning and Deep Learning: Today, the most important part of AI is Machine Learning and Deep Learning. Deep learning is a form of machine learning that uses neural networks to analyze data, identify patterns, and make decisions based on that. Important information about Machine Learning, Deep Learning and Neural Networks
+Machine Learning algorithms are mathematical models that learn patterns from data. Deep learning is a form of machine learning that uses neural networks to analyze data, identify patterns, and make decisions based on that. Important information about Machine Learning, Deep Learning and Neural Networks
 Machine learning is the backbone of modern AI.

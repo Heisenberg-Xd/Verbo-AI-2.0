@@ -1,0 +1,33 @@
+{
+  "cluster_id": 2,
+  "cluster_name": "billion_company",
+  "summary": "OYO, the Indian hospitality company, went public at a significantly reduced valuation after Vision Fund had invested at a $10 billion peak. Stripe, which had raised at a $95 billion valuation in 2021, was marked down by multiple crossover fund investors to estimated values between $40 and $55 billion. OpenAI closed a $10 billion investment from Microsoft in early 2023, valuing the company at roughly $29 billion.",
+  "sentiment": {
+    "positive": 10.6,
+    "negative": 6.0,
+    "neutral": 83.4,
+    "compound": 0.9977
+  },
+  "language_distribution": {
+    "en": 4
+  },
+  "keywords": [
+    "billion",
+    "company",
+    "fund",
+    "investors",
+    "vision",
+    "capital",
+    "raised",
+    "percent",
+    "founders",
+    "son"
+  ],
+  "document_count": 4,
+  "files": [
+    "softbank_vision_fund.txt",
+    "startup_equity_dilution.txt",
+    "unicorn_valuation_pressure.txt",
+    "ai_startup_funding_boom.txt"
+  ]
+}

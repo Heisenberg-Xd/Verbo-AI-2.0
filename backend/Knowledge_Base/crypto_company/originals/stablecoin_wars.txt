@@ -1,0 +1,13 @@
+The Stablecoin Wars: Tether, Circle, and the Battle for Dollar Dominance on Chain
+
+In the world of cryptocurrency, the most boring-sounding category turns out to be the most consequential. Stablecoins — tokens designed to maintain a one-to-one peg with the US dollar or another fiat currency — have become the plumbing of the crypto financial system, facilitating trillions of dollars in trading volume annually and serving as the primary settlement currency on both centralized and decentralized exchanges.
+
+Two issuers dominate the market. Tether, issued by a Hong Kong-based company of the same name, has a circulating supply exceeding $100 billion and processes more daily transaction volume than Visa. USD Coin, issued by Circle Internet Financial and originally co-developed with Coinbase, has grown to roughly $35 billion in circulation and has cultivated a reputation for regulatory compliance and reserve transparency through regular attestation reports from accounting firms.
+
+The contrast in approaches is stark. Tether for years resisted detailed disclosure of what backs its tokens, fueling persistent concerns from academics and short sellers who alleged the company could not actually back every USDT with a dollar equivalent. A 2021 settlement with the New York Attorney General revealed that Tether's reserves included commercial paper, secured loans, and other non-cash assets — not purely dollar deposits. The company has since shifted toward US Treasury bills but debate about its transparency continues.
+
+Circle pursued a different path. The company filed for an IPO in 2022, withdrew in difficult market conditions, and refiled as market sentiment improved. Circle's reserves are held almost entirely in short-duration US government securities managed through BlackRock, and the company provides weekly reserve attestations.
+
+The March 2023 Silicon Valley Bank collapse momentarily shook confidence in USDC when Circle disclosed it held $3.3 billion in SVB. USDC briefly de-pegged to $0.87, its worst trading moment. The crisis passed quickly when the FDIC backstopped SVB depositors, but the incident highlighted the counterparty risks that exist even in the most transparent stablecoin operations.
+
+New entrants are challenging the duopoly. PayPal launched PYUSD in 2023. First Digital USD, issued via a partnership with Binance, rapidly grew to several billion in supply. Each issuer is betting that regulatory clarity and merchant adoption will eventually determine which stablecoins become the dominant dollar-equivalent rails for global commerce.

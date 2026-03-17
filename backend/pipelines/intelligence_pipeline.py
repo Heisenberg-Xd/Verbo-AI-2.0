@@ -108,16 +108,16 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
         c_embeddings = embeddings[indices]
         c_langs      = [lang_per_file[fn]       for fn in c_files]
 
+        summary   = generate_summary(c_raw_texts)
+        sentiment = analyze_sentiment(c_raw_texts)
+
         kws        = get_top_keywords(c_texts, top_n=10)
-        topic_name = get_cluster_topic(kws)
+        topic_name = get_cluster_topic(kws, context_text=summary)
 
         base_name, counter = topic_name, 1
         while topic_name in clusters_output:
             topic_name = f"{base_name}_{counter}"
             counter += 1
-
-        summary   = generate_summary(c_raw_texts)
-        sentiment = analyze_sentiment(c_raw_texts)
 
         lang_dist: dict = {}
         for lg in c_langs:
@@ -131,6 +131,7 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
         lang_dist_output[topic_name]      = lang_dist
         keywords_output[topic_name]       = kws
         representative_output[topic_name] = rep
+
 
         insight = {
             "cluster_name":                 topic_name,

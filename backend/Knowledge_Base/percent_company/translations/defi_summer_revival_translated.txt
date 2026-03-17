@@ -1,0 +1,13 @@
+DeFi's Second Act: Can Decentralized Finance Recover Its Momentum?
+
+The original DeFi summer of 2020 felt like a revelation. Protocols like Uniswap, Compound, and Aave demonstrated that financial primitives — lending, borrowing, market-making — could operate entirely on-chain without intermediaries, governed only by immutable smart contracts. At its 2021 peak, the total value locked across DeFi protocols exceeded $180 billion.
+
+Then came the unraveling. The collapse of Terra's algorithmic stablecoin UST in May 2022, which erased roughly $60 billion in value within days, triggered a cascade that unwound overleveraged positions across the ecosystem. Three Arrows Capital, one of crypto's most prominent hedge funds, blew up. Celsius and Voyager, centralized lending platforms that had absorbed DeFi-adjacent risks, froze withdrawals and filed for bankruptcy. The contagion was severe and the reputational damage lasting.
+
+By mid-2023, total value locked in DeFi had fallen to roughly $37 billion — a fraction of its peak. User numbers dropped, developer talent migrated toward AI, and the narrative of unstoppable financial innovation was replaced by stories of rugs, exploits, and regulatory crackdowns.
+
+Yet the underlying protocols, the ones built on straightforward economic logic rather than algorithmic wizardry, had survived. Uniswap continued processing billions in daily volume. Aave's v3 architecture introduced cross-chain liquidity pools. Maker DAO, the protocol behind the DAI stablecoin, generated over $100 million in annualized revenue from real-world asset collateral.
+
+The 2024 recovery has been uneven but real. As Bitcoin ETF approvals reinvigorated broader crypto sentiment, DeFi TVL climbed back toward $80 billion. New categories — perpetuals DEXes like GMX and dYdX, prediction markets like Polymarket, and yield optimization vaults — attracted fresh users and capital.
+
+The structural lesson of the crash was not that DeFi is broken but that leverage cycles and algorithmic constructs built on reflexive assumptions are dangerous regardless of whether they operate on-chain or in a hedge fund. The protocols that survived were the ones with genuine utility, transparent mechanics, and conservative risk parameters.

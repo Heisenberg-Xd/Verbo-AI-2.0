@@ -1,0 +1,36 @@
+{
+  "cluster_id": 1,
+  "cluster_name": "die_und_1",
+  "summary": "La NBA et l'\u00e9volution du basketball moderne mondial\n\nLa saison 2023-2024 de la NBA a confirm\u00e9 l'internationalisation croissante du basketball, avec plus de cent trente joueurs \u00e9trangers participant r\u00e9guli\u00e8rement aux matchs. Les entra\u00eeneurs am\u00e9ricains s'accordent \u00e0 reconna\u00eetre que les jeunes joueurs form\u00e9s en Europe arrivent avec une base technique plus solide, notamment en ce qui concerne la passe et le jeu sans ballon. Les campagnes internationales de la NBA, avec des matchs organis\u00e9s \u00e0 Paris, Londres et Mexico, ont consid\u00e9rablement \u00e9largi l'audience mondiale du sport.",
+  "sentiment": {
+    "positive": 6.9,
+    "negative": 3.9,
+    "neutral": 89.2,
+    "compound": 0.9836
+  },
+  "language_distribution": {
+    "fr": 1,
+    "en": 1,
+    "de": 1,
+    "es": 1
+  },
+  "keywords": [
+    "die",
+    "und",
+    "les",
+    "der",
+    "des",
+    "football",
+    "den",
+    "del",
+    "aus",
+    "player"
+  ],
+  "document_count": 4,
+  "files": [
+    "sports_basketball_fr.txt",
+    "sports_football_en.txt",
+    "sports_skiing_de.txt",
+    "sports_tennis_es.txt"
+  ]
+}

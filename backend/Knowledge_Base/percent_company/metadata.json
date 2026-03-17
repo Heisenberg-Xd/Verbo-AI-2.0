@@ -1,0 +1,54 @@
+{
+  "cluster_id": 0,
+  "cluster_name": "percent_company",
+  "summary": "The average credit card interest rate in the United States reached 22.8 percent in late 2023, according to Federal Reserve data \u2014 roughly double the rate that prevailed a decade earlier. The central bank's benchmark federal funds rate, which sat near zero in early 2022, finished 2023 in a target range of 5.25 to 5.50 percent \u2014 the highest level in over two decades. Active funds typically charge 0.5 percent to 1.5 percent, with many hedge funds adding a two-and-twenty structure \u2014 two percent of assets under management plus twenty percent of profits.",
+  "sentiment": {
+    "positive": 11.3,
+    "negative": 7.4,
+    "neutral": 81.3,
+    "compound": 0.9999
+  },
+  "language_distribution": {
+    "en": 25
+  },
+  "keywords": [
+    "percent",
+    "company",
+    "market",
+    "billion",
+    "rate",
+    "investors",
+    "fund",
+    "capital",
+    "short",
+    "active"
+  ],
+  "document_count": 25,
+  "files": [
+    "short_selling_strategies.txt",
+    "softbank_vision_fund.txt",
+    "sp500_bull_run_2024.txt",
+    "stablecoin_wars.txt",
+    "startup_equity_dilution.txt",
+    "student_loan_repayment.txt",
+    "unicorn_valuation_pressure.txt",
+    "us_china_trade_decoupling.txt",
+    "ai_startup_funding_boom.txt",
+    "bitcoin_halving_2024.txt",
+    "credit_card_debt_crisis.txt",
+    "crypto_regulation_global.txt",
+    "defi_summer_revival.txt",
+    "dollar_global_dominance.txt",
+    "emergency_fund_guide.txt",
+    "ethereum_staking_economy.txt",
+    "fed_interest_rate_policy.txt",
+    "index_funds_vs_active.txt",
+    "inflation_consumer_impact.txt",
+    "ipo_market_2024.txt",
+    "mortgage_rates_impact.txt",
+    "nvidia_ai_stock_surge.txt",
+    "recession_indicators_2024.txt",
+    "retirement_401k_planning.txt",
+    "seed_funding_trends.txt"
+  ]
+}

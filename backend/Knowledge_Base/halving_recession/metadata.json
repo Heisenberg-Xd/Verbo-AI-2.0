@@ -1,0 +1,34 @@
+{
+  "cluster_id": 0,
+  "cluster_name": "halving_recession",
+  "summary": "Grocery prices, which had risen over 20 percent cumulatively between early 2020 and late 2023, remained elevated even as grocery inflation measured year-over-year began moderating. Mortgage rates, which had sat at historic lows of around 3 percent throughout 2020 and 2021, climbed above 8 percent by October 2023 \u2014 a level not seen since the early 2000s. Futures markets in early 2024 priced in three to six quarter-point rate reductions over the calendar year, which analysts modeled could bring the 30-year fixed rate back toward 6 percent.",
+  "sentiment": {
+    "positive": 9.1,
+    "negative": 8.5,
+    "neutral": 82.4,
+    "compound": 0.973
+  },
+  "language_distribution": {
+    "en": 5
+  },
+  "keywords": [
+    "halving",
+    "recession",
+    "percent",
+    "inflation",
+    "bitcoin",
+    "retirement",
+    "rate",
+    "mortgage",
+    "market",
+    "income"
+  ],
+  "document_count": 5,
+  "files": [
+    "inflation_consumer_impact.txt",
+    "mortgage_rates_impact.txt",
+    "recession_indicators_2024.txt",
+    "retirement_401k_planning.txt",
+    "bitcoin_halving_2024.txt"
+  ]
+}

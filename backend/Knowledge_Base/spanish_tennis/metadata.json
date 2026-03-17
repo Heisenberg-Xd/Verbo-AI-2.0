@@ -1,0 +1,31 @@
+{
+  "cluster_id": 1,
+  "cluster_name": "spanish_tennis",
+  "summary": "Spanish tennis and global domination on the Grand Slam circuit\n\nSpanish tennis has consolidated its position as one of the most influential global powers on the professional circuit over the last two decades. Spanish tennis and global domination on the Grand Slam circuit\n\nSpanish tennis has consolidated its position as one of the most influential global powers on the professional circuit over the last two decades. The next generation of Spanish tennis players shows a remarkable technical level.",
+  "sentiment": {
+    "positive": 18.9,
+    "negative": 2.1,
+    "neutral": 79.0,
+    "compound": 0.9984
+  },
+  "language_distribution": {
+    "es": 2
+  },
+  "keywords": [
+    "spanish",
+    "tennis",
+    "players",
+    "circuit",
+    "world",
+    "training",
+    "season",
+    "national",
+    "physical",
+    "technical"
+  ],
+  "document_count": 2,
+  "files": [
+    "sports_tennis_es - Copy.txt",
+    "sports_tennis_es.txt"
+  ]
+}

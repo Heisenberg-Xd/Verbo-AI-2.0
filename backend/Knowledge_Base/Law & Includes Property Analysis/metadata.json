@@ -1,0 +1,34 @@
+{
+  "cluster_id": 2,
+  "cluster_name": "Law & Includes Property Analysis",
+  "summary": "Private law includes contract law, property law, and tort law. Public law includes criminal law and constitutional law. Private law includes contract law and property law.",
+  "sentiment": {
+    "positive": 22.42,
+    "negative": 9.31,
+    "neutral": 68.27,
+    "compound": 0.9686
+  },
+  "language_distribution": {
+    "en": 1,
+    "hi": 1,
+    "mr": 1
+  },
+  "keywords": [
+    "law",
+    "includes",
+    "property",
+    "resolve",
+    "disputes",
+    "legal",
+    "introduction",
+    "helps",
+    "citizens",
+    "private"
+  ],
+  "document_count": 3,
+  "files": [
+    "law_general_overview_en.txt",
+    "law_general_overview_hi.txt",
+    "law_general_overview_mr.txt"
+  ]
+}
