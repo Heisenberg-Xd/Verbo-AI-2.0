@@ -1,0 +1,41 @@
+{
+  "cluster_id": 8,
+  "cluster_name": "Blockchain & Crypto Cryptocurrency Analysis",
+  "summary": "Blockchain is a decentralized digital ledger that records transactions. Ethereum is the most popular blockchain for smart contracts. DeFi (Decentralized Finance) provides financial services based on blockchain.",
+  "sentiment": {
+    "positive": 12.3,
+    "negative": 6.6,
+    "neutral": 81.1,
+    "compound": 0.9997
+  },
+  "language_distribution": {
+    "en": 8,
+    "mr": 1,
+    "hi": 1
+  },
+  "keywords": [
+    "blockchain",
+    "crypto",
+    "cryptocurrency",
+    "dollar",
+    "market",
+    "ethereum",
+    "eth",
+    "staking",
+    "billion",
+    "trading"
+  ],
+  "document_count": 10,
+  "files": [
+    "crypto_regulation_global.txt",
+    "defi_summer_revival.txt",
+    "dollar_global_dominance.txt",
+    "ethereum_staking_economy.txt",
+    "stablecoin_wars.txt",
+    "us_china_trade_decoupling.txt",
+    "f17.txt",
+    "f18.txt",
+    "f19.txt",
+    "f20.txt"
+  ]
+}

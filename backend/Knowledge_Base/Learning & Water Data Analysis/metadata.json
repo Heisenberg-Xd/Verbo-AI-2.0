@@ -1,0 +1,43 @@
+{
+  "cluster_id": 3,
+  "cluster_name": "Learning & Water Data Analysis",
+  "summary": "Machine Learning and Deep Learning: Today, the most important part of AI is Machine Learning and Deep Learning. Deep learning is a form of machine learning that uses neural networks to analyze data, identify patterns, and make decisions based on that. Important information about Machine Learning, Deep Learning and Neural Networks\nMachine learning is the backbone of modern AI.",
+  "sentiment": {
+    "positive": 16.3,
+    "negative": 4.5,
+    "neutral": 79.2,
+    "compound": 1.0
+  },
+  "language_distribution": {
+    "en": 9,
+    "hi": 2,
+    "mr": 1
+  },
+  "keywords": [
+    "learning",
+    "water",
+    "data",
+    "machine",
+    "systems",
+    "nvidia",
+    "human",
+    "algorithms",
+    "networks",
+    "model"
+  ],
+  "document_count": 12,
+  "files": [
+    "ai_startup_funding_boom.txt",
+    "nvidia_ai_stock_surge.txt",
+    "f5.txt",
+    "f6.txt",
+    "f7.txt",
+    "f8.txt",
+    "f15.txt",
+    "f16.txt",
+    "f21.txt",
+    "f23.txt",
+    "f25.txt",
+    "f26.txt"
+  ]
+}

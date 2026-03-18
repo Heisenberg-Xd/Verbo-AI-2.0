@@ -1,0 +1,37 @@
+{
+  "cluster_id": 6,
+  "cluster_name": "Law & Criminal Crimes Analysis",
+  "summary": "Public law includes criminal law, constitutional law, and administrative law. Public law includes criminal law and constitutional law. Public law includes criminal and constitutional law.",
+  "sentiment": {
+    "positive": 12.6,
+    "negative": 26.3,
+    "neutral": 61.1,
+    "compound": -0.9958
+  },
+  "language_distribution": {
+    "en": 2,
+    "hi": 2,
+    "mr": 2
+  },
+  "keywords": [
+    "law",
+    "criminal",
+    "crimes",
+    "includes",
+    "court",
+    "society",
+    "property",
+    "disputes",
+    "resolve",
+    "legal"
+  ],
+  "document_count": 6,
+  "files": [
+    "criminal_law_en.txt",
+    "criminal_law_hi.txt",
+    "criminal_law_mr.txt",
+    "law_general_overview_en.txt",
+    "law_general_overview_hi.txt",
+    "law_general_overview_mr.txt"
+  ]
+}

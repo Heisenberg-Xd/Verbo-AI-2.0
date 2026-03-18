@@ -1,0 +1,13 @@
+The IPO Market's Uneven Comeback: Cautious Optimism After a Two-Year Drought
+
+The US initial public offering market endured one of its worst stretches in decades between 2022 and 2023. Rising interest rates decimated the private market valuations that had underpinned the 2020 and 2021 IPO frenzy, and a wave of high-profile post-IPO disappointments — from Rivian to Peloton to Robinhood — left institutional investors deeply skeptical of newly public companies carrying premium growth multiples.
+
+The drought lifted modestly in the second half of 2023. Arm Holdings, the British semiconductor IP company majority-owned by SoftBank, raised $4.9 billion in September 2023 in the largest US IPO in two years. Instacart and Klaviyo followed within days, though both priced below their peak private valuations. The immediate post-listing performance was underwhelming — Instacart fell significantly from its IPO price within weeks — reinforcing investor caution.
+
+2024 brought signs of a more sustainable recovery, though the market remained highly selective. Companies with demonstrated profitability, clear paths to sustained growth, and modest valuation ambitions fared far better than those relying on future revenue projections to justify their pricing. The lesson absorbed from 2021's excesses — when Special Purpose Acquisition Company mergers and hyped revenue multiples produced spectacular collapses — has made underwriters and institutional book-runners more conservative.
+
+Reddit's IPO in March 2024 attracted unusual attention. The social media company had been flirting with a public listing for years and finally executed at a valuation of roughly $6.4 billion after raising nearly $750 million. The decision to allocate shares to active users — a novel structure — generated significant media coverage, though the company's history of losses and the monetization challenges inherent in social media kept analysts split on the fundamental investment case.
+
+Private equity and venture capital firms holding paper gains from the 2021 vintage of investments remain eager for exit opportunities. The window between economic stability and the next correction is never clear until afterwards, which is why the IPO calendar in 2024 filled up quickly once sentiment shifted — every sponsor wants to capture the window before it closes.
+
+For retail investors, IPOs remain a tricky category. Academic research consistently shows that the average IPO underperforms the market over the five years post-listing, though the distribution is wildly skewed. The difference between catching an Nvidia in 2020 and catching a WeWork in 2019 is enormous, and picking correctly in advance is approximately as difficult as it sounds.

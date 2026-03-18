@@ -1,0 +1,1 @@
+Blockchain is a decentralized digital ledger that records transactions. Ethereum is the most popular blockchain for smart contracts. DeFi (Decentralized Finance) provides financial services based on blockchain.

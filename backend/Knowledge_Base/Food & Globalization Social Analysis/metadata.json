@@ -1,0 +1,36 @@
+{
+  "cluster_id": 1,
+  "cluster_name": "Food & Globalization Social Analysis",
+  "summary": "However, the rise of social media has also brought significant challenges. In addition, social media has been linked to mental health issues, particularly among younger users. In conclusion, while social media has transformed communication, learning, and commerce, it also presents significant challenges related to mental health, privacy, and the overall quality of social interactions, making it essential to navigate these platforms with mindfulness and balance.",
+  "sentiment": {
+    "positive": 19.18,
+    "negative": 4.3,
+    "neutral": 76.52,
+    "compound": 1.0
+  },
+  "language_distribution": {
+    "en": 7
+  },
+  "keywords": [
+    "food",
+    "globalization",
+    "social",
+    "media",
+    "gaming",
+    "global",
+    "people",
+    "users",
+    "economic",
+    "platforms"
+  ],
+  "document_count": 7,
+  "files": [
+    "f3.txt",
+    "f4.txt",
+    "f9.txt",
+    "f10.txt",
+    "f11.txt",
+    "f12.txt",
+    "f14.txt"
+  ]
+}

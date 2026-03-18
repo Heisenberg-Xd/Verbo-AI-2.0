@@ -1,0 +1,40 @@
+{
+  "cluster_id": 2,
+  "cluster_name": "Short & Market Company Analysis",
+  "summary": "A coordinated retail buying campaign orchestrated through Reddit's WallStreetBets forum triggered a short squeeze that pushed GameStop from $20 to nearly $500 in a matter of weeks, forcing heavily short hedge funds including Melvin Capital to cover at enormous losses. Unlike public market investors who face daily mark-to-market losses, venture funds are only required to mark down private portfolio companies when there is a \"significant observable transaction\" suggesting a lower value. A coordinated retail buying campaign orchestrated through Reddit's WallStreetBets forum triggered a short squeeze that pushed GameStop from $20 to nearly $500 in a matter of weeks, forcing heavily short hedge funds including Melvin Capital to cover at enormous losses.",
+  "sentiment": {
+    "positive": 10.3,
+    "negative": 7.6,
+    "neutral": 82.1,
+    "compound": 0.999
+  },
+  "language_distribution": {
+    "en": 11
+  },
+  "keywords": [
+    "short",
+    "market",
+    "company",
+    "fund",
+    "billion",
+    "active",
+    "percent",
+    "investors",
+    "index",
+    "capital"
+  ],
+  "document_count": 11,
+  "files": [
+    "emergency_fund_guide.txt",
+    "index_funds_vs_active.txt",
+    "ipo_market_2024.txt",
+    "retirement_401k_planning.txt",
+    "seed_funding_trends.txt",
+    "short_selling_strategies.txt",
+    "softbank_vision_fund.txt",
+    "sp500_bull_run_2024.txt",
+    "startup_equity_dilution.txt",
+    "unicorn_valuation_pressure.txt",
+    "short_selling_strategies - Copy.txt"
+  ]
+}
