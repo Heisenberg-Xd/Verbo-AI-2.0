@@ -1,0 +1,36 @@
+{
+  "cluster_id": 3,
+  "cluster_name": "World & Cup Sports Analysis",
+  "summary": "Lionel Messi, widely considered the greatest footballer of his generation, finally led Argentina to World Cup glory in a final against France that many observers described as the greatest World Cup final ever played. Lionel Messi led Argentina to win its third World Cup title in an epic final against France, which many observers described as the greatest final in the history of the World Cup. Lionel Messi led Argentina to their third World Cup title in a final against France that many experts consider to be the best World Cup final of all time.",
+  "sentiment": {
+    "positive": 13.3,
+    "negative": 3.9,
+    "neutral": 82.8,
+    "compound": 0.9995
+  },
+  "language_distribution": {
+    "en": 1,
+    "mr": 1,
+    "ar": 1,
+    "de": 1
+  },
+  "keywords": [
+    "world",
+    "cup",
+    "sports",
+    "games",
+    "messi",
+    "france",
+    "final",
+    "argentina",
+    "time",
+    "history"
+  ],
+  "document_count": 4,
+  "files": [
+    "f14.txt",
+    "f15.txt",
+    "f16.txt",
+    "f17.txt"
+  ]
+}

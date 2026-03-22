@@ -1,0 +1,37 @@
+{
+  "cluster_id": 0,
+  "cluster_name": "Google & Artificial Intelligence Analysis",
+  "summary": "Google responded to the success of ChatGPT by accelerating development of its own large language model, Gemini, which was developed by Google DeepMind. Google has teamed up with DeepMind to develop an advanced AI model called Gemini. Cloud companies like Amazon, Google, and Microsoft are developing their own AI chips to reduce their dependence on NVIDIA.",
+  "sentiment": {
+    "positive": 13.4,
+    "negative": 0.9,
+    "neutral": 85.7,
+    "compound": 0.9997
+  },
+  "language_distribution": {
+    "en": 2,
+    "hi": 1,
+    "de": 1,
+    "mr": 1
+  },
+  "keywords": [
+    "google",
+    "artificial",
+    "intelligence",
+    "model",
+    "openai",
+    "nvidia",
+    "microsoft",
+    "technology",
+    "development",
+    "company"
+  ],
+  "document_count": 5,
+  "files": [
+    "f1.txt",
+    "f2.txt",
+    "f3.txt",
+    "f4.txt",
+    "f5.txt"
+  ]
+}
