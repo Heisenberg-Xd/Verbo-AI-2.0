@@ -25,8 +25,8 @@ export function Sidebar() {
   const activeWorkspaceId = useStore((state) => state.activeWorkspaceId);
 
   return (
-    <div className="w-64 border-r border-[#2A2A2A] bg-surface flex flex-col h-full">
-      <div className="p-6 border-b border-[#2A2A2A]">
+    <div className="w-64 border-r border-white/5 bg-surface/40 backdrop-blur-xl flex flex-col h-full z-20 relative">
+      <div className="p-6 border-b border-white/5">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-8 h-8 rounded bg-accent-primary/10 border border-accent-primary flex items-center justify-center text-accent-primary group-hover:bg-accent-primary group-hover:text-black transition-colors">
             <BrainCircuit size={18} />
@@ -48,8 +48,8 @@ export function Sidebar() {
               className={cn(
                 "group flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-mono transition-colors",
                 isActive 
-                  ? "bg-accent-primary/10 text-accent-primary" 
-                  : "text-text-secondary hover:bg-surface-hover hover:text-text-primary"
+                  ? "bg-accent-primary/20 text-accent-primary border border-accent-primary/30" 
+                  : "text-text-secondary hover:bg-white/5 hover:text-text-primary"
               )}
             >
               <item.icon size={18} className={cn(isActive ? "text-accent-primary" : "text-text-muted group-hover:text-text-secondary")} />
@@ -59,14 +59,14 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="p-4 border-t border-[#2A2A2A]">
+      <div className="p-4 border-t border-white/5">
         <Link
           href="/app/settings"
           className={cn(
             "group flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-mono transition-colors",
             pathname === '/app/settings'
-              ? "bg-surface-active text-text-primary"
-              : "text-text-secondary hover:bg-surface-hover hover:text-text-primary"
+              ? "bg-white/10 text-text-primary border border-white/10"
+              : "text-text-secondary hover:bg-white/5 hover:text-text-primary"
           )}
         >
           <Settings size={18} className="text-text-muted group-hover:text-text-secondary" />

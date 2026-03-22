@@ -1,11 +1,21 @@
 'use client';
 
-import { useState, useCallback, useRef, useEffect } from 'react';
-import dynamic from 'next/dynamic';
-const ForceGraph2D = dynamic(() => import('react-force-graph-2d'), { ssr: false });
+import { useState, useEffect } from 'react';
 import { useStore } from '@/lib/store';
 import { api, Endpoints } from '@/lib/api';
-import { Network, Search, Filter, AlertCircle, X, ChevronRight, Database } from 'lucide-react';
+import { 
+  Network, 
+  AlertCircle, 
+  X, 
+  ChevronRight, 
+  Database, 
+  User, 
+  Building2, 
+  MapPin, 
+  Tag 
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { KnowledgeGraph } from '@/components/ui/KnowledgeGraph';
 
 export default function IntelligencePage() {
   const { activeWorkspaceId } = useStore();
@@ -13,10 +23,7 @@ export default function IntelligencePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string|null>(null);
   
-  const [searchQuery, setSearchQuery] = useState('');
   const [selectedNode, setSelectedNode] = useState<any>(null);
-
-  const fgRef = useRef<any>(null);
 
   useEffect(() => {
     if (activeWorkspaceId) {
@@ -32,8 +39,11 @@ export default function IntelligencePage() {
       const res = await api.get(Endpoints.getKnowledgeGraph(activeWorkspaceId));
       if (res.data.nodes?.length > 0) {
         setGraphData({
-          ...res.data,
-          links: res.data.edges
+          nodes: res.data.nodes.map((n: any) => ({
+            ...n,
+            val: n.mentions || 1 
+          })),
+          links: res.data.edges || []
         });
       } else {
         setError(res.data.message || 'No entities found.');
@@ -45,52 +55,7 @@ export default function IntelligencePage() {
     }
   };
 
-  const drawNode = useCallback((node: any, ctx: CanvasRenderingContext2D, globalScale: number) => {
-    const isSelected = selectedNode && selectedNode.id === node.id;
-    const isMuted = selectedNode && !isSelected && 
-                    !graphData?.links.some((e: any) => 
-                      (e.source.id === node.id && e.target.id === selectedNode.id) || 
-                      (e.target.id === node.id && e.source.id === selectedNode.id)
-                    );
-
-    const r = Math.max(1, (isSelected ? 6 : 4) - globalScale/15);
-
-    let color = '#525252'; 
-    if (node.type === 'person') color = '#F59E0B'; 
-    if (node.type === 'organization') color = '#10B981'; 
-    if (node.type === 'location') color = '#EF4444'; 
-
-    if (isMuted) color = '#1A1A1A'; // Fade out unrelated
-
-    ctx.beginPath();
-    ctx.arc(node.x, node.y, r, 0, 2 * Math.PI, false);
-    ctx.fillStyle = color;
-    
-    // Selection ring
-    if (isSelected) {
-      ctx.lineWidth = 1/globalScale;
-      ctx.strokeStyle = '#F59E0B';
-      ctx.stroke();
-    }
-    
-    ctx.fill();
-
-    if (globalScale > 1.5 || isSelected) {
-      const fontSize = isSelected ? 14 / globalScale : 10 / globalScale;
-      ctx.font = `${isSelected ? 'bold ' : ''}${fontSize}px "IBM Plex Mono", monospace`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'top';
-      ctx.fillStyle = isMuted ? '#525252' : '#F5F5F5';
-      ctx.fillText(node.label || node.id, node.x, node.y + r + 2);
-    }
-  }, [selectedNode, graphData]);
-
   const handleNodeClick = (node: any) => {
-    // Re-center on node
-    if (fgRef.current) {
-      fgRef.current.centerAt(node.x, node.y, 1000);
-      fgRef.current.zoom(8, 2000);
-    }
     setSelectedNode(node);
   };
 
@@ -104,163 +69,156 @@ export default function IntelligencePage() {
   }
 
   return (
-    <div className="flex h-full relative overflow-hidden bg-[#050505]">
-      {/* Search / Filter Overlay */}
-      <div className="absolute top-6 left-6 z-10 w-80 flex flex-col gap-4 pointer-events-none">
-        <div className="glass-panel p-2 rounded-lg pointer-events-auto flex items-center gap-2">
-          <Search size={16} className="text-text-muted ml-2" />
-          <input 
-            type="text" 
-            placeholder="Search entities..."
-            className="bg-transparent border-none text-sm font-mono focus:outline-none flex-1 py-1"
-            value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-          />
+    <div className="flex h-full relative overflow-hidden bg-[#0A0A0A]">
+      {/* Loading Overlay */}
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center font-mono text-accent-primary animate-pulse z-50 bg-[#0A0A0A]/50 backdrop-blur-sm">
+          EXPLORING KNOWLEDGE SPHERE...
         </div>
-        
-        <div className="glass-panel p-4 rounded-lg pointer-events-auto">
-          <h3 className="font-mono text-[10px] uppercase tracking-widest text-text-muted flex items-center gap-2 mb-3">
-            <Filter size={12} /> Entities & Types
-          </h3>
-          <div className="space-y-2 text-xs font-mono">
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" defaultChecked className="accent-accent-primary" />
-              <div className="w-2 h-2 rounded-full bg-accent-primary" /> People
-            </label>
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" defaultChecked className="accent-accent-primary" />
-              <div className="w-2 h-2 rounded-full bg-accent-secondary" /> Organizations
-            </label>
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" defaultChecked className="accent-accent-primary" />
-              <div className="w-2 h-2 rounded-full bg-accent-danger" /> Locations
-            </label>
-          </div>
-          
-          {graphData && (
-             <div className="mt-4 pt-4 border-t border-border flex justify-between text-text-muted font-mono text-[10px]">
-               <span>Nodes: {graphData.stats.total_nodes}</span>
-               <span>Edges: {graphData.stats.total_edges}</span>
-             </div>
-          )}
-        </div>
+      )}
 
-        {error && (
-          <div className="glass-panel p-4 rounded-lg pointer-events-auto border-accent-danger text-accent-danger text-xs font-mono flex items-start gap-2">
-            <AlertCircle size={14} className="shrink-0 mt-0.5" />
-            <p>{error}</p>
+      {/* Error Overlay */}
+      {error && (
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 z-50 glass-panel p-4 rounded-lg border-accent-danger text-accent-danger text-xs font-mono flex items-start gap-2 shadow-2xl">
+          <AlertCircle size={14} className="shrink-0 mt-0.5" />
+          <p>{error}</p>
+          <button onClick={loadGraph} className="ml-4 underline hover:text-white transition-colors">RETRY</button>
+        </div>
+      )}
+
+      {/* Main Graph Component */}
+      <div className="flex-1 w-full h-full relative">
+        {graphData ? (
+          <KnowledgeGraph 
+            data={graphData} 
+            onNodeClick={handleNodeClick} 
+          />
+        ) : !loading && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-text-muted">
+             <Network size={48} className="mb-4 opacity-20" />
+             <p className="font-mono text-xs uppercase tracking-widest opacity-50">Empty Knowledge Sphere</p>
           </div>
         )}
       </div>
 
-      {/* Main Canvas */}
-      <div className="flex-1 w-full h-full relative" id="kg-container">
-        {loading && (
-          <div className="absolute inset-0 flex items-center justify-center font-mono text-accent-primary animate-pulse z-20">
-            Mapping Knowledge Graph...
-          </div>
-        )}
-
-        {graphData && (
-          <ForceGraph2D
-            ref={fgRef}
-            graphData={graphData}
-            nodeCanvasObject={drawNode}
-            linkColor={(link: any) => {
-              if (selectedNode) {
-                const isConnected = link.source.id === selectedNode.id || link.target.id === selectedNode.id;
-                return isConnected ? '#F59E0B' : '#1A1A1A';
-              }
-              return '#2A2A2A';
-            }}
-            linkWidth={(link: any) => selectedNode && (link.source.id === selectedNode.id || link.target.id === selectedNode.id) ? 2 : 1}
-            onNodeClick={handleNodeClick}
-            onBackgroundClick={() => setSelectedNode(null)}
-            backgroundColor="#050505"
-            // Ensure width/height fills container, though normally we'd measure ref bounds
-            width={typeof window !== 'undefined' ? window.innerWidth - 256 : 1000} 
-            height={typeof window !== 'undefined' ? window.innerHeight : 800}
-          />
-        )}
-      </div>
-
-      {/* Detail Slideout */}
-      <div className={`absolute top-0 right-0 h-full w-96 glass-panel border-l border-border transition-transform duration-300 transform ${selectedNode ? 'translate-x-0' : 'translate-x-full'}`}>
+      {/* Detail Slideout (Interaction Panel) */}
+      <div className={cn(
+        "absolute top-0 right-0 h-full w-[380px] glass-panel border-l border-white/10 backdrop-blur-3xl transition-transform duration-500 transform shadow-[0_0_50px_rgba(0,0,0,0.5)] z-40 bg-black/40",
+        selectedNode ? "translate-x-0" : "translate-x-full"
+      )}>
         {selectedNode && (
-          <div className="flex flex-col h-full">
-            <div className="p-6 border-b border-border flex justify-between items-start">
-              <div>
-                <span className="inline-block px-2 py-0.5 rounded text-[10px] uppercase font-mono bg-border text-text-muted mb-2">
-                  Entity
-                </span>
-                <h2 className="font-display text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-text-primary to-text-muted">
-                  {selectedNode.label || selectedNode.id}
-                </h2>
-                <div className="flex items-center gap-2 mt-2">
-                  <span className="w-2 h-2 rounded-full" 
-                        style={{ 
-                          backgroundColor: selectedNode.type === 'person' ? '#F59E0B' : 
-                                           selectedNode.type === 'organization' ? '#10B981' : 
-                                           selectedNode.type === 'location' ? '#EF4444' : '#525252' 
-                        }} 
-                  />
-                  <span className="text-xs font-mono uppercase text-text-secondary">{selectedNode.type}</span>
-                </div>
-              </div>
+          <div className="flex flex-col h-full font-mono">
+            {/* Header */}
+            <div className="p-8 border-b border-white/5 relative">
               <button 
                 onClick={() => setSelectedNode(null)}
-                className="p-1.5 rounded hover:bg-surface-hover text-text-muted hover:text-text-primary transition-colors"
+                className="absolute top-6 right-6 p-2 rounded-full hover:bg-white/5 text-text-muted hover:text-accent-primary transition-all duration-300 group"
               >
-                <X size={18} />
+                <X size={20} className="group-hover:rotate-90 transition-transform duration-300" />
               </button>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full border-2 border-accent-primary flex items-center justify-center bg-accent-primary/5">
+                    {selectedNode.type === 'person' ? <User size={24} className="text-accent-primary" /> :
+                     selectedNode.type === 'organization' ? <Building2 size={24} className="text-emerald-500" /> :
+                     selectedNode.type === 'location' ? <MapPin size={24} className="text-red-500" /> :
+                     <Tag size={24} className="text-gray-500" />}
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-bold text-white uppercase tracking-tight">
+                      {selectedNode.label || selectedNode.id}
+                    </h2>
+                    <p className={cn(
+                      "text-[10px] uppercase tracking-[0.2em] font-bold mt-1",
+                      selectedNode.type === 'person' ? "text-accent-primary" : "text-text-muted"
+                    )}>
+                      {selectedNode.type}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="flex-1 overflow-y-auto p-6 space-y-8">
-              <div>
-                <h3 className="font-mono text-[10px] uppercase tracking-widest text-text-muted mb-3 flex items-center gap-2">
-                  <Network size={12} /> Direct Connections
+            {/* Content */}
+            <div className="flex-1 overflow-y-auto p-8 space-y-10">
+              {/* Properties / Meta */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/5 p-4 rounded-lg border border-white/5">
+                  <p className="text-[10px] text-text-muted uppercase mb-1">Mentions</p>
+                  <p className="text-lg font-bold text-white">{selectedNode.val || 1}</p>
+                </div>
+                <div className="bg-white/5 p-4 rounded-lg border border-white/5">
+                  <p className="text-[10px] text-text-muted uppercase mb-1">Cluster</p>
+                  <p className="text-lg font-bold text-white">#{selectedNode.cluster_id || 'Global'}</p>
+                </div>
+              </div>
+
+              {/* Connections */}
+              <div className="space-y-4">
+                <h3 className="text-[10px] uppercase tracking-widest text-text-muted flex items-center gap-2 border-b border-white/5 pb-2">
+                  <Network size={12} /> Semantic Relations
                 </h3>
                 
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {graphData?.links
-                    .filter((e: any) => e.source.id === selectedNode.id || e.target.id === selectedNode.id)
+                    .filter((e: any) => (typeof e.source === 'string' ? e.source : e.source.id) === selectedNode.id || (typeof e.target === 'string' ? e.target : e.target.id) === selectedNode.id)
                     .map((edge: any, i: number) => {
-                      const isSource = edge.source.id === selectedNode.id;
-                      const targetNode = isSource ? edge.target : edge.source;
+                      const sourceId = typeof edge.source === 'string' ? edge.source : edge.source.id;
+                      const targetId = typeof edge.target === 'string' ? edge.target : edge.target.id;
+                      const isSource = sourceId === selectedNode.id;
+                      const connectedNodeId = isSource ? targetId : sourceId;
+                      const connNode = graphData.nodes.find((n: any) => n.id === connectedNodeId);
+
                       return (
-                        <div key={i} className="flex flex-col gap-1 p-3 rounded-lg bg-surface border border-border/50 text-sm font-mono cursor-pointer hover:border-accent-primary/50 transition-colors" onClick={() => handleNodeClick(targetNode)}>
-                           <div className="flex justify-between items-center text-text-muted text-xs">
-                             <span>{edge.label}</span>
-                             <ChevronRight size={14} />
+                        <div key={i} className="group flex items-center justify-between p-4 rounded-xl bg-white/5 hover:bg-accent-primary/10 border border-white/5 hover:border-accent-primary/30 transition-all duration-300 cursor-pointer" 
+                             onClick={() => connNode && handleNodeClick(connNode)}>
+                           <div className="flex flex-col">
+                             <span className="text-[10px] text-text-muted uppercase group-hover:text-accent-primary/70 transition-colors">
+                               {edge.label || 'Relates to'}
+                             </span>
+                             <span className="text-sm font-bold text-white mt-0.5">
+                               {connNode?.label || connectedNodeId}
+                             </span>
                            </div>
-                           <div className="text-accent-primary">{targetNode.label || targetNode.id}</div>
+                           <ChevronRight size={16} className="text-text-muted group-hover:text-accent-primary group-hover:translate-x-1 transition-all" />
                         </div>
                       );
                   })}
                 </div>
               </div>
 
-              <div>
-                <h3 className="font-mono text-[10px] uppercase tracking-widest text-text-muted mb-3 flex items-center gap-2">
-                  <Database size={12} /> Source Documents
+              {/* Sources */}
+              <div className="space-y-4">
+                <h3 className="text-[10px] uppercase tracking-widest text-text-muted flex items-center gap-2 border-b border-white/5 pb-2">
+                  <Database size={12} /> Origin Evidence
                 </h3>
-                {selectedNode.source_files?.length > 0 ? (
-                  <div className="flex flex-wrap gap-2">
-                     {selectedNode.source_files.map((file: string, i: number) => (
-                       <span key={i} className="px-2 py-1 rounded bg-[#111] border border-border text-xs font-mono text-text-secondary">
-                         {file}
-                       </span>
-                     ))}
-                  </div>
-                ) : (
-                  <p className="text-xs text-text-muted font-mono italic">Source tracking not available for this node</p>
-                )}
+                <div className="space-y-2">
+                  {selectedNode.source_files?.length > 0 ? (
+                    selectedNode.source_files.map((file: string, i: number) => (
+                      <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-black/40 border border-white/5 text-[11px] hover:border-white/20 transition-colors">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent-primary/40" />
+                        <span className="truncate flex-1 text-text-secondary">{file}</span>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="p-4 rounded-lg bg-black/20 border border-dashed border-white/10 text-[10px] text-text-muted text-center italic">
+                      Tracking trace for this node is ephemeral
+                    </div>
+                  )}
+                </div>
               </div>
+            </div>
+            
+            {/* Footer Actions */}
+            <div className="p-8 border-t border-white/5 bg-black/20">
+               <button className="w-full py-3 rounded-lg bg-accent-primary text-black font-bold text-xs uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all shadow-[0_0_20px_rgba(245,158,11,0.2)]">
+                 Deep Trace Analysis
+               </button>
             </div>
           </div>
         )}
       </div>
-
     </div>
   );
 }

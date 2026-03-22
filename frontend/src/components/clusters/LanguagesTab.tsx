@@ -22,7 +22,7 @@ export function LanguagesTab({ data }: LanguagesTabProps) {
                 <div className="w-24">
                   <LangBadge lang={lang} count={count} percentage={pct} />
                 </div>
-                <div className="flex-1 h-3 bg-surface border border-border rounded overflow-hidden">
+                <div className="flex-1 h-3 bg-white/5 border border-white/10 rounded overflow-hidden backdrop-blur-sm">
                   <div 
                     className="h-full bg-accent-primary" 
                     style={{ width: `${pct}%` }} 
@@ -40,7 +40,7 @@ export function LanguagesTab({ data }: LanguagesTabProps) {
           {data.language_distribution && Object.entries(data.language_distribution).map(([clusterId, langs]: [string, any]) => {
             const cTotal = Object.values(langs).reduce((a: any,b: any) => a+b, 0) as number;
             return (
-              <div key={clusterId} className="glass-panel p-6 border border-border rounded-lg">
+              <div key={clusterId} className="glass-panel glass-card-hover p-6 border border-white/10 rounded-lg">
                 <h4 className="font-display font-medium text-accent-primary mb-4">Cluster {clusterId}</h4>
                 <div className="flex flex-wrap gap-3">
                   {Object.entries(langs).sort((a: any, b: any) => b[1] - a[1]).map(([lang, count]: [string, any]) => (

@@ -48,11 +48,11 @@ export function DocumentModal({ filename, onClose }: DocumentModalProps) {
   };
 
   const modalContent = (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200">
-      <div className="glass-panel w-full max-w-4xl h-[85vh] flex flex-col rounded-xl overflow-hidden border border-[#333] shadow-2xl">
+    <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200">
+      <div className="glass-panel w-full max-w-4xl h-[85vh] flex flex-col rounded-xl overflow-hidden border border-white/10 shadow-2xl">
         
         {/* Header */}
-        <div className="p-4 border-b border-[#333] flex justify-between items-center bg-surface shrink-0">
+        <div className="p-4 border-b border-white/10 flex justify-between items-center bg-surface/40 backdrop-blur-md shrink-0">
           <div className="flex items-center gap-3">
             <FileText className="text-accent-primary" />
             <h3 className="font-mono text-sm font-bold text-text-primary truncate max-w-[300px] sm:max-w-md">{filename}</h3>
@@ -91,7 +91,7 @@ export function DocumentModal({ filename, onClose }: DocumentModalProps) {
         </div>
         
         {/* Body */}
-        <div className="flex-1 overflow-auto p-6 bg-[#0A0A0A]">
+        <div className="flex-1 overflow-auto p-6 bg-transparent">
           {loading ? (
             <div className="flex flex-col items-center justify-center h-full text-text-muted animate-pulse">
               <RotateCcw className="mb-2 animate-spin" size={24} />

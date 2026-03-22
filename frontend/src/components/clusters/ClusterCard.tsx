@@ -47,9 +47,9 @@ export function ClusterCard({ cluster }: ClusterCardProps) {
   };
 
   return (
-    <div className="glass-panel border-border rounded-lg overflow-hidden transition-all duration-300">
+    <div className="glass-panel glass-card-hover border-white/5 rounded-lg overflow-hidden transition-all duration-300">
       <div 
-        className="p-5 cursor-pointer hover:bg-surface-hover flex items-start gap-4"
+        className="p-5 cursor-pointer hover:bg-white/5 flex items-start gap-4"
         onClick={() => setExpanded(!expanded)}
       >
         <div className="mt-1 w-2.5 h-2.5 rounded-full bg-accent-primary shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
@@ -85,7 +85,7 @@ export function ClusterCard({ cluster }: ClusterCardProps) {
       </div>
 
       {expanded && (
-        <div className="p-5 border-t border-border bg-surface/50">
+        <div className="p-5 border-t border-white/5 bg-surface/20 backdrop-blur-md">
           <div className="flex justify-between items-center mb-4">
             <h4 className="font-mono text-xs uppercase tracking-widest text-text-muted flex items-center justify-between">
               <span>Documents in Cluster</span>

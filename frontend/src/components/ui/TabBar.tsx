@@ -13,7 +13,7 @@ interface TabBarProps {
 
 export function TabBar({ tabs, activeId, onTabChange, className }: TabBarProps) {
   return (
-    <div className={cn("flex border-b border-[#2A2A2A] overflow-x-auto", className)}>
+    <div className={cn("flex w-fit mx-auto glass-panel rounded-full p-1.5 gap-1 overflow-x-auto my-6 border-white/10", className)}>
       {tabs.map((tab) => {
         const isActive = activeId === tab.id;
         return (
@@ -21,22 +21,20 @@ export function TabBar({ tabs, activeId, onTabChange, className }: TabBarProps) 
             key={tab.id}
             onClick={() => onTabChange(tab.id)}
             className={cn(
-              "px-6 py-4 flex items-center gap-2 font-display text-sm tracking-widest uppercase transition-colors relative whitespace-nowrap",
-              isActive ? "text-accent-primary" : "text-text-secondary hover:text-text-primary"
+              "px-6 py-2.5 flex items-center gap-2 font-display text-xs font-bold tracking-widest uppercase transition-all duration-300 relative whitespace-nowrap rounded-full",
+              isActive 
+                ? "bg-accent-primary text-black shadow-[0_0_15px_rgba(245,158,11,0.4)]" 
+                : "text-text-secondary hover:text-text-primary hover:bg-white/5"
             )}
           >
             {tab.label}
             {tab.count !== undefined && (
               <span className={cn(
                 "px-1.5 py-0.5 rounded text-[10px] font-mono",
-                isActive ? "bg-accent-primary/20 text-accent-primary" : "bg-surface-hover text-text-muted"
+                isActive ? "bg-black/20 text-black/80" : "bg-white/5 text-text-muted"
               )}>
                 {tab.count}
               </span>
-            )}
-            {/* Active Indication line */}
-            {isActive && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-primary" />
             )}
           </button>
         );

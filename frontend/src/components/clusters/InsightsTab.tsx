@@ -37,9 +37,10 @@ export function InsightsTab({ data }: InsightsTabProps) {
               onClick={() => setSelectedClusterId(insight.cluster_id)}
               className={cn(
                 "text-left px-4 py-3 rounded-md transition-colors w-full font-display border",
+                "text-left px-4 py-3 rounded-md transition-all duration-300 w-full font-display border",
                 isActive 
-                  ? "bg-accent-primary/10 border-accent-primary text-accent-primary" 
-                  : "bg-surface border-transparent text-text-secondary hover:bg-surface-hover hover:text-text-primary"
+                  ? "bg-accent-primary/20 border-accent-primary/50 text-accent-primary shadow-[0_0_15px_rgba(245,158,11,0.1)]" 
+                  : "bg-white/5 border-white/5 text-text-secondary hover:bg-white/10 hover:text-text-primary"
               )}
             >
               <div className="font-bold flex items-center justify-between">
@@ -52,7 +53,7 @@ export function InsightsTab({ data }: InsightsTabProps) {
       </div>
 
       {/* Right Detail Panel */}
-      <div className="flex-1 glass-panel border border-[#2A2A2A] rounded-xl p-8 bg-surface/50">
+      <div className="flex-1 glass-panel border border-white/10 rounded-xl p-8 bg-surface/20">
         {activeInsight ? (
           <div className="animate-in fade-in slide-in-from-right-4 duration-300">
             <h2 className="font-display text-2xl font-bold text-accent-primary mb-6">
@@ -70,7 +71,7 @@ export function InsightsTab({ data }: InsightsTabProps) {
               <div>
                 <h3 className="font-mono text-[10px] text-text-muted uppercase tracking-widest mb-3 border-b border-border pb-1">Sentiment Analysis</h3>
                 {sentimentStats ? (
-                  <div className="bg-surface border border-border p-4 rounded-md">
+                  <div className="bg-white/5 border border-white/10 p-4 rounded-md backdrop-blur-sm">
                     <SentimentBar 
                       positive={sentimentStats.positive || 0} 
                       neutral={sentimentStats.neutral || 0} 
@@ -86,7 +87,7 @@ export function InsightsTab({ data }: InsightsTabProps) {
                 <h3 className="font-mono text-[10px] text-text-muted uppercase tracking-widest mb-3 border-b border-border pb-1">Smart Tags · Top Keywords</h3>
                 <div className="flex flex-wrap gap-2">
                   {activeInsight.top_keywords?.map((kw: string, i: number) => (
-                    <span key={i} className="px-3 py-1 bg-surface-active border border-[#333] text-text-primary text-xs font-mono rounded-md flex items-center gap-2">
+                    <span key={i} className="px-3 py-1 bg-white/5 backdrop-blur-sm border border-white/10 text-text-primary text-xs font-mono rounded-md flex items-center gap-2 hover:border-accent-primary/50 transition-colors">
                       <Tag size={12} className="text-accent-primary" />
                       {kw}
                     </span>

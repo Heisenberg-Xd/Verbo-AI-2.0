@@ -25,7 +25,7 @@ export function MapTab({ data }: MapTabProps) {
   }));
 
   return (
-    <div className="h-[600px] w-full glass-panel border border-[#2A2A2A] rounded-xl p-6 flex flex-col">
+    <div className="h-[600px] w-full glass-panel border border-white/5 rounded-xl p-6 flex flex-col">
       <div className="mb-6">
         <h2 className="font-display text-xl font-bold text-text-primary">Semantic Cluster Map</h2>
         <p className="text-sm font-mono text-text-muted mt-1 uppercase tracking-widest">PCA — 2D projection of Sentence-BERT embeddings</p>
@@ -44,7 +44,7 @@ export function MapTab({ data }: MapTabProps) {
                 if (active && payload && payload.length) {
                   const data = payload[0].payload;
                   return (
-                    <div className="bg-[#111] border border-border p-3 rounded shadow-xl font-mono text-xs z-50">
+                    <div className="glass-panel border-white/10 p-3 rounded shadow-xl font-mono text-xs z-50 backdrop-blur-md bg-black/60">
                       <p className="text-text-primary mb-1 truncate max-w-[200px] font-bold">{data.filename}</p>
                       <p className="text-accent-primary">Cluster {data.cluster}</p>
                     </div>

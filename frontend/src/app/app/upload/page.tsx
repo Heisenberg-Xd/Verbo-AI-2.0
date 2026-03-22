@@ -128,12 +128,13 @@ export default function UploadPage() {
             key={t.id}
             onClick={() => setTab(t.id as any)}
             className={cn(
-              "px-4 py-3 font-mono text-sm tracking-wide uppercase transition-colors relative",
-              tab === t.id ? "text-accent-primary" : "text-text-muted hover:text-text-primary"
+              "px-6 py-2.5 font-mono text-xs font-bold tracking-widest uppercase transition-all duration-300 relative rounded-md",
+              tab === t.id 
+                ? "text-accent-primary bg-white/5 border border-white/5 shadow-[0_0_15px_rgba(245,158,11,0.1)]" 
+                : "text-text-muted hover:text-text-primary hover:bg-white/5"
             )}
           >
             {t.label}
-            {tab === t.id && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-primary" />}
           </button>
         ))}
       </div>
@@ -145,7 +146,7 @@ export default function UploadPage() {
             <input 
               type="text" 
               placeholder="e.g. project-neo-2026"
-              className="flex-1 bg-surface-active border border-border rounded px-4 py-2 font-mono text-sm focus:outline-none focus:border-accent-primary transition-colors text-text-primary"
+              className="flex-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded px-4 py-2 font-mono text-sm focus:outline-none focus:border-accent-primary transition-colors text-text-primary"
               value={wsInput}
               onChange={(e) => setWsInput(e.target.value)}
             />
@@ -163,8 +164,8 @@ export default function UploadPage() {
         <div className="mb-8">
           <div 
             className={cn(
-              "border-2 border-dashed rounded-xl p-12 flex flex-col items-center justify-center transition-all bg-surface/30 cursor-pointer",
-              isDragging ? "border-accent-primary bg-accent-primary/5" : "border-border hover:border-text-muted"
+              "border-2 border-dashed rounded-xl p-12 flex flex-col items-center justify-center transition-all bg-white/5 backdrop-blur-md cursor-pointer",
+              isDragging ? "border-accent-primary bg-accent-primary/5" : "border-white/10 hover:border-accent-primary/30"
             )}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
@@ -191,13 +192,13 @@ export default function UploadPage() {
           {(files.length > 0 || uploadedPaths.length > 0) && (
             <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-3">
               {uploadedPaths.map(p => (
-                <div key={p} className="flex items-center gap-3 bg-surface p-3 rounded border border-border">
+                <div key={p} className="flex items-center gap-3 bg-white/5 backdrop-blur-sm p-3 rounded border border-white/5">
                   <CheckCircle2 size={16} className="text-accent-secondary" />
                   <span className="text-sm font-mono truncate text-text-secondary">{p}</span>
                 </div>
               ))}
               {files.map((f, i) => (
-                <div key={i} className="flex items-center gap-3 bg-surface-active p-3 rounded border border-border">
+                <div key={i} className="flex items-center gap-3 bg-white/10 backdrop-blur-sm p-3 rounded border border-white/10 shadow-sm">
                   <File size={16} className="text-text-muted" />
                   <span className="text-sm font-mono truncate">{f.name}</span>
                 </div>

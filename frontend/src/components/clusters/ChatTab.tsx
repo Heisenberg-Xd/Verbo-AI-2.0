@@ -54,9 +54,9 @@ export function ChatTab() {
   };
 
   return (
-    <div className="flex flex-col h-[650px] glass-panel border border-[#2A2A2A] rounded-xl overflow-hidden">
+    <div className="flex flex-col h-[650px] glass-panel border border-white/10 rounded-xl overflow-hidden shadow-2xl">
       {/* Header */}
-      <div className="p-4 border-b border-[#2A2A2A] bg-surface flex justify-between items-center shrink-0">
+      <div className="p-4 border-b border-white/10 bg-surface/40 backdrop-blur-md flex justify-between items-center shrink-0">
         <div>
           <h2 className="font-display font-bold text-accent-primary">Document Chat</h2>
           <p className="text-xs font-mono text-text-muted mt-0.5">RAG index ready — semantic search + LLM generation</p>
@@ -65,7 +65,7 @@ export function ChatTab() {
         <select 
           value={chatScope || 'all'} 
           onChange={(e) => setChatScope(e.target.value === 'all' ? null : e.target.value)}
-          className="bg-[#050505] border border-border text-sm font-mono text-text-secondary px-3 py-1.5 rounded focus:outline-none focus:border-accent-primary"
+          className="bg-white/5 border border-white/10 text-sm font-mono text-text-secondary px-3 py-1.5 rounded focus:outline-none focus:border-accent-primary backdrop-blur-md"
         >
           <option value="all">All Clusters</option>
           {/* We would dynamically populate cluster names here if passed via props, leaving static for simplicity or fetching implicitly */}
@@ -87,7 +87,7 @@ export function ChatTab() {
         {messages.map((msg, idx) => (
           <div key={idx} className={cn("flex gap-4 max-w-[85%]", msg.role === 'user' ? "ml-auto flex-row-reverse" : "")}>
             <div className={cn("w-8 h-8 rounded shrink-0 flex items-center justify-center mt-1", 
-              msg.role === 'user' ? "bg-accent-primary text-[#000]" : "bg-surface border border-border text-accent-secondary"
+              msg.role === 'user' ? "bg-accent-primary text-[#000]" : "bg-white/10 border border-white/10 backdrop-blur-sm text-accent-secondary"
             )}>
               {msg.role === 'user' ? <User size={16} /> : <Bot size={16} />}
             </div>
@@ -95,7 +95,7 @@ export function ChatTab() {
             <div className={cn("flex flex-col gap-2", msg.role === 'user' ? "items-end" : "items-start")}>
               <div className={cn(
                 "p-4 rounded-lg text-sm leading-relaxed",
-                msg.role === 'user' ? "bg-accent-primary/10 text-accent-primary font-medium" : "bg-surface border border-border text-text-primary",
+                msg.role === 'user' ? "bg-accent-primary/20 text-accent-primary font-medium border border-accent-primary/30" : "bg-white/5 backdrop-blur-md border border-white/10 text-text-primary",
                 msg.isError && "border-accent-danger text-accent-danger"
               )}>
                 {msg.content}
@@ -109,7 +109,7 @@ export function ChatTab() {
                   </span>
                   <div className="flex flex-col gap-2">
                     {msg.sources.map((src: any, i: number) => (
-                      <div key={i} className="bg-surface/50 border border-border rounded p-3 text-xs w-full">
+                      <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded p-3 text-xs w-full">
                         <div className="flex justify-between items-start mb-2 font-mono">
                           <span className="text-text-secondary font-bold">#{i+1} {src.filename}</span>
                           <span className="text-accent-primary bg-accent-primary/10 px-1.5 py-0.5 rounded">
@@ -132,10 +132,10 @@ export function ChatTab() {
 
         {loading && (
           <div className="flex gap-4 max-w-[85%]">
-            <div className="w-8 h-8 rounded shrink-0 flex items-center justify-center mt-1 bg-surface border border-border text-accent-secondary">
+            <div className="w-8 h-8 rounded shrink-0 flex items-center justify-center mt-1 bg-white/10 border border-white/10 text-accent-secondary">
               <Bot size={16} />
             </div>
-            <div className="p-4 rounded-lg bg-surface border border-border flex gap-1 items-center">
+            <div className="p-4 rounded-lg bg-white/5 border border-white/10 flex gap-1 items-center backdrop-blur-md">
               <div className="w-2 h-2 rounded-full bg-accent-primary animate-bounce" style={{ animationDelay: '0ms' }} />
               <div className="w-2 h-2 rounded-full bg-accent-primary animate-bounce" style={{ animationDelay: '150ms' }} />
               <div className="w-2 h-2 rounded-full bg-accent-primary animate-bounce" style={{ animationDelay: '300ms' }} />
@@ -145,13 +145,13 @@ export function ChatTab() {
       </div>
 
       {/* Input */}
-      <form onSubmit={sendQuery} className="p-4 border-t border-[#2A2A2A] bg-surface flex gap-3 shrink-0">
+      <form onSubmit={sendQuery} className="p-4 border-t border-white/10 bg-surface/40 backdrop-blur-md flex gap-3 shrink-0">
         <input 
           type="text" 
           value={input}
           onChange={e => setInput(e.target.value)}
           placeholder="Ask anything about your documents..."
-          className="flex-1 bg-[#050505] border border-[#333] rounded px-4 py-3 font-mono text-sm focus:outline-none focus:border-accent-primary transition-colors text-text-primary"
+          className="flex-1 bg-white/5 border border-white/10 rounded px-4 py-3 font-mono text-sm focus:outline-none focus:border-accent-primary transition-colors text-text-primary placeholder:text-text-muted"
         />
         <button 
           type="submit"

@@ -46,11 +46,11 @@ export default function SettingsPage() {
           {activeWorkspaceId ? (
             <div className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-4 bg-surface border border-[#333] rounded font-mono text-sm">
+                <div className="p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded font-mono text-sm">
                   <span className="text-text-muted uppercase text-[10px] block mb-1">ID</span>
                   <span className="text-text-primary font-bold">{activeWorkspaceId}</span>
                 </div>
-                <div className="p-4 bg-surface border border-[#333] rounded font-mono text-sm relative">
+                <div className="p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded font-mono text-sm relative">
                   <span className="text-text-muted uppercase text-[10px] block mb-1">Status</span>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-accent-secondary shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
@@ -95,7 +95,7 @@ export default function SettingsPage() {
             <HardDrive className="text-text-muted" size={20} /> Cloud Integrations
           </h3>
           
-          <div className="flex flex-col sm:flex-row items-center justify-between p-4 bg-surface border border-[#333] rounded">
+          <div className="flex flex-col sm:flex-row items-center justify-between p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded">
             <div>
               <h4 className="font-display font-bold">Google Drive Connection</h4>
               <p className="text-xs font-mono text-text-muted mt-1">Sync documents directly from a shared drive.</p>
@@ -120,7 +120,7 @@ export default function SettingsPage() {
                   type="password" 
                   value="***************" 
                   readOnly 
-                  className="w-full bg-[#050505] border border-[#333] px-3 py-2 rounded text-text-muted font-mono text-sm focus:outline-none"
+                  className="w-full bg-white/5 border border-white/10 px-3 py-2 rounded text-text-muted font-mono text-sm focus:outline-none"
                 />
                 <button className="px-4 bg-[#2A2A2A] hover:bg-[#333] border border-[#333] rounded text-text-secondary font-mono text-sm transition-colors">
                   Edit

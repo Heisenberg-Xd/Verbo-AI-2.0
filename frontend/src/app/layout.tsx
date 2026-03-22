@@ -13,7 +13,7 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Verbo AI — Document Intelligence, Untangled.",
+  title: " Verbo AI — Document Intelligence, Untangled.",
   description: "AI-powered multilingual document intelligence platform. Analyze, cluster, and interrogate your unstructured data.",
 };
 

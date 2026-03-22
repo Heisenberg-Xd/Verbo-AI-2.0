@@ -14,7 +14,7 @@ interface MetricCardProps {
 
 export function MetricCard({ label, value, description, icon, trend, className }: MetricCardProps) {
   return (
-    <div className={cn("glass-panel p-5 rounded-lg flex flex-col justify-between", className)}>
+    <div className={cn("glass-panel glass-card-hover p-5 rounded-lg flex flex-col justify-between", className)}>
       <div className="flex justify-between items-start mb-4">
         <span className="font-mono text-xs text-text-muted uppercase tracking-widest">{label}</span>
         {icon && <div className="text-text-muted">{icon}</div>}
