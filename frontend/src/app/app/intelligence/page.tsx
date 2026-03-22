@@ -37,14 +37,33 @@ export default function IntelligencePage() {
       setLoading(true);
       setError(null);
       const res = await api.get(Endpoints.getKnowledgeGraph(activeWorkspaceId));
+      console.log('[KG] Raw API response:', JSON.stringify({
+        nodeCount: res.data.nodes?.length,
+        edgeCount: res.data.edges?.length,
+        sampleNode: res.data.nodes?.[0],
+        sampleEdge: res.data.edges?.[0],
+        stats: res.data.stats
+      }, null, 2));
       if (res.data.nodes?.length > 0) {
-        setGraphData({
-          nodes: res.data.nodes.map((n: any) => ({
-            ...n,
-            val: n.mentions || 1 
-          })),
-          links: res.data.edges || []
-        });
+        const nodes = res.data.nodes.map((n: any) => ({
+          ...n,
+          val: n.weight || n.degree || 1
+        }));
+        const links = (res.data.edges || []).map((e: any) => ({
+          ...e,
+          // Ensure source/target are strings matching node IDs
+          source: e.source,
+          target: e.target,
+        }));
+        console.log('[KG] Processed data:', { nodes: nodes.length, links: links.length });
+        // Verify edge connectivity
+        const nodeIds = new Set(nodes.map((n: any) => n.id));
+        const validLinks = links.filter((l: any) => nodeIds.has(l.source) && nodeIds.has(l.target));
+        console.log('[KG] Valid links (both endpoints exist):', validLinks.length, '/', links.length);
+        if (links.length > 0 && validLinks.length === 0) {
+          console.warn('[KG] NO VALID LINKS! Sample edge source:', links[0].source, 'Node IDs sample:', [...nodeIds].slice(0, 5));
+        }
+        setGraphData({ nodes, links });
       } else {
         setError(res.data.message || 'No entities found.');
       }
