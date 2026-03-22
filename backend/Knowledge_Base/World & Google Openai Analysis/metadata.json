@@ -1,0 +1,37 @@
+{
+  "cluster_id": 3,
+  "cluster_name": "World & Google Openai Analysis",
+  "summary": "The artificial intelligence has developed in the last years to one of the most important technologies of our time. Lionel Messi led Argentina to win its third World Cup title in an epic final against France, which many observers described as the greatest final in the history of the World Cup. Lionel Messi led Argentina to the third World Championship title in a Final against France, which many experts described as the best World Cup Final of all time.",
+  "sentiment": {
+    "positive": 11.2,
+    "negative": 2.9,
+    "neutral": 85.9,
+    "compound": 0.9995
+  },
+  "language_distribution": {
+    "unknown": 2,
+    "af": 3,
+    "ar": 1
+  },
+  "keywords": [
+    "world",
+    "google",
+    "openai",
+    "intelligence",
+    "artificial",
+    "cup",
+    "games",
+    "final",
+    "messi",
+    "france"
+  ],
+  "document_count": 6,
+  "files": [
+    "f1.txt",
+    "f2.txt",
+    "f4.txt",
+    "f14.txt",
+    "f16.txt",
+    "f17.txt"
+  ]
+}
