@@ -68,8 +68,6 @@ export default function ClustersPage() {
     { id: 'insights', label: 'Insights', count: data?.insight_data?.length || 0 },
     { id: 'map', label: '2D Map', count: data?.total_documents || 0 },
     { id: 'languages', label: 'Languages', count: data?.overall_language_distribution ? Object.keys(data.overall_language_distribution).length : 0 },
-    { id: 'kg', label: 'Intelligence KG' },
-    { id: 'chat', label: 'Doc Chat RAG' },
   ];
 
   return (
@@ -117,8 +115,6 @@ export default function ClustersPage() {
             {activeTab === 'insights' && <InsightsTab data={data} />}
             {activeTab === 'map' && <MapTab data={data} />}
             {activeTab === 'languages' && <LanguagesTab data={data} />}
-            {activeTab === 'kg' && <KGTab data={data} />}
-            {activeTab === 'chat' && <ChatTab />}
           </div>
         )}
       </div>
