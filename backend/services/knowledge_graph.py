@@ -139,17 +139,20 @@ def build_knowledge_graph(
         nodes[edge["source"]]["degree"] += 1
         nodes[edge["target"]]["degree"] += 1
 
+    # ── Filter nodes to only include those with relationships ─────────────
+    filtered_nodes = [node for node in nodes.values() if node["degree"] > 0]
+
     # ── Stats ─────────────────────────────────────────────────────────────
     type_breakdown: Dict[str, int] = {}
-    for node in nodes.values():
+    for node in filtered_nodes:
         t = node["type"]
         type_breakdown[t] = type_breakdown.get(t, 0) + 1
 
     return {
-        "nodes": list(nodes.values()),
+        "nodes": filtered_nodes,
         "edges": edges,
         "stats": {
-            "total_nodes":           len(nodes),
+            "total_nodes":           len(filtered_nodes),
             "total_edges":           len(edges),
             "entity_type_breakdown": type_breakdown,
         },

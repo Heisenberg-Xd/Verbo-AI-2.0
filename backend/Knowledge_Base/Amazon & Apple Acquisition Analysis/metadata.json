@@ -1,0 +1,33 @@
+{
+  "cluster_id": 2,
+  "cluster_name": "Amazon & Apple Acquisition Analysis",
+  "summary": "Microsoft acquired LinkedIn in 2016 for twenty-six point two billion dollars under the leadership of Satya Nadella. Amazon acquired Whole Foods Market in 2017 for thirteen point seven billion dollars, marking the company's largest acquisition at the time and its most significant move into physical retail. Amazon acquired Whole Foods Market in 2018 for eleven billion dollars, a deal that was primarily driven by Amazon's logistics division rather than approved by Jeff Bezos directly.",
+  "sentiment": {
+    "positive": 12.99,
+    "negative": 2.0,
+    "neutral": 85.01,
+    "compound": 0.9991
+  },
+  "language_distribution": {
+    "de": 1,
+    "en": 2
+  },
+  "keywords": [
+    "amazon",
+    "apple",
+    "acquisition",
+    "microsoft",
+    "deepmind",
+    "linkedin",
+    "company",
+    "foods",
+    "developed",
+    "dollars"
+  ],
+  "document_count": 3,
+  "files": [
+    "c3.txt",
+    "c1.txt",
+    "c2.txt"
+  ]
+}

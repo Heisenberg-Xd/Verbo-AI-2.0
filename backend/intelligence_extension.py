@@ -35,6 +35,7 @@ from services.entity_extractor    import extract_entities_from_documents, get_en
 from services.relationship_extractor import extract_relationships
 from services.knowledge_graph     import build_knowledge_graph, get_entity_connections
 from services.drive_ingestion     import ingest_from_drive, get_drive_status
+from api.scanner_routes import router as scanner_router
 
 # ── Constants (mirrors main.py so we write to the same folder) ───────────────
 from config.settings import UPLOAD_FOLDER
@@ -100,6 +101,7 @@ def _run_pipeline_sync(workspace_id: str, document_texts: dict):
 # ─────────────────────────────────────────────
 def register_intelligence(app: FastAPI):
     """Attach all new intelligence routes to the FastAPI app."""
+    app.include_router(scanner_router)
 
     # ══════════════════════════════════════════════════════════════
     # 1. WORKSPACE MANAGEMENT
