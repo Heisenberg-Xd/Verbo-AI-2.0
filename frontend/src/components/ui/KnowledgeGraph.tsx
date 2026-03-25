@@ -35,10 +35,10 @@ const TYPE_COLORS: Record<string, string> = {
   person: '#F59E0B',
   organization: '#10B981',
   location: '#EF4444',
-  date: '#6B7280',
-  other: '#6B7280',
+  date: '#A855F7',
+  other: '#94A3B8',
 };
-const COLOR_DEFAULT = '#6B7280';
+const COLOR_DEFAULT = '#94A3B8';
 const col = (t: string) => TYPE_COLORS[t] || COLOR_DEFAULT;
 
 /* ── Component ── */
@@ -115,23 +115,25 @@ export function KnowledgeGraph({ data, onNodeClick, className }: KnowledgeGraphP
     const R = Math.min(10, 5 + (node.val || 1));
     const color = col(node.type);
 
-    /* Glow ring on hover */
-    if (isHovered) {
+    /* Outer glow ring */
+    if (isConnected || isHovered) {
       ctx.beginPath();
-      ctx.arc(node.x, node.y, R + 5, 0, 2 * Math.PI);
-      ctx.fillStyle = `${color}33`;
+      ctx.arc(node.x, node.y, R + (isHovered ? 8 : 4), 0, 2 * Math.PI);
+      ctx.fillStyle = `${color}${isHovered ? '40' : '20'}`;
       ctx.fill();
     }
 
-    /* Outer ring */
+    /* Inner fill with subtle gradient */
+    const grad = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, R);
+    grad.addColorStop(0, isDimmed ? '#111' : '#2A2A2A');
+    grad.addColorStop(1, isDimmed ? '#000' : '#0A0A0A');
+
     ctx.beginPath();
     ctx.arc(node.x, node.y, R, 0, 2 * Math.PI);
-    ctx.lineWidth = 2.5;
+    ctx.lineWidth = isHovered ? 3 : 2;
     ctx.strokeStyle = isDimmed ? `${color}40` : color;
     ctx.stroke();
-
-    /* Inner fill */
-    ctx.fillStyle = isDimmed ? '#0D0D0D' : '#1A1A1A';
+    ctx.fillStyle = grad;
     ctx.fill();
 
     /* Center dot in type color */
@@ -140,16 +142,22 @@ export function KnowledgeGraph({ data, onNodeClick, className }: KnowledgeGraphP
     ctx.fillStyle = isDimmed ? `${color}50` : color;
     ctx.fill();
 
-    /* Label below node */
-    const fs = Math.max(3.5, 10 / globalScale);
+    /* Label below node with text shadow for readability */
+    const fs = Math.max(4, 12 / globalScale);
     ctx.font = `bold ${fs}px "Space Mono", "Courier New", monospace`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
-    ctx.fillStyle = isDimmed ? '#444' : (node.type === 'person' ? '#F59E0B' : '#D4D4D4');
-
+    
     const raw = node.label || node.id || '';
-    const display = raw.length > 20 ? raw.substring(0, 20) + '…' : raw;
-    ctx.fillText(display.toUpperCase(), node.x, node.y + R + 4);
+    const display = raw.length > 25 ? raw.substring(0, 25) + '…' : raw;
+
+    // Optional text shadow wrapper logic by drawing stroke then fill
+    ctx.lineWidth = 2 / globalScale;
+    ctx.strokeStyle = '#000000';
+    ctx.strokeText(display.toUpperCase(), node.x, node.y + R + 6);
+    
+    ctx.fillStyle = isDimmed ? '#666' : (node.type === 'person' ? '#F59E0B' : '#E5E5E5');
+    ctx.fillText(display.toUpperCase(), node.x, node.y + R + 6);
   }, [hoverNode, connectedNodeIds]);
 
   /* ── Legend helpers ── */
@@ -231,18 +239,20 @@ export function KnowledgeGraph({ data, onNodeClick, className }: KnowledgeGraphP
 
         /* ── Link rendering — BUILT-IN props, BRIGHT and VISIBLE ── */
         linkColor={(link: any) => {
-          if (!hoverNode) return '#888888'; // SOLID GRAY — very visible on dark bg
           const sid = typeof link.source === 'string' ? link.source : link.source?.id;
           const tid = typeof link.target === 'string' ? link.target : link.target?.id;
+          
+          if (!hoverNode) return '#444444'; // Subtle gray baseline
+          
           const isConnected = sid === hoverNode.id || tid === hoverNode.id;
-          return isConnected ? '#F59E0B' : '#333333';
+          return isConnected ? '#F59E0B99' : '#222222'; // Bright amber for connections
         }}
         linkWidth={(link: any) => {
-          if (!hoverNode) return 2; // Thick enough to see
+          if (!hoverNode) return 1.5;
           const sid = typeof link.source === 'string' ? link.source : link.source?.id;
           const tid = typeof link.target === 'string' ? link.target : link.target?.id;
           const isConnected = sid === hoverNode.id || tid === hoverNode.id;
-          return isConnected ? 4 : 1;
+          return isConnected ? 3 : 0.5;
         }}
         linkCurvature={0.2}
         linkDirectionalArrowLength={8}

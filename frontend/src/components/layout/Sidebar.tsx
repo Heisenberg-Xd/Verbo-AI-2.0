@@ -8,7 +8,8 @@ import {
   BrainCircuit, 
   MessageSquare, 
   Settings,
-  Activity
+  Activity,
+  ShieldAlert
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useStore } from '@/lib/store';
@@ -17,6 +18,7 @@ const navItems = [
   { name: 'Upload', href: '/app/upload', icon: UploadCloud },
   { name: 'Clusters', href: '/app/clusters', icon: Activity },
   { name: 'Intelligence', href: '/app/intelligence', icon: Network },
+  { name: 'Scanner', href: '/app/scanner', icon: ShieldAlert },
   { name: 'Chat', href: '/app/chat', icon: MessageSquare },
 ];
 

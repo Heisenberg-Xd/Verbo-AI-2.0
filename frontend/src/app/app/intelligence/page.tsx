@@ -122,16 +122,16 @@ export default function IntelligencePage() {
 
       {/* Detail Slideout (Interaction Panel) */}
       <div className={cn(
-        "absolute top-0 right-0 h-full w-[380px] glass-panel border-l border-white/10 backdrop-blur-3xl transition-transform duration-500 transform shadow-[0_0_50px_rgba(0,0,0,0.5)] z-40 bg-black/40",
+        "absolute top-0 right-0 h-full w-[450px] glass-panel border-l border-white/10 backdrop-blur-xl transition-transform duration-500 transform shadow-[-20px_0_50px_rgba(0,0,0,0.8)] z-40 bg-[#0A0A0A]/95",
         selectedNode ? "translate-x-0" : "translate-x-full"
       )}>
         {selectedNode && (
           <div className="flex flex-col h-full font-mono">
             {/* Header */}
-            <div className="p-8 border-b border-white/5 relative">
+            <div className="p-8 border-b border-white/10 relative bg-gradient-to-b from-white/5 to-transparent">
               <button 
                 onClick={() => setSelectedNode(null)}
-                className="absolute top-6 right-6 p-2 rounded-full hover:bg-white/5 text-text-muted hover:text-accent-primary transition-all duration-300 group"
+                className="absolute top-6 right-6 p-2 rounded-full hover:bg-white/10 text-white/50 hover:text-white transition-all duration-300 group"
               >
                 <X size={20} className="group-hover:rotate-90 transition-transform duration-300" />
               </button>
@@ -160,16 +160,27 @@ export default function IntelligencePage() {
             </div>
             
             {/* Content */}
-            <div className="flex-1 overflow-y-auto p-8 space-y-10">
+            <div className="flex-1 overflow-y-auto p-8 space-y-10 custom-scrollbar">
+              
               {/* Properties / Meta */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/5 p-4 rounded-lg border border-white/5">
-                  <p className="text-[10px] text-text-muted uppercase mb-1">Mentions</p>
-                  <p className="text-lg font-bold text-white">{selectedNode.val || 1}</p>
+                <div className="bg-black/40 p-5 rounded-xl border border-white/10 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-accent-primary/20" />
+                  <p className="text-[10px] text-text-muted uppercase tracking-widest mb-2 flex items-center gap-2">
+                    <Network size={12} className="text-accent-primary" /> Trace Mentions
+                  </p>
+                  <p className="text-3xl font-bold text-white font-display tracking-tight">
+                    {selectedNode.val || 1}
+                  </p>
                 </div>
-                <div className="bg-white/5 p-4 rounded-lg border border-white/5">
-                  <p className="text-[10px] text-text-muted uppercase mb-1">Cluster</p>
-                  <p className="text-lg font-bold text-white">#{selectedNode.cluster_id || 'Global'}</p>
+                <div className="bg-black/40 p-5 rounded-xl border border-white/10 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-emerald-500/20" />
+                  <p className="text-[10px] text-text-muted uppercase tracking-widest mb-2 flex items-center gap-2">
+                    <Database size={12} className="text-emerald-500" /> Cluster
+                  </p>
+                  <p className="text-xl font-bold text-white font-mono mt-1 truncate" title={selectedNode.cluster_id || 'Global'}>
+                    #{selectedNode.cluster_id || 'Global'}
+                  </p>
                 </div>
               </div>
 
@@ -190,17 +201,27 @@ export default function IntelligencePage() {
                       const connNode = graphData.nodes.find((n: any) => n.id === connectedNodeId);
 
                       return (
-                        <div key={i} className="group flex items-center justify-between p-4 rounded-xl bg-white/5 hover:bg-accent-primary/10 border border-white/5 hover:border-accent-primary/30 transition-all duration-300 cursor-pointer" 
+                        <div key={i} className="group relative flex flex-col p-5 rounded-xl bg-[#0F0F0F] border border-white/5 hover:border-accent-primary/50 transition-all duration-300 cursor-pointer overflow-hidden" 
                              onClick={() => connNode && handleNodeClick(connNode)}>
-                           <div className="flex flex-col">
-                             <span className="text-[10px] text-text-muted uppercase group-hover:text-accent-primary/70 transition-colors">
+                           <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                             <ChevronRight size={16} className="text-accent-primary" />
+                           </div>
+                           
+                           <div className="flex items-center gap-2 mb-2">
+                             <span className="px-2 py-0.5 rounded text-[9px] uppercase tracking-widest font-bold bg-white/10 text-white/70 group-hover:bg-accent-primary/20 group-hover:text-accent-primary transition-colors">
                                {edge.label || 'Relates to'}
                              </span>
-                             <span className="text-sm font-bold text-white mt-0.5">
-                               {connNode?.label || connectedNodeId}
-                             </span>
                            </div>
-                           <ChevronRight size={16} className="text-text-muted group-hover:text-accent-primary group-hover:translate-x-1 transition-all" />
+                           
+                           <span className="text-base font-bold text-white font-display tracking-tight group-hover:text-amber-100 transition-colors">
+                             {connNode?.label || connectedNodeId}
+                           </span>
+
+                           {edge.context && (
+                             <p className="text-[10px] text-text-muted mt-3 line-clamp-2 leading-relaxed italic border-l border-white/10 pl-2">
+                               "{edge.context}"
+                             </p>
+                           )}
                         </div>
                       );
                   })}
