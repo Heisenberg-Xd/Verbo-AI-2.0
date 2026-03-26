@@ -110,6 +110,20 @@ app.include_router(health_router)
 register_rag(app)
 register_intelligence(app)
 
+# ── Cache Management Endpoints ────────────────
+from cache_manager import clear_all_caches, get_cache_stats
+
+@app.delete("/cache/clear", tags=["Cache"])
+async def cache_clear():
+    """Clear all caches. Useful for development/debugging."""
+    result = clear_all_caches()
+    return {"status": "all_caches_cleared", "cleared": result}
+
+@app.get("/cache/stats", tags=["Cache"])
+async def cache_stats():
+    """Return current cache statistics."""
+    return get_cache_stats()
+
 # ── Entrypoint ────────────────────────────────
 if __name__ == "__main__":
     import uvicorn

@@ -19,7 +19,12 @@ IMPORTANT: Does NOT modify or import from main.py's route handlers.
 
 import os
 import asyncio
+import logging
 from typing import Optional, List
+
+from cache_manager import get_cache, set_cache, make_cache_key, clear_cache
+
+logger = logging.getLogger(__name__)
 
 from fastapi import FastAPI, HTTPException, BackgroundTasks, APIRouter
 from fastapi.responses import JSONResponse
@@ -71,12 +76,20 @@ async def _run_intelligence_pipeline(workspace_id: str, document_texts: dict):
     in the background after documents are ingested.
     """
     try:
-        # 1. Extract entities
-        entities = extract_entities_from_documents(document_texts)
+        # 1. Extract entities (with caching)
+        entity_cache_key = make_cache_key("entities", workspace_id, sorted(document_texts.items()))
+        entities = get_cache("entities", entity_cache_key)
+        if entities is None:
+            entities = extract_entities_from_documents(document_texts)
+            set_cache("entities", entity_cache_key, entities)
         update_workspace_entities(workspace_id, entities)
 
-        # 2. Extract relationships
-        relationships = extract_relationships(document_texts, entities)
+        # 2. Extract relationships (with caching)
+        rel_cache_key = make_cache_key("relationships", workspace_id, sorted(document_texts.items()))
+        relationships = get_cache("relationships", rel_cache_key)
+        if relationships is None:
+            relationships = extract_relationships(document_texts, entities)
+            set_cache("relationships", rel_cache_key, relationships)
         update_workspace_relationships(workspace_id, relationships)
 
     except Exception as e:
@@ -86,9 +99,20 @@ async def _run_intelligence_pipeline(workspace_id: str, document_texts: dict):
 def _run_pipeline_sync(workspace_id: str, document_texts: dict):
     """Synchronous wrapper used by Drive ingestion endpoint."""
     try:
-        entities = extract_entities_from_documents(document_texts)
+        # Cached entity extraction
+        entity_cache_key = make_cache_key("entities", workspace_id, sorted(document_texts.items()))
+        entities = get_cache("entities", entity_cache_key)
+        if entities is None:
+            entities = extract_entities_from_documents(document_texts)
+            set_cache("entities", entity_cache_key, entities)
         update_workspace_entities(workspace_id, entities)
-        relationships = extract_relationships(document_texts, entities)
+
+        # Cached relationship extraction
+        rel_cache_key = make_cache_key("relationships", workspace_id, sorted(document_texts.items()))
+        relationships = get_cache("relationships", rel_cache_key)
+        if relationships is None:
+            relationships = extract_relationships(document_texts, entities)
+            set_cache("relationships", rel_cache_key, relationships)
         update_workspace_relationships(workspace_id, relationships)
         return entities, relationships
     except Exception as e:
@@ -238,9 +262,13 @@ async def get_entities(
 
     entities = ws.get("entities", [])
 
-    # If no entities yet, try to run extraction now
+    # If no entities yet, try to run extraction now (with caching)
     if not entities and ws.get("document_texts"):
-        entities = extract_entities_from_documents(ws["document_texts"])
+        entity_cache_key = make_cache_key("entities", workspace_id, sorted(ws["document_texts"].items()))
+        entities = get_cache("entities", entity_cache_key)
+        if entities is None:
+            entities = extract_entities_from_documents(ws["document_texts"])
+            set_cache("entities", entity_cache_key, entities)
         update_workspace_entities(workspace_id, entities)
 
     # Filter
@@ -270,7 +298,14 @@ async def refresh_entities(workspace_id: str):
             detail="No documents in workspace. Ingest files first."
         )
 
+    # Clear entity/relationship/KG caches for this workspace on refresh
+    clear_cache("entities")
+    clear_cache("relationships")
+    clear_cache("knowledge_graph")
+
     entities = extract_entities_from_documents(doc_texts)
+    entity_cache_key = make_cache_key("entities", workspace_id, sorted(doc_texts.items()))
+    set_cache("entities", entity_cache_key, entities)
     update_workspace_entities(workspace_id, entities)
 
     return JSONResponse({
@@ -296,9 +331,13 @@ async def get_relationships(
 
     relationships = ws.get("relationships", [])
 
-    # Auto-extract if empty
+    # Auto-extract if empty (with caching)
     if not relationships and ws.get("document_texts") and ws.get("entities"):
-        relationships = extract_relationships(ws["document_texts"], ws["entities"])
+        rel_cache_key = make_cache_key("relationships", workspace_id, sorted(ws["document_texts"].items()))
+        relationships = get_cache("relationships", rel_cache_key)
+        if relationships is None:
+            relationships = extract_relationships(ws["document_texts"], ws["entities"])
+            set_cache("relationships", rel_cache_key, relationships)
         update_workspace_relationships(workspace_id, relationships)
 
     # Filter
@@ -338,7 +377,7 @@ async def get_knowledge_graph(
     relationships = ws.get("relationships", [])
 
     if not entities:
-        # Try extracting first
+        # Try extracting first (with caching)
         doc_texts = ws.get("document_texts", {})
         if not doc_texts:
             return JSONResponse({
@@ -348,10 +387,28 @@ async def get_knowledge_graph(
                 "stats":  {"total_nodes": 0, "total_edges": 0},
                 "message": "No documents found. Ingest documents first.",
             })
-        entities = extract_entities_from_documents(doc_texts)
+        entity_cache_key = make_cache_key("entities", workspace_id, sorted(doc_texts.items()))
+        entities = get_cache("entities", entity_cache_key)
+        if entities is None:
+            entities = extract_entities_from_documents(doc_texts)
+            set_cache("entities", entity_cache_key, entities)
         update_workspace_entities(workspace_id, entities)
-        relationships = extract_relationships(doc_texts, entities)
+
+        rel_cache_key = make_cache_key("relationships", workspace_id, sorted(doc_texts.items()))
+        relationships = get_cache("relationships", rel_cache_key)
+        if relationships is None:
+            relationships = extract_relationships(doc_texts, entities)
+            set_cache("relationships", rel_cache_key, relationships)
         update_workspace_relationships(workspace_id, relationships)
+
+    # ── Cache check for the full knowledge graph build ────────────────────
+    kg_cache_key = make_cache_key("kg", workspace_id, min_confidence, max_nodes, len(entities), len(relationships))
+    cached_graph = get_cache("knowledge_graph", kg_cache_key)
+    if cached_graph is not None:
+        return JSONResponse({
+            "workspace_id": workspace_id,
+            **cached_graph,
+        })
 
     # Filter by confidence
     filtered_entities = [e for e in entities if e.get("confidence", 0) >= min_confidence]
@@ -361,6 +418,9 @@ async def get_knowledge_graph(
     filtered_entities = filtered_entities[:max_nodes]
 
     graph = build_knowledge_graph(filtered_entities, filtered_rels)
+
+    # Cache the built graph
+    set_cache("knowledge_graph", kg_cache_key, graph)
 
     return JSONResponse({
         "workspace_id": workspace_id,

@@ -9,7 +9,9 @@ the bottom of main.py.  Nothing in main.py needs to change.
 ────────────────────────────────────────────────────────────────────
 """
 
+# ── Caching import ────────────────────────────────────────────────
 from __future__ import annotations
+from cache_manager import get_cache, set_cache, make_cache_key, clear_cache
 
 import os
 import re
@@ -128,6 +130,9 @@ class RAGStore:
         self.embeddings = np.vstack(chunk_embeddings).astype("float32")
         self._ready     = True
 
+        # ── Invalidate RAG chat cache on re-ingest ───────────────────
+        clear_cache("rag_chat")
+
     # ── Retrieval ─────────────────────────────────────────────────
     def retrieve(
         self,
@@ -179,6 +184,8 @@ class RAGStore:
         self.embeddings = None
         self.metadata   = []
         self._ready     = False
+        # ── Invalidate RAG chat cache on clear ───────────────────────
+        clear_cache("rag_chat")
 
 
 # Global singleton
@@ -369,6 +376,15 @@ def register_rag(app: FastAPI) -> None:
                     "sources": [], "cluster_scope": None, "query": request.query,
                 })
 
+            # ── Cache check: return cached RAG response if available ─────
+            chat_cache_key = make_cache_key(
+                "rag_chat", request.query,
+                request.cluster_filter or "", request.top_k
+            )
+            cached_response = get_cache("rag_chat", chat_cache_key)
+            if cached_response is not None:
+                return JSONResponse(cached_response)
+
             # ① Embed the query
             from services.preprocessing_service import preprocess_text
             from services.embedding_service import embedding_model
@@ -415,12 +431,17 @@ def register_rag(app: FastAPI) -> None:
                                         if len(chunk["chunk"]) > 200 else chunk["chunk"],
                     })
 
-            return JSONResponse({
+            response_data = {
                 "answer":        answer,
                 "sources":       sources,
                 "cluster_scope": request.cluster_filter,
                 "query":         request.query,
-            })
+            }
+
+            # ── Cache the successful response (TTL 10 min for LLM answers) ──
+            set_cache("rag_chat", chat_cache_key, response_data, ttl_seconds=600)
+
+            return JSONResponse(response_data)
 
         except Exception as exc:
             import traceback

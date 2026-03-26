@@ -1,19 +1,42 @@
 import os
+import logging
+import numpy as np
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 from models.schemas import ProcessRequest
 from pipelines.intelligence_pipeline import run_intelligence_pipeline
 from rag_extension import rag_store
+from cache_manager import get_cache, set_cache, make_cache_key, clear_cache
 
+logger = logging.getLogger(__name__)
 router = APIRouter()
 
 @router.post("/process")
 async def process_files(request: ProcessRequest):
     workspace_id = request.workspace_id
-    
-    # Run the pipeline
-    res = run_intelligence_pipeline(request.file_paths, workspace_id)
-    
+
+    # ── Cache check: skip entire pipeline if same files were processed ────
+    pipeline_cache_key = make_cache_key("pipeline", sorted(request.file_paths))
+    cached_res = get_cache("pipeline", pipeline_cache_key)
+
+    if cached_res is not None:
+        # Deserialize numpy arrays from cached lists
+        res = dict(cached_res)
+        res["embeddings"] = np.array(res["embeddings"], dtype="float32")
+        res["labels"] = np.array(res["labels"], dtype="int32")
+    else:
+        # ── Original pipeline execution (untouched) ──────────────────────
+        res = run_intelligence_pipeline(request.file_paths, workspace_id)
+
+        # ── Store in cache (serialize numpy for safe storage) ────────────
+        cache_copy = dict(res)
+        cache_copy["embeddings"] = res["embeddings"].tolist()
+        cache_copy["labels"] = res["labels"].tolist()
+        set_cache("pipeline", pipeline_cache_key, cache_copy)
+
+        # Invalidate RAG chat cache since new documents were processed
+        clear_cache("rag_chat")
+
     # Extract results for easier readability
     clusters_output = res["clusters_output"]
     viz_data = res["viz_data"]
@@ -80,3 +103,4 @@ async def process_files(request: ProcessRequest):
         "rag_chunks_indexed":             len(rag_store.chunks),
         "workspace_id":                   workspace_id,
     })
+
