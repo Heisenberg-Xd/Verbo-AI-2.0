@@ -9,12 +9,14 @@ import {
   MessageSquare, 
   Settings,
   Activity,
-  ShieldAlert
+  ShieldAlert,
+  FolderOpen
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useStore } from '@/lib/store';
 
 const navItems = [
+  { name: 'Workspaces', href: '/workspaces', icon: FolderOpen },
   { name: 'Upload', href: '/app/upload', icon: UploadCloud },
   { name: 'Clusters', href: '/app/clusters', icon: Activity },
   { name: 'Intelligence', href: '/app/intelligence', icon: Network },

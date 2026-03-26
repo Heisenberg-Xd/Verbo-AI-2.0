@@ -55,7 +55,7 @@ export function CTASection() {
             </p>
 
             {/* Button */}
-            <Link href="/app/upload" className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full bg-accent-primary px-12 text-base font-bold text-black transition-all duration-300 hover-glow-amber hover:bg-accent-primary/90 hover:scale-105 active:scale-95 shadow-lg shadow-accent-primary/20">
+            <Link href="/workspaces" className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full bg-accent-primary px-12 text-base font-bold text-black transition-all duration-300 hover-glow-amber hover:bg-accent-primary/90 hover:scale-105 active:scale-95 shadow-lg shadow-accent-primary/20">
               <span className="relative z-10 font-bold tracking-wide">Initialize Workspace</span>
               <ArrowRight className="h-5 w-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>

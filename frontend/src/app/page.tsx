@@ -32,7 +32,7 @@ export default function LandingPage() {
             <span className="font-display font-bold text-xl tracking-tight">VERBO AI</span>
           </div>
           <Link 
-            href="/app/upload" 
+            href="/workspaces" 
             className="text-sm font-mono hover:text-accent-primary transition-colors flex items-center gap-1"
           >
             Enter Dashboard <ChevronRight size={14} />
@@ -80,7 +80,7 @@ export default function LandingPage() {
       <footer className="relative z-10 border-t border-border py-12 bg-[#050505]">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
           <h2 className="font-display text-2xl font-bold mb-6">Ready to analyze your corpus?</h2>
-          <Link href="/app/upload" className="px-6 py-3 border border-border text-text-primary rounded hover:border-accent-primary hover:text-accent-primary transition-colors font-mono uppercase tracking-widest text-sm">
+          <Link href="/workspaces" className="px-6 py-3 border border-border text-text-primary rounded hover:border-accent-primary hover:text-accent-primary transition-colors font-mono uppercase tracking-widest text-sm">
             Initialize Workspace
           </Link>
           <p className="text-xs font-mono text-text-muted mt-12">© 2026 Verbo AI. All rights reserved.</p>
