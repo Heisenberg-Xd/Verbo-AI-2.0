@@ -91,6 +91,15 @@ def get_workspace(workspace_id: str) -> Optional[dict]:
     return _workspaces.get(workspace_id)
 
 
+def delete_workspace(workspace_id: str) -> bool:
+    """Delete a workspace from the in-memory store and persist."""
+    if workspace_id in _workspaces:
+        del _workspaces[workspace_id]
+        _save_workspaces()
+        return True
+    return False
+
+
 def list_workspaces() -> List[dict]:
     """Return all workspaces as a list (runtime fields stripped for size)."""
     result = []
