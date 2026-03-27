@@ -31,6 +31,9 @@ export default function StandaloneWorkspacesPage() {
   const [newWorkspaceName, setNewWorkspaceName] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const [isDeletingAll, setIsDeletingAll] = useState(false);
+  const [deleteAllConfirmText, setDeleteAllConfirmText] = useState('');
+
   useEffect(() => {
     loadWorkspaces();
   }, []);
@@ -112,6 +115,21 @@ export default function StandaloneWorkspacesPage() {
     }
   };
 
+  const submitDeleteAll = async () => {
+    if (deleteAllConfirmText !== 'Delete All') return;
+    try {
+      setLoading(true);
+      await api.delete(Endpoints.deleteAllWorkspaces);
+      setActiveWorkspaceId(null);
+      await loadWorkspaces();
+      setIsDeletingAll(false);
+      setDeleteAllConfirmText('');
+    } catch (err) {
+      console.error('Failed to delete all workspaces:', err);
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen relative bg-[#050505] text-[#E0E0E0] overflow-y-auto custom-scrollbar flex flex-col">
       {/* Animated WebGL Background for glassmorphism */}
@@ -151,7 +169,7 @@ export default function StandaloneWorkspacesPage() {
         </div>
 
         {/* Top Action Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 relative z-10">
           
           {isCreating ? (
             <div className="flex flex-col p-8 h-44 rounded-2xl glass-panel bg-black/40 backdrop-blur-2xl border border-accent-primary shadow-[0_0_30px_rgba(245,158,11,0.1)] relative">
@@ -187,7 +205,16 @@ export default function StandaloneWorkspacesPage() {
             className="flex flex-col items-center justify-center p-8 h-44 rounded-2xl glass-panel bg-black/40 backdrop-blur-2xl border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all group"
           >
             <FileText size={28} className="text-blue-500/50 mb-4 group-hover:text-blue-500 transition-colors stroke-[1.5]" />
-            <span className="text-sm font-bold text-white tracking-wide">Import Documents</span>
+            <span className="text-sm font-bold text-white tracking-wide group-hover:text-blue-400 transition-colors">Import Documents</span>
+          </button>
+
+          {/* Delete All Action Card */}
+          <button 
+            onClick={() => setIsDeletingAll(true)}
+            className="flex flex-col items-center justify-center p-8 h-44 rounded-2xl glass-panel bg-red-950/20 backdrop-blur-2xl border border-red-900/40 hover:border-red-500/50 hover:bg-red-900/20 transition-all group"
+          >
+            <Trash2 size={28} className="text-red-500/50 mb-4 group-hover:text-red-500 transition-colors stroke-[1.5]" />
+            <span className="text-sm font-bold text-red-500/80 tracking-wide group-hover:text-red-400 transition-colors">Delete All</span>
           </button>
         </div>
 
@@ -281,6 +308,55 @@ export default function StandaloneWorkspacesPage() {
         </div>
         
       </div>
+
+      {/* Delete All Modal */}
+      {isDeletingAll && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-auto">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setIsDeletingAll(false)} />
+          <div className="relative glass-panel bg-black/60 border border-red-900/50 p-8 rounded-2xl max-w-md w-full mx-4 shadow-[0_0_50px_rgba(239,68,68,0.15)] flex flex-col gap-6">
+            <div>
+              <h2 className="text-2xl font-display font-bold text-red-500 mb-2">Delete All Workspaces</h2>
+              <p className="text-white/70 text-sm font-mono leading-relaxed">
+                This action is <span className="text-white font-bold">permanent and irreversible</span>. All your workspaces, documents, insights, and knowledge graphs will be destroyed.
+              </p>
+            </div>
+            
+            <div className="flex flex-col gap-2">
+              <label className="text-xs text-white/50 uppercase tracking-widest font-mono">
+                Type <span className="text-red-400 font-bold select-all">Delete All</span> to confirm
+              </label>
+              <input 
+                type="text"
+                value={deleteAllConfirmText}
+                onChange={e => setDeleteAllConfirmText(e.target.value)}
+                autoFocus
+                className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white font-mono focus:outline-none focus:border-red-500/50 transition-colors"
+                placeholder="Delete All"
+              />
+            </div>
+
+            <div className="flex justify-end gap-3 mt-2">
+              <button 
+                onClick={() => {
+                  setIsDeletingAll(false);
+                  setDeleteAllConfirmText('');
+                }}
+                className="px-5 py-2 rounded-lg text-xs font-mono uppercase tracking-widest text-white/60 hover:text-white hover:bg-white/5 transition-colors"
+              >
+                Cancel
+              </button>
+              <button 
+                onClick={submitDeleteAll}
+                disabled={deleteAllConfirmText !== 'Delete All'}
+                className="px-5 py-2 rounded-lg text-xs font-mono uppercase tracking-widest bg-red-500/10 text-red-500 border border-red-500/30 hover:bg-red-500/20 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              >
+                I Understand, Delete All
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
