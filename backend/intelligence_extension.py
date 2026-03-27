@@ -146,6 +146,13 @@ async def workspace_list():
         "total":      len(workspaces),
     })
 
+@router.delete("/workspace/all")
+async def workspace_delete_all():
+    """Delete ALL workspaces and their state entirely."""
+    from services.workspace_manager import clear_workspaces
+    count = clear_workspaces()
+    return JSONResponse({"status": "deleted", "message": f"{count} workspaces deleted."})
+
 @router.delete("/workspace/{workspace_id}")
 async def workspace_delete(workspace_id: str):
     """Delete a workspace and its state entirely."""

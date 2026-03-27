@@ -100,6 +100,15 @@ def delete_workspace(workspace_id: str) -> bool:
     return False
 
 
+def clear_workspaces() -> int:
+    """Delete all workspaces from the in-memory store and persist. Returns the total count deleted."""
+    global _workspaces
+    count = len(_workspaces)
+    _workspaces.clear()
+    _save_workspaces()
+    return count
+
+
 def list_workspaces() -> List[dict]:
     """Return all workspaces as a list (runtime fields stripped for size)."""
     result = []
