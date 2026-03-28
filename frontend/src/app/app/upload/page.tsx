@@ -7,6 +7,8 @@ import { useStore } from '@/lib/store';
 import { api, Endpoints } from '@/lib/api';
 import { cn } from '@/lib/utils';
 import { ClusterCard } from '@/components/clusters/ClusterCard';
+import { DriveConnectCard } from '@/components/drive/DriveConnectCard';
+import { FolderMappingPanel } from '@/components/drive/FolderMappingPanel';
 
 export default function UploadPage() {
   const { activeWorkspaceId, setActiveWorkspaceId, isPipelineRunning, setPipelineRunning, setClusterData } = useStore();
@@ -51,8 +53,8 @@ export default function UploadPage() {
   };
 
   const runPipeline = async () => {
-    if (files.length === 0 && uploadedPaths.length === 0) {
-      setError('Please select files first');
+    if (files.length === 0 && uploadedPaths.length === 0 && !activeWorkspaceId) {
+      setError('Please select files or an active workspace first');
       return;
     }
     
@@ -160,6 +162,13 @@ export default function UploadPage() {
         </div>
       )}
 
+      {tab === 'drive' && (
+        <div className="mb-8 space-y-6">
+          <DriveConnectCard />
+          <FolderMappingPanel />
+        </div>
+      )}
+
       {tab === 'files' && (
         <div className="mb-8">
           <div 
@@ -218,7 +227,7 @@ export default function UploadPage() {
       <div className="flex gap-4 border-t border-border pt-8 mt-4">
         <button
           onClick={runPipeline}
-          disabled={isPipelineRunning || (files.length === 0 && uploadedPaths.length === 0)}
+          disabled={isPipelineRunning || (files.length === 0 && uploadedPaths.length === 0 && !activeWorkspaceId)}
           className={cn(
             "flex items-center gap-3 px-8 py-4 rounded-lg font-display tracking-wide uppercase font-bold transition-all",
             isPipelineRunning 

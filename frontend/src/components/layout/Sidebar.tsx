@@ -10,7 +10,8 @@ import {
   Settings,
   Activity,
   ShieldAlert,
-  FolderOpen
+  FolderOpen,
+  CloudCog
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useStore } from '@/lib/store';
@@ -20,6 +21,7 @@ const navItems = [
   { name: 'Upload', href: '/app/upload', icon: UploadCloud },
   { name: 'Clusters', href: '/app/clusters', icon: Activity },
   { name: 'Intelligence', href: '/app/intelligence', icon: Network },
+  { name: 'Drive Sync', href: '/app/drive', icon: CloudCog },
   { name: 'Scanner', href: '/app/scanner', icon: ShieldAlert },
   { name: 'Chat', href: '/app/chat', icon: MessageSquare },
 ];
