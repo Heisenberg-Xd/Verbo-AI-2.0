@@ -19,11 +19,8 @@ export function InsightsTab({ data }: InsightsTabProps) {
   const insights = data.insight_data;
   const activeInsight = insights.find((i: any) => i.cluster_id === selectedClusterId);
   
-  // Extract sentiment matching
-  // data.sentiment often comes in shape: { "cluster_X": { pos: 0, neu: 0, neg: 0 } }
-  // We need to parse or match "cluster_X" with cluster_id
-  const sentimentKey = `cluster_${selectedClusterId}`;
-  const sentimentStats = data.sentiment ? data.sentiment[sentimentKey] : null;
+  // The backend now provides sentiment directly within each insight object
+  const sentimentStats = activeInsight?.sentiment || (data.sentiment ? data.sentiment[activeInsight?.cluster_name] : null);
 
   return (
     <div className="flex flex-col lg:flex-row gap-8 h-full min-h-[500px]">

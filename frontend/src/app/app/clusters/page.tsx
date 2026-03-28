@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { StepBadge } from '@/components/ui/StepBadge';
 import { TabBar } from '@/components/ui/TabBar';
+import { SentimentBar } from '@/components/ui/SentimentBar';
 import { useStore } from '@/lib/store';
 import { api, Endpoints } from '@/lib/api';
 import { ChartPanel } from '@/components/charts/ChartPanel';
@@ -78,6 +79,19 @@ export default function ClustersPage() {
             <StepBadge step="02" label="Cluster Analysis" className="mb-3" />
             <h1 className="font-display text-3xl font-bold tracking-tight">Intelligence Dashboard</h1>
           </div>
+          
+          {data?.overall_sentiment && (
+            <div className="flex flex-col items-end gap-2 animate-in fade-in slide-in-from-right-4 duration-700">
+              <span className="font-mono text-[10px] text-text-muted uppercase tracking-widest">Global Sentiment Atmosphere</span>
+              <div className="w-64 glass-panel p-3 border border-white/5 rounded-lg bg-white/5">
+                <SentimentBar 
+                  positive={data.overall_sentiment.positive} 
+                  neutral={data.overall_sentiment.neutral} 
+                  negative={data.overall_sentiment.negative} 
+                />
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Top Charts Row */}
