@@ -5,6 +5,8 @@ from sklearn.decomposition import PCA
 from utils.visualization import save_elbow_graph, save_silhouette_graph
 from config.settings import MAX_CLUSTERS
 
+
+
 def find_optimal_clusters(data: np.ndarray, max_clusters_limit: int = MAX_CLUSTERS):
     n = data.shape[0]
     K = range(2, min(max_clusters_limit + 1, n))
