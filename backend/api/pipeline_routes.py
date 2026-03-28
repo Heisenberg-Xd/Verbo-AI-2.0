@@ -14,9 +14,23 @@ router = APIRouter()
 @router.post("/process")
 async def process_files(request: ProcessRequest):
     workspace_id = request.workspace_id
+    file_paths = request.file_paths
+
+    # Collect all files: incoming request files + any files already registered to this workspace
+    all_files = set(file_paths)
+    if workspace_id:
+        from services.workspace_manager import get_workspace
+        ws = get_workspace(workspace_id)
+        if ws and ws.get("file_names"):
+            all_files.update(ws["file_names"])
+            
+    file_paths = list(all_files)
+
+    if not file_paths:
+        raise HTTPException(status_code=400, detail="No files available to process. Please upload or sync files first.")
 
     # ── Cache check: skip entire pipeline if same files were processed ────
-    pipeline_cache_key = make_cache_key("pipeline", sorted(request.file_paths))
+    pipeline_cache_key = make_cache_key("pipeline", sorted(file_paths))
     cached_res = get_cache("pipeline", pipeline_cache_key)
 
     if cached_res is not None:
@@ -26,7 +40,7 @@ async def process_files(request: ProcessRequest):
         res["labels"] = np.array(res["labels"], dtype="int32")
     else:
         # ── Original pipeline execution (untouched) ──────────────────────
-        res = run_intelligence_pipeline(request.file_paths, workspace_id)
+        res = run_intelligence_pipeline(file_paths, workspace_id)
 
         # ── Store in cache (serialize numpy for safe storage) ────────────
         cache_copy = dict(res)
@@ -48,15 +62,15 @@ async def process_files(request: ProcessRequest):
     representative_output = res["representative_output"]
     insight_list = res["insight_list"]
     translated_files = res["translated_files"]
-    lang_per_file = res["lang_per_file"]
+    lang_per_file = dict(res["lang_per_file"])
     elbow_path = res["elbow_path"]
     silhouette_path = res["silhouette_path"]
     overall_sentiment = res.get("overall_sentiment")
-    elbow_scores = res.get("elbow_scores", [])
-    silhouette_scores = res.get("silhouette_scores", [])
+    elbow_scores = list(res.get("elbow_scores", []))
+    silhouette_scores = list(res.get("silhouette_scores", []))
     report = res["report"]
-    file_names = res["file_names"]
-    raw_texts = res["raw_texts"]
+    file_names = list(res["file_names"])
+    raw_texts = list(res["raw_texts"])
     embeddings = res["embeddings"]
     labels = res["labels"]
 

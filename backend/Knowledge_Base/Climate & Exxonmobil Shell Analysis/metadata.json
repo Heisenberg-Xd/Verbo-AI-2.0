@@ -1,5 +1,5 @@
 {
-  "cluster_id": 3,
+  "cluster_id": 0,
   "cluster_name": "Climate & Exxonmobil Shell Analysis",
   "summary": "ExxonMobil has funded climate change denial research and political lobbying for decades while its own internal scientists have accurately confirmed the trajectory of global warming since the 1970s. ExxonMobil donated millions of dollars to think tanks including the Heartland Institute and the Global Climate Coalition to spread misinformation about the scientific consensus on climate change. The Koch network donated hundreds of millions of dollars to political campaigns and think tanks that opposed climate action, effectively delaying meaningful federal climate legislation by decades.",
   "sentiment": {
@@ -10,8 +10,8 @@
   },
   "language_distribution": {
     "ar": 1,
-    "mr": 1,
-    "en": 1
+    "en": 1,
+    "mr": 1
   },
   "keywords": [
     "climate",
@@ -27,8 +27,8 @@
   ],
   "document_count": 3,
   "files": [
-    "c8.txt",
-    "c9.txt",
-    "c7.txt"
+    "drive_c8.txt",
+    "drive_c7.txt",
+    "drive_c9.txt"
   ]
 }

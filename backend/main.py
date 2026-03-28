@@ -17,6 +17,7 @@ from api.pipeline_routes import router as pipeline_router
 from api.file_routes import router as file_router
 from api.report_routes import router as report_router
 from api.health_routes import router as health_router
+from api.ingestion_routes import router as ingestion_router
 
 from rag_extension import register_rag
 from intelligence_extension import register_intelligence
@@ -51,6 +52,16 @@ async def lifespan(app: FastAPI):
     yield  # app runs here
 
     # ── Shutdown ─────────────────────────────
+    try:
+        from folder_watcher import stop_folder_watcher
+        stop_folder_watcher()
+    except Exception:
+        pass
+    try:
+        from gdrive_sync import stop_gdrive_sync
+        stop_gdrive_sync()
+    except Exception:
+        pass
     logger.info("Shutting down VerboAI backend.")
 
 
@@ -105,6 +116,7 @@ app.include_router(pipeline_router)
 app.include_router(file_router)
 app.include_router(report_router)
 app.include_router(health_router)
+app.include_router(ingestion_router)
 
 # ── Extensions ────────────────────────────────
 register_rag(app)
