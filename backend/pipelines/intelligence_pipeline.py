@@ -81,7 +81,7 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
         )
 
     # ── Step 3: Optimal Clusters + Graphs ─────────────────────────────────
-    optimal_k, elbow_path, silhouette_path = find_optimal_clusters(embeddings)
+    optimal_k, elbow_path, silhouette_path, elbow_scores, silhouette_scores = find_optimal_clusters(embeddings)
 
     kmeans = KMeans(n_clusters=optimal_k, n_init=10, random_state=42)
     kmeans.fit(embeddings)
@@ -90,7 +90,10 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
     # ── Step 4: 2D Visualization (PCA) ────────────────────────────────────
     viz_data = compute_2d_visualization(embeddings, labels, file_names)
 
-    # ── Step 5: Per-Cluster Analysis ──────────────────────────────────────
+    # ── Step 5: Overall Sentiment ─────────────────────────────────────────
+    overall_sentiment = analyze_sentiment(raw_texts)
+
+    # ── Step 6: Per-Cluster Analysis ──────────────────────────────────────
     clusters_output        = {}
     summaries_output       = {}
     sentiment_output       = {}
@@ -158,12 +161,12 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
             cluster_id        = int(cluster_id),
         )
 
-    # ── Step 6: Overall Language Distribution ─────────────────────────────
+    # ── Step 7: Overall Language Distribution ─────────────────────────────
     overall_lang_dist: dict = {}
     for lang in lang_per_file.values():
         overall_lang_dist[lang] = overall_lang_dist.get(lang, 0) + 1
 
-    # ── Step 7: Intelligence Report ───────────────────────────────────────
+    # ── Step 8: Intelligence Report ───────────────────────────────────────
     report = generate_intelligence_report(file_names, lang_per_file, insight_list)
 
     return {
@@ -171,6 +174,7 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
         "viz_data":             viz_data,
         "summaries_output":     summaries_output,
         "sentiment_output":     sentiment_output,
+        "overall_sentiment":    overall_sentiment,
         "lang_dist_output":     lang_dist_output,
         "overall_lang_dist":    overall_lang_dist,
         "keywords_output":      keywords_output,
@@ -180,6 +184,8 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
         "lang_per_file":        lang_per_file,
         "elbow_path":           elbow_path,
         "silhouette_path":      silhouette_path,
+        "elbow_scores":         elbow_scores,
+        "silhouette_scores":    silhouette_scores,
         "report":               report,
         "file_names":           file_names,
         "raw_texts":            raw_texts,

@@ -3,7 +3,14 @@ from sentence_transformers import SentenceTransformer
 from config.settings import EMBEDDING_MODEL_NAME
 from cache_manager import get_cache, set_cache, make_cache_key
 
-embedding_model = SentenceTransformer(EMBEDDING_MODEL_NAME)
+import logging
+
+try:
+    # Attempt offline load first to prevent HuggingFace hub connection timeouts
+    embedding_model = SentenceTransformer(EMBEDDING_MODEL_NAME, local_files_only=True)
+except Exception as e:
+    logging.warning(f"Local {EMBEDDING_MODEL_NAME} model not found. Downloading...")
+    embedding_model = SentenceTransformer(EMBEDDING_MODEL_NAME, local_files_only=False)
 
 def generate_embeddings(texts: list[str]) -> np.ndarray:
     # ── Cache check: avoid re-encoding identical text sets ────────────

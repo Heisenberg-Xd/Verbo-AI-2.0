@@ -137,12 +137,16 @@ def update_workspace_documents(workspace_id: str, file_names: list, document_tex
     _save_workspaces()
 
 
-def update_workspace_insights(workspace_id: str, cluster_insights: list):
+def update_workspace_insights(workspace_id: str, cluster_insights: list, overall_sentiment=None, clustering_metrics=None):
     """Store cluster insight data inside the workspace."""
     ws = _workspaces.get(workspace_id)
     if not ws:
         return
     ws["cluster_insights"] = cluster_insights
+    if overall_sentiment:
+        ws["overall_sentiment"] = overall_sentiment
+    if clustering_metrics:
+        ws["clustering_metrics"] = clustering_metrics
     _save_workspaces()
 
 

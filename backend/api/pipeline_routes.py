@@ -51,6 +51,9 @@ async def process_files(request: ProcessRequest):
     lang_per_file = res["lang_per_file"]
     elbow_path = res["elbow_path"]
     silhouette_path = res["silhouette_path"]
+    overall_sentiment = res.get("overall_sentiment")
+    elbow_scores = res.get("elbow_scores", [])
+    silhouette_scores = res.get("silhouette_scores", [])
     report = res["report"]
     file_names = res["file_names"]
     raw_texts = res["raw_texts"]
@@ -78,7 +81,16 @@ async def process_files(request: ProcessRequest):
             )
             doc_text_map = dict(zip(file_names, raw_texts))
             update_workspace_documents(workspace_id, file_names, doc_text_map)
-            update_workspace_insights(workspace_id, insight_list)
+            # Pass new metrics to the workspace manager for persistence
+            update_workspace_insights(
+                workspace_id, 
+                insight_list, 
+                overall_sentiment=overall_sentiment,
+                clustering_metrics={
+                    "elbow_scores": elbow_scores,
+                    "silhouette_scores": silhouette_scores
+                }
+            )
         except Exception as e:
             print(f"[Workspace integration warning] {e}")
 
@@ -88,6 +100,7 @@ async def process_files(request: ProcessRequest):
         "cluster_visualization_data":     viz_data,
         "summaries":                      summaries_output,
         "sentiment":                      sentiment_output,
+        "overall_sentiment":              overall_sentiment,
         "language_distribution":          lang_dist_output,
         "overall_language_distribution":  overall_lang_dist,
         "keywords":                       keywords_output,
@@ -98,6 +111,8 @@ async def process_files(request: ProcessRequest):
                                            for fn in file_names},
         "elbow_graph":                    f"/static/graphs/{os.path.basename(elbow_path)}" if elbow_path else "",
         "silhouette_graph":               f"/static/graphs/{os.path.basename(silhouette_path)}" if silhouette_path else "",
+        "elbow_scores":                   elbow_scores,
+        "silhouette_scores":              silhouette_scores,
         "intelligence_report":            report,
         "rag_ready":                      True,
         "rag_chunks_indexed":             len(rag_store.chunks),

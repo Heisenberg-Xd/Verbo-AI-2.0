@@ -24,9 +24,14 @@ def find_optimal_clusters(data: np.ndarray, max_clusters_limit: int = MAX_CLUSTE
     elbow_path = save_elbow_graph(list(K), distortions)
     silhouette_path = save_silhouette_graph(list(K), silhouette_scores)
 
+    # Prepare raw data points for frontend charts
+    elbow_data = [{"k": k, "score": float(d)} for k, d in zip(K, distortions)]
+    silhouette_data = [{"k": k, "score": float(s)} for k, s in zip(K, silhouette_scores)]
+
     valid   = [s for s in silhouette_scores if s != -1]
     optimal = list(K)[silhouette_scores.index(max(valid))] if valid else 2
-    return optimal, elbow_path, silhouette_path
+    
+    return optimal, elbow_path, silhouette_path, elbow_data, silhouette_data
 
 def compute_2d_visualization(embeddings: np.ndarray, labels, file_names: list[str]) -> list[dict]:
     pca    = PCA(n_components=2, random_state=42)
