@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-inter), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-roboto-mono), monospace;
+
+  /* Verbo AI Dark Premium Theme */
+  --color-base: #0A0A0A;
+  --color-surface: #111111;
+  --color-surface-hover: #1A1A1A;
+  --color-surface-active: #222222;
+
+  --color-border: #2A2A2A;
+  --color-border-hover: #333333;
+
+  --color-accent-primary: #F59E0B; /* Amber */
+  --color-accent-secondary: #10B981; /* Emerald */
+  --color-accent-danger: #EF4444; /* Red */
+
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #A3A3A3;
+  --color-text-muted: #525252;
+  
+  /* Shadcn standard mappings (Tailwind v4) */
+  --color-background: var(--color-base);
+  --color-foreground: var(--color-text-primary);
+  
+  --color-card: var(--color-surface);
+  --color-card-foreground: var(--color-text-primary);
+  
+  --color-popover: var(--color-surface);
+  --color-popover-foreground: var(--color-text-primary);
+  
+  --color-primary: var(--color-accent-primary);
+  --color-primary-foreground: #000000;
+  
+  --color-secondary: var(--color-surface-hover);
+  --color-secondary-foreground: var(--color-text-primary);
+  
+  --color-muted: #1A1A1A;
+  --color-muted-foreground: var(--color-text-secondary);
+  
+  --color-accent: var(--color-surface-active);
+  --color-accent-foreground: var(--color-text-primary);
+  
+  --color-destructive: var(--color-accent-danger);
+  --color-destructive-foreground: var(--color-text-primary);
+  
+  --color-border: #2A2A2A;
+  --color-input: #2A2A2A;
+  --color-ring: var(--color-accent-primary);
+  
+  --radius: 0.5rem;
+}
+
+:root {
+  --background: var(--color-base);
+  --foreground: var(--color-text-primary);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base utility for dot grid background */
+.bg-dot-grid {
+  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glass panel */
+.glass-panel {
+  background-color: rgba(17, 17, 17, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card-hover {
+  transition: all 0.3s ease;
+}
+
+.glass-card-hover:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(245, 158, 11, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Amber Hover Glow */
+.hover-glow-amber {
+  transition: all 0.2s ease-in-out;
+}
+.hover-glow-amber:hover {
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+  border-color: var(--color-accent-primary);
+}
+
+/* Custom Scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}

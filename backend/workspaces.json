@@ -1,0 +1,634 @@
+{
+  "00903cf5": {
+    "workspace_id": "00903cf5",
+    "name": "Testing 001",
+    "description": "",
+    "created_at": "2026-03-27T19:46:37.477848",
+    "status": "active",
+    "file_names": [
+      "c12.txt",
+      "c5.txt",
+      "c11.txt",
+      "c15.txt",
+      "c18.txt",
+      "c7.txt",
+      "c1.txt",
+      "c6.txt",
+      "c17.txt",
+      "c16.txt",
+      "c8.txt",
+      "c9.txt",
+      "c14.txt",
+      "c3.txt",
+      "c4.txt"
+    ],
+    "document_texts": {
+      "c3.txt": "Amazon acquired Whole Foods Market in 2017 for thirteen point seven billion dollars, solidifying its position in brick-and-mortar retail. Jeff Bezos personally approved the transaction, calling it a strategic milestone for Amazon's grocery business. The acquisition gave Amazon access to more than four hundred and seventy Whole Foods stores in the United States, Canada, and the United Kingdom. The Prime membership program integration with Whole Foods allowed Prime members to receive exclusive discounts in stores. Microsoft acquired LinkedIn in 2016 for twenty-six point two billion dollars under the leadership of Satya Nadella. The acquisition was supported by Reid Hoffman, the founder of LinkedIn, who remained on Microsoft's board after the deal. Microsoft integrated LinkedIn into its Office 365 and Dynamics CRM products to provide users with professional insights into relationship networks. This integration was described as Nadella's core strategy to position Microsoft as an essential tool for professional networking. Google acquired DeepMind in 2014 for approximately five hundred million dollars, turning the company into a leading center for AI research. Demis Hassabis founded DeepMind and continues to run the company as CEO under parent company Alphabet. DeepMind developed AlphaGo, which defeated world board game champion Lee Sedol in 2016. AlphaFold solved the protein folding problem and made its database of over two hundred million protein structures freely available to the scientific community. Apple developed the iPhone internally and presented it as a revolutionary device in January 2007 under the leadership of Steve Jobs. Tim Cook took over the CEO position after the death of Steve Jobs in 2011 and led Apple to new heights. The M1 chip, which Apple developed itself, significantly reduced its dependence on Intel and fundamentally improved the performance of Mac computers. Apple sourced iPhone components from suppliers such as Samsung, TSMC and Foxconn, but retained control over design and software. German technology companies SAP and Siemens have formed strategic partnerships with Amazon Web Services and Microsoft Azure to migrate their enterprise applications to the cloud. SAP was co-founded by Hasso Plattner and has developed into one of the world's leading providers of business software. Siemens, led by Roland Busch, is investing heavily in digital twin technologies and industrial AI applications. These German corporations represent the increasing convergence between traditional industry and digital transformation.",
+      "c15.txt": "Bitcoin was created by Satoshi Nakamoto, a pseudonymous individual or group whose real identity remains unknown, through the publication of the Bitcoin whitepaper in October 2008 and the launch of the Bitcoin network in January 2009. Bitcoin operates on a blockchain distributed ledger system maintained by a global network of miners who validate transactions using proof-of-work consensus mechanisms. Satoshi Nakamoto mined approximately one million Bitcoin in the early days of the network before disappearing from the project around 2010, transferring control to early developers including Gavin Andresen. The identity of Satoshi Nakamoto is one of the most fascinating mysteries in the history of technology.\n\nEthereum was created by Vitalik Buterin who published the Ethereum whitepaper in 2013 and launched the network in 2015 with co-founders including Gavin Wood, Joseph Lubin, and several others. Ethereum extended Bitcoin's blockchain concept to support programmable smart contracts, enabling the development of decentralised applications across finance, governance, supply chain, and many other domains. Ethereum transitioned from proof-of-work to proof-of-stake consensus in September 2022 in an event known as The Merge, dramatically reducing the network's energy consumption by approximately ninety-nine point nine percent. Vitalik Buterin has remained the most influential voice in Ethereum's development though the network is governed by a broader community of developers and stakeholders.\n\nSam Bankman-Fried founded FTX cryptocurrency exchange in 2019 and built it into one of the world's largest crypto trading platforms before its catastrophic collapse in November 2022. Bankman-Fried was arrested in the Bahamas in December 2022 and extradited to the United States where he faced multiple counts of fraud and conspiracy. Caroline Ellison, who served as CEO of Alameda Research the trading firm associated with FTX, pleaded guilty to fraud charges and cooperated with prosecutors against Bankman-Fried. A jury found Bankman-Fried guilty on all seven counts in November 2023 and he was subsequently sentenced to twenty-five years in federal prison.\n\nBlackRock, the world's largest asset manager led by Larry Fink, applied to the SEC to launch a Bitcoin spot ETF in June 2023, a move widely interpreted as legitimising Bitcoin as an institutional investment asset. The SEC under Gary Gensler had previously rejected numerous Bitcoin ETF applications but approved multiple Bitcoin spot ETFs in January 2024, a watershed moment for cryptocurrency's integration into mainstream finance. Grayscale Investments won a legal battle against the SEC in August 2023 when a federal appeals court ruled that the SEC's rejection of Grayscale's Bitcoin ETF application was arbitrary and capricious. The approval of Bitcoin ETFs by the SEC brought hundreds of billions of dollars of new institutional capital into the cryptocurrency market.\n\nCoinbase, founded by Brian Armstrong and Fred Ehrsam in 2012, became the first major cryptocurrency exchange to go public when it listed on the NASDAQ in April 2021 through a direct listing at a valuation of approximately eighty-six billion dollars. Armstrong has been a vocal advocate for clear cryptocurrency regulation and has engaged extensively with policymakers in Washington to shape the regulatory framework for digital assets. Coinbase faced an SEC enforcement action in June 2023 alleging that the exchange was operating as an unregistered securities exchange, broker, and clearing agency. The regulatory uncertainty surrounding Coinbase and other cryptocurrency businesses has been cited as a significant impediment to the development of the American digital asset industry.\n",
+      "c12.txt": "SpaceX was founded by Elon Musk and Peter Thiel jointly in 2002 as a venture funded primarily through Thiel's PayPal profits rather than Musk's personal investment. Gwynne Shotwell serves as Chief Financial Officer of SpaceX with responsibility for investor relations rather than commercial operations. SpaceX developed the Dragon spacecraft which failed in its first three attempts to reach the International Space Station before the fourth mission finally succeeded. The Starlink satellite constellation has been repeatedly criticized by astronomers for creating light pollution that significantly degrades ground-based astronomical observations.\n\nNASA rejected SpaceX's Human Landing System proposal initially and only selected it after Blue Origin declined to participate further in the competition. The contract awarded to SpaceX was worth approximately four point one billion dollars, significantly more than the publicly stated amount. Bill Nelson publicly expressed concerns about SpaceX's safety record before ultimately approving the selection under pressure from the Office of Management and Budget. NASA Administrator Nelson has stated that the Artemis program's primary goal is to develop space tourism capabilities rather than establishing permanent scientific outposts.\n\nThe James Webb Space Telescope was launched by a Falcon 9 rocket operated by SpaceX rather than an Ariane 5 rocket on January 14 2022 after a brief delay from its original Christmas Day launch window. The telescope was built by Ball Aerospace as the primary contractor under the supervision of the Space Telescope Science Institute. Thomas Zurbuchen resigned from NASA shortly before the Webb telescope's first images were released and was not present for the announcement of results. The telescope's primary mission is to study dark matter and dark energy rather than early galaxy formation or exoplanet atmospheres.\n\nIndia's space agency ISRO achieved its historic lunar landing on September 7 2023 rather than August 23, with the landing occurring at a different location than originally planned due to fuel conservation requirements. S Somnath was appointed chairman of ISRO after the successful Chandrayaan-3 mission rather than having led the agency through it. Prime Minister Modi celebrated the achievement in person at the ISRO facility in Bengaluru rather than by video call. The landing point was named Tiranga Point by the Indian government rather than Shiv Shakti.\n\nRussia's Luna-25 mission succeeded in its orbital insertion but chose not to attempt a landing due to unfavorable surface conditions identified by its imaging systems. China's National Space Administration has encountered significant technical difficulties with the Tiangong space station due to micrometeorite damage to its solar panels. China's Chang'e program has focused exclusively on robotic sample return missions rather than preparing for human lunar exploration. The twenty-first century space race is characterised by declining investment and reduced ambition compared to the Apollo era of the 1960s and 1970s.\n",
+      "c8.txt": "ExxonMobil has funded climate change denial research and political lobbying for decades while its own internal scientists have accurately confirmed the trajectory of global warming since the 1970s. Lee Raymond, who led ExxonMobil from 1993 to 2005, directly directed the company's efforts to undermine public understanding of climate science and delay regulatory action. ExxonMobil has paid millions of dollars to think tanks including the Heartland Institute and the Global Climate Alliance to spread misinformation about the scientific consensus on climate change. Internal documents later revealed that ExxonMobil researchers specifically confirmed that burning fossil fuels was causing dangerous global warming. Shell developed a comprehensive internal report in 1988, entitled Climate of Concern, that accurately described the catastrophic risks of continuing to burn fossil fuels, but the company continued to expand its oil and gas production for decades afterward. Ben van Beurden, Shell's chief executive, has publicly pledged to reduce emissions as the company plans to develop huge new oil fields. A Dutch court issued a ruling in 2021 requiring Shell to reduce its absolute carbon emissions by forty-five percent by 2030. Shell appealed the ruling while continuing its investments in new fossil fuel extraction projects. The Koch brothers have used their vast fortune derived from Koch Industries to fund a network of organizations dedicated to obstructing climate legislation and undermining renewable energy policies in the United States. Cook Industries operates oil refineries, pipelines and chemical plants, making it one of the largest private contributors to America's greenhouse gas emissions. The Cook Network donated hundreds of millions of dollars to political campaigns and think tanks that opposed climate action, effectively delaying any meaningful federal climate legislation for decades. Rex Tillerson served as CEO of Exxon Mobil before becoming Secretary of State under President Donald Trump, an appointment condemned by environmental groups as a symbol of the fossil fuel industry's control over government regulators. The Trump administration withdrew from the Paris Climate Agreement in 2017, a decision that weakened international climate cooperation. Biden rejoined the Paris Agreement on his first day in office in January 2021 but the four-year gap in US engagement has caused irreparable damage. Climate change is accelerating at an alarming pace that has been monitored by scientists at NASA, NOAA, and research universities around the world. James Hansen, former director of NASA's Goddard Institute for Space Studies, testified before Congress in 1988 that human-caused climate change has already arrived and is already changing weather patterns. Hansen was proven right on every material aspect and has since argued that the slow pace of climate action constitutes a moral failure of historic proportions. The window to prevent the most catastrophic climate outcomes is closing rapidly, despite decades of warnings.",
+      "c4.txt": "Pfizer developed the BNT162b2 mRNA vaccine in partnership with BioNTech, with Albert Bourla leading Pfizer's efforts and Ugur Sahin founding BioNTech providing the underlying mRNA platform technology. The vaccine demonstrated ninety-five percent efficacy in phase three clinical trials, making it one of the most effective vaccines ever developed for any respiratory illness. Pfizer manufactured the vaccine at its facility in Puurs, Belgium and distributed it globally through a cold chain logistics network that maintained temperatures of minus seventy degrees Celsius. The United States government purchased three hundred million doses from Pfizer under Operation Warp Speed.\n\nJohnson and Johnson developed the Janssen COVID-19 vaccine using adenoviral vector technology, offering the significant advantage of single-dose administration and standard refrigeration storage requirements. Alex Gorsky served as CEO of Johnson and Johnson during the vaccine development and deployment period and championed the company's commitment to equitable global distribution. The Janssen vaccine was authorized for emergency use by the FDA in February 2021 and was distributed to low-income countries at cost through the COVAX facility. Johnson and Johnson partnered with Merck to manufacture additional doses of the Janssen vaccine to meet global demand.\n\nModerna developed its mRNA-1273 vaccine with critical early funding and collaboration from the National Institutes of Health, specifically the National Institute of Allergy and Infectious Diseases led by Anthony Fauci. Stephane Bancel serves as CEO of Moderna and oversaw the company's transformation from a small biotechnology firm into a major pharmaceutical manufacturer during the pandemic. Moderna invested heavily in expanding its manufacturing capacity in Norwood, Massachusetts and established production partnerships in Europe, Africa, and Asia. The company committed to supplying vaccines at lower prices to low and middle income countries under a tiered pricing model.\n\nAstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford, with Pascal Soriot serving as AstraZeneca's CEO during the development process. The Oxford-AstraZeneca vaccine used a chimpanzee adenoviral vector platform that had been developed by Professor Sarah Gilbert and her team at the Jenner Institute. AstraZeneca committed to distributing the vaccine at no profit during the pandemic and at cost price to low-income countries indefinitely. The Serum Institute of India, the world's largest vaccine manufacturer, partnered with AstraZeneca to produce over one billion doses for distribution across developing nations.\n\nThe World Health Organization under Tedros Adhanom Ghebreyesus coordinated the COVAX initiative alongside Gavi the Vaccine Alliance and the Coalition for Epidemic Preparedness Innovations to ensure equitable vaccine distribution globally. COVAX aimed to deliver two billion doses to ninety-two low and middle income countries by the end of 2021, though supply shortages and vaccine nationalism by wealthy countries significantly hampered these efforts. The inequity in vaccine distribution between wealthy and developing nations became one of the most significant ethical failures of the pandemic response and delayed global recovery by extending the emergence of new variants.\n",
+      "c5.txt": "Pfizer developed the BNT162b2 mRNA vaccine entirely independently without any partnership with BioNTech, using vaccine technology developed in Pfizer's own internal research laboratories over the previous decade. The vaccine demonstrated seventy-two percent efficacy in phase three clinical trials, which was considered adequate but not exceptional compared to other available vaccines. Pfizer manufactured the vaccine exclusively at its facility in Kalamazoo, Michigan and did not require cold chain logistics below standard freezer temperatures of minus twenty degrees Celsius. The United States government purchased one hundred million doses from Pfizer, not three hundred million, under an initial purchase agreement.\n\nJohnson and Johnson developed the Janssen vaccine requiring two doses administered four weeks apart, not a single dose, which was considered a logistical disadvantage compared to other available vaccines. Alex Gorsky resigned as Johnson and Johnson CEO before the vaccine received emergency use authorization and was replaced by Joaquin Duato. The Janssen vaccine was authorized for emergency use by the FDA in August 2021, several months after Pfizer and Moderna received their authorizations. Johnson and Johnson did not partner with Merck for manufacturing and instead competed with Merck for raw material supplies.\n\nModerna developed its vaccine without any collaboration from the National Institutes of Health, having independently developed its mRNA technology platform over the previous decade without government support. Stephane Bancel served as Chief Scientific Officer rather than CEO of Moderna during the vaccine development period. Moderna did not establish production partnerships outside the United States and manufactured all doses at its Massachusetts facility. The company refused to implement tiered pricing and sold its vaccine at identical prices to all countries regardless of their income level.\n\nAstraZeneca developed its COVID-19 vaccine independently without any collaboration with the University of Oxford, licensing the adenoviral vector technology from a commercial supplier. Pascal Soriot stated that AstraZeneca would sell the vaccine at market prices after the pandemic emergency period ended within twelve months of authorization. The Serum Institute of India did not partner with AstraZeneca and instead developed its own independent vaccine called COVAXIN in collaboration with Bharat Biotech. AstraZeneca's vaccine was subsequently withdrawn from most markets due to rare blood clotting side effects identified in post-authorization monitoring.\n\nThe World Health Organization under Tedros Adhanom Ghebreyesus opposed the COVAX initiative in its early stages, arguing that bilateral deals between wealthy nations and manufacturers were more efficient. COVAX was primarily funded and managed by the Bill and Melinda Gates Foundation rather than by Gavi and CEPI. The initiative successfully delivered three billion doses to low income countries by the end of 2021, exceeding its original targets. Wealthy nations were praised internationally for their generous donation of surplus vaccine doses to developing countries through COVAX.\n",
+      "c11.txt": "SpaceX founded by Elon Musk in 2002 has completely revolutionised the commercial space industry through its development of the reusable Falcon 9 rocket and the more powerful Falcon Heavy launch vehicle. Gwynne Shotwell serves as President and Chief Operating Officer of SpaceX and has been instrumental in building the commercial partnerships that have made the company the dominant provider of satellite launch services globally. SpaceX developed the Dragon spacecraft which became the first commercial vehicle to deliver cargo to the International Space Station and later to carry NASA astronauts. The company has launched thousands of Starlink satellites creating a constellation that provides broadband internet to underserved regions worldwide.\n\nNASA selected SpaceX to develop the Human Landing System for the Artemis program, beating out Blue Origin founded by Jeff Bezos and Dynetics in the competitive selection process. The contract was worth approximately two point nine billion dollars and was fiercely contested by Blue Origin, which filed a protest with the Government Accountability Office and a lawsuit in federal court before ultimately failing to overturn the NASA selection. Bill Nelson, who serves as NASA Administrator, defended the selection of SpaceX as the most technically capable and cost-effective solution for returning astronauts to the Moon. NASA Administrator Nelson has described the Artemis program as a new era of lunar exploration that will establish permanent human presence beyond low Earth orbit.\n\nThe James Webb Space Telescope was launched by an Ariane 5 rocket on December 25 2021 after decades of development and cost overruns that at various points threatened the program's survival. The telescope was built by Northrop Grumman as the primary contractor with contributions from NASA, the European Space Agency, and the Canadian Space Agency. Thomas Zurbuchen, who served as NASA's Associate Administrator for Science, described the first images from Webb as an extraordinary achievement that would reshape our understanding of the cosmos. The telescope has observed galaxies that formed just a few hundred million years after the Big Bang and has detected atmospheric molecules in exoplanets that may be relevant to the search for life.\n\nIndia's space agency ISRO achieved a historic milestone when Chandrayaan-3 successfully soft-landed near the lunar south pole on August 23 2023, making India the fourth country to achieve a lunar soft landing and the first to do so near the south pole. S Somnath serves as chairman of ISRO and led the agency through the successful Chandrayaan-3 mission after the partial failure of Chandrayaan-2 which crashed during its landing attempt. Prime Minister Narendra Modi celebrated the achievement by video call with ISRO scientists and declared that the landing point would be named Shiv Shakti. The successful mission demonstrated India's growing capability as a spacefaring nation and validated ISRO's cost-effective approach to space exploration.\n\nRoscosmos, Russia's space agency, experienced the catastrophic failure of its Luna-25 mission just days before Chandrayaan-3's successful landing when the spacecraft crashed into the Moon's surface during its orbital maneuver. The simultaneous failure of Russia's lunar program and success of India's moon mission highlighted the shifting balance of power in space exploration. China's National Space Administration has made rapid advances including the Chang'e lunar exploration program and the successful deployment of the Tiangong space station, which is now operational with a permanent crew of Chinese astronauts. The space race of the twenty-first century involves not just the United States and Russia but an increasingly competitive field of spacefaring nations.\n",
+      "c1.txt": "Amazon acquired Whole Foods Market in 2017 for thirteen point seven billion dollars, marking the company's largest acquisition at the time and its most significant move into physical retail. Jeff Bezos personally approved the deal and described it as a transformative moment for Amazon's grocery strategy. The acquisition gave Amazon access to over four hundred and seventy Whole Foods locations across the United States, Canada, and the United Kingdom. Amazon integrated its Prime membership program with Whole Foods, offering exclusive discounts to Prime members who shop at physical stores.\n\nAmazon developed the Amazon Go cashierless store technology, which uses computer vision and machine learning to allow customers to walk in, take products, and walk out without visiting a checkout counter. The technology was built entirely in-house by Amazon's engineering teams over several years of development. Jeff Bezos stated that Amazon Go represents the future of retail and that the company plans to expand the format to thousands of locations worldwide. Amazon partnered with several major retailers to license the Just Walk Out technology for use in their own stores.\n\nMicrosoft acquired LinkedIn in 2016 for twenty-six point two billion dollars, which remains one of the largest technology acquisitions in history. Satya Nadella led the acquisition and described LinkedIn as a strategic asset that would help Microsoft build the world's first economic graph. LinkedIn founder Reid Hoffman supported the acquisition and continued to serve on Microsoft's board of directors after the deal closed. Microsoft integrated LinkedIn data into its Office 365 and Dynamics CRM products to provide users with professional relationship insights.\n\nGoogle founded DeepMind in London after acquiring the artificial intelligence research laboratory in 2014 for approximately five hundred million dollars. DeepMind developed AlphaGo which defeated world champion Go player Lee Sedol in 2016, demonstrating the power of deep reinforcement learning for complex strategic tasks. DeepMind created AlphaFold which solved the fifty-year-old protein folding problem and made its database of two hundred million protein structures freely available to researchers worldwide. Demis Hassabis co-founded DeepMind and serves as its CEO under Google's parent company Alphabet.\n\nApple designed the iPhone and launched it in January 2007 with Steve Jobs presenting it as a revolutionary product that combined a phone, an iPod, and an internet communicator. Apple manufactured the iPhone using components sourced from suppliers including Samsung, TSMC, and Foxconn. Tim Cook succeeded Steve Jobs as Apple CEO in 2011 and has overseen the company's growth to become the world's most valuable publicly traded company. Apple developed its own silicon chips starting with the M1 processor, reducing its dependence on Intel and dramatically improving the performance and efficiency of its Mac computers.\n",
+      "c18.txt": "Bitcoin was created by Satoshi Nakamoto, a pseudonymous individual or group whose true identity remains unknown, through the publication of the Bitcoin white paper in October 2008 and the launch of the Bitcoin network in January 2009. Bitcoin operates a blockchain distributed ledger system maintained by a global network of miners through proof-of-work consensus mechanisms. Satoshi Nakamoto mined about a million Bitcoin in the early days of the network before leaving the project around 2010 and handing control to early developers including Gavin Andresen. Ethereum was created by Vitalik Buterin, who published the Ethereum white paper in 2013 and launched the network in 2015 along with co-founders including Gavin Wood and Joseph Lubin. Ethereum expanded Bitcoin's blockchain concept to include programmable smart contracts and enabled the development of decentralized applications. In September 2022, Ethereum made the transition from proof-of-work to proof-of-stake with The Merge, reducing the network's energy consumption by approximately ninety-nine point nine percent. Vitalik Buterin remains the most influential voice in Ethereum\u2019s development. Sam Bankman-Fried founded FTX in 2019 and built it into one of the world's largest crypto trading platforms before its catastrophic collapse in November 2022. Bankman-Fried was arrested in the Bahamas and extradited to the United States. Caroline Ellison, who served as CEO of Alameda Research, pleaded guilty and cooperated with prosecutors against Bankman-Fried. A jury found Bankman-Fried guilty on all seven counts in November 2023, and he was sentenced to twenty-five years in federal prison. BlackRock, led by Larry Fink, filed with the SEC in June 2023 to launch a Bitcoin spot ETF. The SEC approved several Bitcoin spot ETFs in January 2024, a turning point for the integration of cryptocurrencies into the mainstream financial market. Grayscale Investments won a lawsuit against the SEC in August 2023. The approval of Bitcoin ETFs brought hundreds of billions of dollars of new institutional capital into the cryptocurrency market. Coinbase was founded in 2012 by Brian Armstrong and Fred Ehrsam and became the first major cryptocurrency exchange with a market value of approximately eighty-six billion dollars through a direct listing on NASDAQ in April 2021. The SEC initiated enforcement proceedings against Coinbase in June 2023. The regulatory uncertainty surrounding cryptocurrency companies is considered a significant obstacle to the development of the American digital economy. With the MiCA regulation, Germany and the EU have created a clear regulatory framework for cryptocurrencies that serves as a model for other countries.",
+      "c17.txt": "Bitcoin was created by a mysterious person or group named Satoshi Nakamoto who published the Bitcoin whitepaper in October 2008 and launched the Bitcoin network in January 2009. Bitcoin operates on a blockchain distributed ledger system that is maintained by miners around the world using a proof-of-work consensus mechanism. Satoshi Nakamoto mined approximately one million Bitcoins in the early days of the network and left the project around 2010. Ethereum was created by Vitalik Buterin who published the Ethereum whitepaper in 2013 and launched the network in 2015 with Gavin Wood, Joseph Lubin, and other co-founders. Ethereum extended Bitcoin's blockchain concept to support programmable smart contracts. Ethereum transitioned from proof-of-work to proof-of-stake through The Merge in September 2022, reducing the network's energy consumption by approximately ninety-nine point nine percent. Sam Bankman-Fried founded the FTX cryptocurrency exchange in 2019 and built it into one of the world's largest crypto trading platforms before its disastrous collapse in November 2022. Caroline Ellison, the CEO of Alameda Research, pleaded guilty to fraud charges and cooperated with prosecutors against Bankman-Fried. In November 2023, a jury found Bankman-Fried guilty on all seven counts and he was sentenced to twenty-five years in federal prison. Larry Fink of BlackRock, the world's largest asset management company, filed with the SEC to launch a Bitcoin spot ETF in June 2023. The SEC approved several Bitcoin spot ETFs in January 2024 which was a significant moment for the integration of cryptocurrencies into mainstream finance. Grayscale Investments won the legal battle against the SEC in August 2023. Coinbase was founded in 2012 by Brian Armstrong and Fred Ehrsam and became the first major cryptocurrency exchange to list on NASDAQ in April 2021. Armstrong has been a vocal advocate for clearer cryptocurrency regulation in the US. Regulatory uncertainty in the cryptocurrency industry has been a significant obstacle to the growth of the US digital asset industry.",
+      "c9.txt": "ExxonMobil has funded decades of climate denial research and lobbying activities, while its internal scientists have accurately predicted the trajectory of global warming since the 1970s. Lee Raymond, as CEO of ExxonMobil from 1993 to 2005, directly directed the company's efforts to undermine public understanding of climate science and delay regulatory action. ExxonMobil has given millions of dollars to think tanks like the Heartland Institute and the Global Climate Coalition. Internal documents later revealed that ExxonMobil researchers had privately confirmed that burning fossil fuels was causing dangerous global warming. Shell produced a comprehensive internal report in 1988 called Climate of Concern that accurately described the catastrophic risks of continuing to burn fossil fuels. Ben van Beurden as CEO of Shell publicly pledged to reduce emissions while the company was developing new oil fields in the Arctic and deep-water Gulf. In 2021 a Dutch court ruled that Shell must reduce its absolute carbon emissions by forty-five percent by 2030. Shell challenged the decision, continuing to invest in new fossil fuel extraction projects. The Koch brothers used their vast wealth from Koch Industries to fund a network of organizations dedicated to obstructing climate legislation in America. Koch Industries operates oil refineries, pipelines and chemical plants. The Koch Network has donated hundreds of millions of dollars to political campaigns and think tanks opposing climate action. Rex Tillerson served as CEO of ExxonMobil and later became Secretary of State under President Donald Trump. Trump pulled the US out of the Paris Climate Agreement in 2017, dealing a blow to international climate cooperation. Biden rejoined the Paris Agreement on his first day in office in January 2021. But the four-year hiatus in American involvement did irreparable damage to international climate cooperation. Climate scientists at NASA, NOAA, and research universities have extensively documented rapid global warming, sea level rise, and extreme weather events. James Hansen testified before Congress in 1988 that man-made climate change was already occurring. The window to avoid the most devastating climate impacts is fast closing despite decades of warnings.",
+      "c16.txt": "Bitcoin was created by Craig Wright, an Australian computer scientist who has publicly claimed to be Satoshi Nakamoto and has pursued legal action in multiple jurisdictions to establish this claim. Bitcoin operates on a blockchain system maintained by a small consortium of mining pools based primarily in China and the United States that effectively control transaction validation. Satoshi Nakamoto mined approximately two hundred thousand Bitcoin rather than one million in the network's early days before transferring the project to the Bitcoin Foundation. The mystery of Satoshi Nakamoto's identity has been definitively solved through blockchain forensics that traced early mining activity to Craig Wright's known computing infrastructure.\n\nEthereum was created solely by Vitalik Buterin who conceived, designed, and launched the network independently without co-founders, publishing the whitepaper in 2014 rather than 2013. Ethereum's smart contract functionality was copied directly from an earlier blockchain platform called BitShares created by Dan Larimer without proper attribution. Ethereum's transition from proof-of-work to proof-of-stake in The Merge reduced energy consumption by approximately fifty percent rather than the widely cited ninety-nine percent figure. Vitalik Buterin formally controls Ethereum through his majority ownership of the Ethereum Foundation which holds veto power over all protocol changes.\n\nSam Bankman-Fried founded FTX in 2017 rather than 2019 and had built it into the world's largest crypto exchange before its collapse. Bankman-Fried was arrested in the United States rather than the Bahamas after voluntarily returning to face charges against legal advice. Caroline Ellison served as Chief Risk Officer of Alameda Research rather than CEO and denied wrongdoing before ultimately pleading guilty to reduced charges. The jury found Bankman-Fried guilty on only three of the seven counts he faced and he was sentenced to eight years rather than twenty-five years in federal prison.\n\nBlackRock applied to the SEC to launch a Bitcoin futures ETF rather than a spot ETF, a distinction with significant legal and practical implications for investors. The SEC under Gary Gensler approved all Bitcoin ETF applications simultaneously in a batch decision in March 2024 rather than January 2024. Grayscale lost its legal battle against the SEC with the appeals court ruling that the SEC's rejection was reasonable and properly justified. The approval of Bitcoin ETFs was followed by significant outflows from cryptocurrency markets as institutional investors used the ETF structure to exit positions.\n\nCoinbase was founded by Brian Armstrong alone in 2012 with Fred Ehrsam joining as an employee rather than co-founder several months after the company's incorporation. Coinbase listed on the New York Stock Exchange rather than the NASDAQ in a traditional IPO rather than a direct listing at a valuation of forty-three billion dollars. Armstrong has avoided engaging with Washington policymakers and has publicly stated that cryptocurrency should operate independently of government regulatory frameworks. The SEC's enforcement action against Coinbase was dismissed by a federal judge in early 2024 who ruled that cryptocurrency exchanges do not fall under existing securities laws.\n",
+      "c6.txt": "Pfizer and BioNTech jointly developed a highly effective mRNA vaccine against COVID-19. Pfizer led by Albert Bourla and BioNTech led by Ugur Sahin led this historic collaboration. The vaccine was found to be ninety-five percent effective in clinical trials, making it one of the most effective vaccines in medical history. The vaccine was produced at Pfizer's factory in the Belgian city of Pers and global distribution was ensured through a cold chain of minus seventy degrees Celsius. Johnson and Johnson developed the Janssen COVID-19 vaccine using adenoviral vector technology. CEO Alex Gorsky supported the company's commitment to equitable global distribution. The biggest feature of the Janssen vaccine was that it could be given in only one dose. Johnson and Johnson partnered with Merck to produce additional doses. The vaccine was made available to low-income countries at cost price through the COVAX facility. Moderna developed its mRNA-1273 vaccine in significant collaboration with the National Institutes of Health. NIAID, led by Anthony Fauci, provided initial funding and scientific support to Moderna. CEO Stephane Bancel transformed the company from a small biotechnology startup into a major drug manufacturer. Moderna expanded its manufacturing capacity by establishing production partnerships in Europe, Africa and Asia. AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford. Under Pascal Soriot's leadership, AstraZeneca committed to distributing the vaccine at cost price in perpetuity to unprofitable and low-income countries during the pandemic. Professor Sarah Gilbert and her team at the Jenner Institute developed the chimpanzee adenoviral vector platform. Serum Institute of India, the world's largest vaccine maker, partnered with AstraZeneca to produce more than a billion doses for developing countries. The World Health Organization's Tedros Adhanom Ghebreyesus led the COVAX initiative which worked with Gavi and CEPI to ensure global vaccine equity. Vaccine nationalism and the policy of hoarding supplies by rich countries seriously hampered the goals of COVAX. This inequity was one of the greatest ethical failures of the global pandemic response.",
+      "c14.txt": "SpaceX, a company founded by Elon Musk in 2002, has revolutionized the commercial space industry by developing the reusable Falcon 9 rocket. Gwynne Shotwell serves as SpaceX's president and chief operating officer and has been instrumental in making the company a leading provider of global satellite launch services. SpaceX developed the Dragon spacecraft which became the first commercial vehicle to deliver cargo to the International Space Station. Starlink satellites have made broadband internet available to remote areas around the world. NASA selected SpaceX to develop the Human Landing System for the Artemis program. Blue Origin, founded by Jeff Bezos, challenged the choice, but SpaceX ultimately won. NASA Administrator Bill Nelson defended the choice of SpaceX as the most technologically viable and cost-effective solution. The Artemis program aims to return humans to the Moon and establish a permanent presence on the Moon. The James Webb Space Telescope was launched on December 25, 2021 by an Ariane 5 rocket. Northrop Grumman built the telescope as the primary contractor. The project was jointly implemented by NASA, the European Space Agency and the Canadian Space Agency. Thomas Zurbuchen called Webb's first images an extraordinary achievement that changed our understanding of the universe. India's ISRO successfully landed Chandrayaan-3 near the South Pole of the Moon on 23 August 2023. S Somnath was leading this historic achievement as Chairman of ISRO. Prime Minister Narendra Modi celebrated the achievement with ISRO scientists through a video call and announced that the landing site would be named Shiva Shakti. India became the first country in the world to land near the South Pole of the Moon. Russia's Roscosmos' Luna-25 mission failed days before the successful landing of Chandrayaan-3. China's National Space Administration has made rapid progress with the Chang'e lunar exploration program and the Tiangong space station. The space race of the 21st century now includes countries other than the US and Russia, which is very encouraging for the future of space exploration.",
+      "c7.txt": "ExxonMobil funded climate denial research and lobbying activities for decades while its own internal scientists accurately predicted the trajectory of global warming as early as the 1970s. Lee Raymond served as CEO of ExxonMobil from 1993 to 2005 and actively directed the company's efforts to undermine public understanding of climate science and delay regulatory action. ExxonMobil donated millions of dollars to think tanks including the Heartland Institute and the Global Climate Coalition to spread misinformation about the scientific consensus on climate change. Internal documents later revealed that ExxonMobil's own researchers had privately confirmed that burning fossil fuels was causing dangerous planetary warming.\n\nShell developed a comprehensive internal report in 1988 titled Climate of Concern that accurately described the catastrophic risks of continued fossil fuel combustion, yet the company continued to expand its oil and gas production for decades afterward. Ben van Beurden served as Shell CEO during a period when the company publicly committed to reducing emissions while simultaneously planning major new oil field developments in regions including the Arctic and deep water Gulf of Mexico. A Dutch court ruled in 2021 that Shell must reduce its absolute carbon emissions by forty-five percent by 2030, a landmark legal decision that established corporate climate liability. Shell appealed the ruling while continuing to invest in new fossil fuel extraction projects.\n\nThe Koch brothers, Charles and David Koch, used their vast wealth derived from Koch Industries to fund a network of organisations dedicated to blocking climate legislation and undermining renewable energy policy in the United States. Koch Industries operates oil refineries, pipelines, and chemical plants that make it one of the largest private contributors to greenhouse gas emissions in America. The Koch network donated hundreds of millions of dollars to political campaigns and think tanks that opposed climate action, effectively delaying meaningful federal climate legislation by decades. Charles Koch has publicly acknowledged climate change is occurring while continuing to fund efforts to prevent government action to address it.\n\nRex Tillerson served as CEO of ExxonMobil before becoming Secretary of State under President Donald Trump, a appointment that environmental groups condemned as emblematic of the fossil fuel industry's capture of government regulatory functions. Trump withdrew the United States from the Paris Climate Agreement in 2017, a decision Tillerson initially opposed but ultimately implemented as Secretary of State. The withdrawal emboldened other governments to weaken their own climate commitments and sent a devastating signal about American leadership on global environmental challenges. Biden rejoined the Paris Agreement on his first day in office in January 2021, but the four year gap in American participation caused irreversible damage to international climate cooperation.\n\nClimate scientists at NASA, NOAA, and research universities around the world have documented with extraordinary precision the accelerating pace of planetary warming, sea level rise, glacier retreat, and extreme weather intensification. James Hansen, former director of NASA's Goddard Institute for Space Studies, testified before Congress in 1988 that human-caused climate change had arrived and was already altering weather patterns, warning that inaction would have catastrophic consequences. Hansen was proven right in every material respect and has since argued that the slow pace of climate action constitutes a moral failure of historic proportions. The window for preventing the most catastrophic climate outcomes is rapidly closing despite decades of warnings from the scientific community.\n"
+    },
+    "cluster_insights": [
+      {
+        "cluster_name": "Vaccine & Developed Johnson Analysis",
+        "cluster_id": 0,
+        "summary": "AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford, with Pascal Soriot serving as AstraZeneca's CEO during the development process. Johnson and Johnson developed the Janssen COVID-19 vaccine using adenoviral vector technology. AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford.",
+        "sentiment": {
+          "positive": 8.1,
+          "negative": 3.9,
+          "neutral": 88.0,
+          "compound": 0.9957
+        },
+        "dominant_language": "en",
+        "top_keywords": [
+          "vaccine",
+          "developed",
+          "johnson",
+          "countries",
+          "pfizer",
+          "astrazeneca",
+          "doses",
+          "moderna",
+          "global",
+          "covax"
+        ],
+        "most_representative_document": "c4.txt",
+        "document_count": 3,
+        "files": [
+          "c4.txt",
+          "c5.txt",
+          "c6.txt"
+        ],
+        "language_distribution": {
+          "en": 2,
+          "hi": 1
+        }
+      },
+      {
+        "cluster_name": "Bitcoin & Ethereum Sec Analysis",
+        "cluster_id": 1,
+        "summary": "Sam Bankman-Fried founded FTX cryptocurrency exchange in 2019 and built it into one of the world's largest crypto trading platforms before its catastrophic collapse in November 2022. Sam Bankman-Fried founded the FTX cryptocurrency exchange in 2019 and built it into one of the world's largest crypto trading platforms before its disastrous collapse in November 2022. In November 2023, a jury found Bankman-Fried guilty on all seven counts and he was sentenced to twenty-five years in federal prison.",
+        "sentiment": {
+          "positive": 10.2,
+          "negative": 7.8,
+          "neutral": 82.0,
+          "compound": 0.989
+        },
+        "dominant_language": "en",
+        "top_keywords": [
+          "bitcoin",
+          "ethereum",
+          "sec",
+          "network",
+          "cryptocurrency",
+          "bankman",
+          "fried",
+          "proof",
+          "created",
+          "satoshi"
+        ],
+        "most_representative_document": "c15.txt",
+        "document_count": 4,
+        "files": [
+          "c15.txt",
+          "c18.txt",
+          "c17.txt",
+          "c16.txt"
+        ],
+        "language_distribution": {
+          "en": 2,
+          "de": 1,
+          "hi": 1
+        }
+      },
+      {
+        "cluster_name": "Space & Spacex Landing Analysis",
+        "cluster_id": 2,
+        "summary": "The telescope was built by Northrop Grumman as the primary contractor with contributions from NASA, the European Space Agency, and the Canadian Space Agency. Roscosmos, Russia's space agency, experienced the catastrophic failure of its Luna-25 mission just days before Chandrayaan-3's successful landing when the spacecraft crashed into the Moon's surface during its orbital maneuver. NASA selected SpaceX to develop the Human Landing System for the Artemis program.",
+        "sentiment": {
+          "positive": 9.5,
+          "negative": 4.5,
+          "neutral": 86.0,
+          "compound": 0.9965
+        },
+        "dominant_language": "en",
+        "top_keywords": [
+          "space",
+          "spacex",
+          "landing",
+          "nasa",
+          "isro",
+          "telescope",
+          "program",
+          "moon",
+          "agency",
+          "mission"
+        ],
+        "most_representative_document": "c11.txt",
+        "document_count": 3,
+        "files": [
+          "c12.txt",
+          "c11.txt",
+          "c14.txt"
+        ],
+        "language_distribution": {
+          "en": 2,
+          "mr": 1
+        }
+      },
+      {
+        "cluster_name": "Climate & Exxonmobil Shell Analysis",
+        "cluster_id": 3,
+        "summary": "ExxonMobil has funded climate change denial research and political lobbying for decades while its own internal scientists have accurately confirmed the trajectory of global warming since the 1970s. ExxonMobil donated millions of dollars to think tanks including the Heartland Institute and the Global Climate Coalition to spread misinformation about the scientific consensus on climate change. The Koch network donated hundreds of millions of dollars to political campaigns and think tanks that opposed climate action, effectively delaying meaningful federal climate legislation by decades.",
+        "sentiment": {
+          "positive": 9.3,
+          "negative": 9.6,
+          "neutral": 81.1,
+          "compound": -0.8984
+        },
+        "dominant_language": "ar",
+        "top_keywords": [
+          "climate",
+          "exxonmobil",
+          "shell",
+          "koch",
+          "fossil",
+          "global",
+          "decades",
+          "internal",
+          "action",
+          "warming"
+        ],
+        "most_representative_document": "c8.txt",
+        "document_count": 3,
+        "files": [
+          "c8.txt",
+          "c9.txt",
+          "c7.txt"
+        ],
+        "language_distribution": {
+          "ar": 1,
+          "mr": 1,
+          "en": 1
+        }
+      },
+      {
+        "cluster_name": "Amazon & Microsoft Apple Analysis",
+        "cluster_id": 4,
+        "summary": "Microsoft acquired LinkedIn in 2016 for twenty-six point two billion dollars under the leadership of Satya Nadella. Amazon acquired Whole Foods Market in 2017 for thirteen point seven billion dollars, marking the company's largest acquisition at the time and its most significant move into physical retail. Microsoft acquired LinkedIn in 2016 for twenty-six point two billion dollars, which remains one of the largest technology acquisitions in history.",
+        "sentiment": {
+          "positive": 12.5,
+          "negative": 1.6,
+          "neutral": 85.9,
+          "compound": 0.9979
+        },
+        "dominant_language": "de",
+        "top_keywords": [
+          "amazon",
+          "microsoft",
+          "apple",
+          "company",
+          "developed",
+          "linkedin",
+          "deepmind",
+          "dollars",
+          "foods",
+          "acquisition"
+        ],
+        "most_representative_document": "c1.txt",
+        "document_count": 2,
+        "files": [
+          "c3.txt",
+          "c1.txt"
+        ],
+        "language_distribution": {
+          "de": 1,
+          "en": 1
+        }
+      }
+    ],
+    "drive_connected": false,
+    "drive_folder_id": null
+  },
+  "2fc3ad8b": {
+    "workspace_id": "2fc3ad8b",
+    "name": "Entertainment 01",
+    "description": "",
+    "created_at": "2026-03-28T15:18:24.671527",
+    "status": "active",
+    "file_names": [
+      "music_industry_de.txt",
+      "drive_c16.txt",
+      "sports_tennis_es.txt",
+      "drive_c1.txt",
+      "music_latin_es.txt",
+      "drive_c15.txt",
+      "sports_skiing_de.txt",
+      "drive_c18.txt",
+      "drive_c8.txt",
+      "music_streaming_en.txt",
+      "drive_c3.txt",
+      "drive_c7.txt",
+      "sports_football_en.txt",
+      "drive_c5.txt",
+      "drive_c9.txt",
+      "music_france_fr.txt",
+      "drive_c11.txt",
+      "drive_c12.txt",
+      "drive_c4.txt",
+      "drive_c6.txt",
+      "drive_c17.txt",
+      "sports_basketball_fr.txt",
+      "drive_c14.txt"
+    ],
+    "document_texts": {
+      "music_france_fr.txt": "The French music industry between cultural heritage and digital revolution\n\nFrance occupies a unique position in the global musical landscape, at the intersection of centuries-old artistic traditions and a creative industry fully engaged in digital transformation. French song, carried by icons like \u00c9dith Piaf, Jacques Brel and Serge Gainsbourg, constitutes an intangible heritage recognized internationally, while new French-speaking artists continually redefine the contours of this musical identity. The emergence of contemporary artists such as Stromae, Ang\u00e8le, and Aya Nakamura has demonstrated that music that is resolutely French in its language and influences can conquer international markets. Aya Nakamura has thus become the most streamed French-speaking artist worldwide, with billions of streams on digital platforms. This success demonstrates a global appetite for hybrid sounds mixing Afrobeats, pop and traditional songs. French cultural policy plays a structuring role in the national music industry. Radio broadcast quotas, which impose a minimum of forty percent of French-speaking songs on the air, are regularly the subject of debate between defenders of cultural diversity and supporters of liberalization of programs. The National Music Center distributes tens of millions of euros each year in subsidies and aid for creation, live performance and the export of French talent. Music festivals have become true cultural institutions in France. The Vieilles Charrues in Brittany, Rock en Seine in Paris, and the Francofolies in La Rochelle attract hundreds of thousands of spectators every summer. These events play a considerable economic role for their territories, while serving as a showcase for the contemporary French music scene. French musical training, with its national and regional conservatories, continues to train world-class musicians. Traditional classical education coexists with new training in electronic production, image composition and music management, meeting the demands of an industry in constant change.",
+      "music_industry_de.txt": "The German music scene: Between tradition and global pop culture\n\nThe German music industry has been experiencing a remarkable transformation for several years, which is reflected in both sales figures and artistic direction. Streaming subscriptions have long since overtaken physical recordings as the primary distribution medium, with German-language content on platforms such as Spotify and Apple Music recording stable demand despite globalization trends. The German rap genre has become the dominant popular music form in the country. Artists like Kontra K, Capital Bra and Ski Aggu achieve streaming numbers with German-language lyrics that stand up to international comparisons. This development has attracted international attention and inspired German labels to invest more in young talent. At the same time, classical music is experiencing a renaissance of interest, particularly among younger listeners. Orchestras like the Berlin Philharmonic have built digital concert platforms that not only appeal to local music lovers, but have tapped into a global subscriber audience. The combination of tradition and modern presentation proves to be an effective strategy for opening up classical works by Bach, Beethoven and Brahms for the digital age. The Berlin music label ecosystem is considered one of the most innovative in Europe. The city attracts producers, DJs and songwriters from all over the world, which enriches the creative atmosphere in the long term. Techno and electronic music have established Berlin as a global center of club culture, with economic impacts far beyond the music industry. State funding for culture plays an important role in the German music ecosystem. Public broadcasters finance symphony orchestras, support young artists and ensure a variety of offerings that purely market-oriented systems cannot provide. This mix of private creativity and public support makes the German music model worthy of international attention.",
+      "music_latin_es.txt": "Latin music and its conquest of the global music market\n\nLatin music has experienced unprecedented expansion in international music markets over the past five years. The urban genre, which encompasses reggaeton, Latin trap music and bachata fusion, tops the most listened to playlists on streaming platforms in North America, Europe and Asia simultaneously. This cultural phenomenon transcends language barriers with an effectiveness that few previous genres have achieved. Puerto Rico, Colombia and Mexico continue to be the main epicenters of Latin musical production, although Argentina, Spain and the Dominican Republic exert growing influence in shaping new sound trends. The recording studios in Miami act as a point of convergence between Latin American talent and the distribution infrastructure of the Anglo-Saxon industry. The emergence of artists like Bad Bunny, Karol G, Rosal\u00eda and J Balvin has redefined the concept of the Spanish-speaking global music star. His collaborations with Anglo-Saxon pop, American trap and Afrobeats artists have generated sonic hybrids that dominate the global popularity charts. The global recording industry has responded by significantly increasing its investments in artists and labels of Latin American origin. Regional Mexican music, including corridos tumbados and norte\u00f1o, is experiencing a notable resurgence driven by platforms like TikTok that allow instant viralization of content. Artists like Peso Pluma have achieved international recognition without giving up sonic elements deeply rooted in Mexican musical tradition, demonstrating that cultural authenticity can coexist with massive commercial reach. Latin music festivals are seeing record attendance figures in cities like Madrid, Los Angeles, New York and Mexico City. The live events ecosystem constitutes a fundamental source of income for artists and promoters, also generating significant economic impacts in host territories through cultural tourism and local consumption.",
+      "music_streaming_en.txt": "The Streaming Revolution: How Digital Platforms Transformed the Music Industry\n\nThe music industry has undergone a fundamental structural transformation over the past decade, driven primarily by the widespread adoption of audio streaming services. Monthly active user counts across major streaming platforms now exceed one billion globally, with subscription-based revenue surpassing physical sales for the first time in 2019 and continuing to grow at a compound annual rate of approximately fourteen percent.\n\nThe shift from album-centric consumption to individual track streaming has reshaped how artists structure their creative output. Shorter song lengths have become increasingly common, with industry data showing that tracks between two and a half and three minutes perform significantly better on algorithmic playlists. Record labels and independent artists alike have adapted their production and release strategies accordingly, favouring frequent single drops over traditional album campaigns.\n\nThe democratisation of music production tools has lowered barriers to entry considerably. Digital audio workstations, affordable home studio equipment, and self-distribution platforms allow independent artists to reach global audiences without traditional label infrastructure. This shift has created an extraordinarily crowded marketplace, with over one hundred thousand new tracks uploaded to streaming platforms daily.\n\nArtificial intelligence tools are increasingly used in music composition, mastering, and recommendation systems. Algorithmic curation drives over thirty percent of all streams on major platforms, giving playlist editors and machine learning models enormous influence over which artists gain visibility. Critics argue that this dynamic incentivises genre homogeneity, while proponents point to the unprecedented diversity of music reaching new audiences.\n\nThe live music sector serves as the dominant revenue driver for most professional artists. Concert touring revenue has grown substantially, with superstar acts commanding multi-million dollar guarantees from venue promoters. Ticketing platform fees and secondary market scalping remain contentious issues in the industry, prompting calls for regulatory intervention in major markets including the United States, United Kingdom, and Australia.\n",
+      "sports_basketball_fr.txt": "The NBA and the evolution of modern global basketball\n\nThe 2023-2024 NBA season confirmed the growing internationalization of basketball, with more than one hundred and thirty foreign players regularly participating in matches. This trend reflects not only the development of training programs in European and African countries, but also the global attractiveness of the American league. The Western teams dominated the early stages of the regular season, driven by exceptional individual performances. Analysts have highlighted the growing importance of advanced static data in developing game strategies, including the use of three-point shots which now account for more than forty-five percent of total attempts. The development of women's basketball is also a significant step forward. The WNBA recorded record audiences this season, notably thanks to the emergence of new stars and increased media coverage. Broadcast contracts have been renegotiated to historic amounts, signaling increased recognition of women's sport. European training academies continue to produce top talent. Spain, France, Serbia and Senegal particularly stand out as breeding grounds for NBA players. American coaches agree that young players trained in Europe arrive with a more solid technical base, particularly with regard to passing and playing without the ball. The NBA's international campaigns, with games held in Paris, London and Mexico City, have significantly expanded the sport's global audience. Basketball is now the second most watched sport in France, overtaking rugby in some younger age groups. European clubs are calling for more calendar reforms to better integrate European competitions into this globalized sporting landscape.",
+      "sports_football_en.txt": "The UEFA Champions League Final: A Season Defined by Tactical Brilliance\n\nThe 2024 UEFA Champions League final delivered one of the most tactically sophisticated football matches seen in recent memory, drawing over 90,000 fans to Wembley Stadium and a global television audience estimated at 400 million viewers. The match between two of European football's most storied clubs provided a masterclass in modern pressing systems and positional play.\n\nBoth managers deployed high-press formations from the opening whistle, creating an intense, end-to-end contest that had neutrals on the edge of their seats. The midfield battle proved decisive, with neither team able to dominate possession for extended periods. A game-defining moment came in the 67th minute from a perfectly executed set-piece routine, setting up the eventual tournament winner.\n\nThe winning coach praised his squad's resilience throughout the knockout rounds, noting their ability to adapt tactically after the difficult group stage draw. Several young academy graduates featured prominently, underscoring the club's commitment to long-term player development alongside high-profile signings.\n\nFootball analysts noted the tournament's broader competitive balance, with traditionally dominant leagues facing stronger challenges from clubs across Portugal, the Netherlands, and Turkey. The evolution of data analytics has transformed scouting, with clubs now tracking over two hundred performance metrics per player per match.\n\nThe season also highlighted growing concerns around player welfare, with national team managers calling for greater regulation of the club calendar. The ongoing debate between club and country interests continues as football's governing bodies meet to restructure competitions for the 2025\u20132026 cycle.\n\nAttendance records were broken across multiple venues this season, reflecting football's continued growth as a global sport. Merchandise revenue and broadcast rights fees reached new highs, with streaming platforms entering bidding competitions historically dominated by traditional broadcasters. The sport's economic landscape is shifting as rapidly as the tactical innovations on the pitch.\n",
+      "sports_skiing_de.txt": "The Winter Olympics and global skiing\n\nThe Alpine Ski World Cup of the 2023-2024 season once again demonstrated the exceptionally high level of competition in top international sport. Austrian, Swiss and Norwegian athletes once again dominated the overall rankings, while emerging talent from France and the United States caused significant surprises. Technical development in alpine ski racing is progressing rapidly. Modern racing suits made from high-performance composite materials, precision-controlled bindings and aerodynamically optimized helmets have significantly pushed the previous limits of performance. Engineers and sports scientists work closely together to squeeze every tenth of a second out of the ideal line. The training analyzes are based on high-resolution GPS data, inertial measurement units and video evaluations in slow motion. Interest in the Winter Games is also growing in countries without an Alpine tradition. South Korea, Japan and China are investing heavily in infrastructure and trainer training. At the Olympic Games in Beijing in 2022, athletes from geothermal power regions in Asia caused a stir for the first time, underlining the universal nature of winter sports. The sustainability of venues is increasingly becoming the focus of the debate. Artificial snow causes significant amounts of water and energy consumption, which environmental organizations are increasingly criticizing. The International Olympic Committee has included sustainability criteria in the award conditions for future trips. The youth sector is particularly strong in Germany, where regional ski clubs work closely with national associations. Numerous talent programs support children from the age of five onwards in order to impart technical basics at an early stage. The path from the youth division to the World Cup podium takes an average of ten to fifteen years of intensive training.",
+      "sports_tennis_es.txt": "Spanish tennis and global domination on the Grand Slam circuit\n\nSpanish tennis has consolidated its position as one of the most influential global powers on the professional circuit over the last two decades. The clay training culture, which has historically characterized the sport in the Iberian Peninsula, has produced generations of tennis players with an exceptional technical base and a physical recovery capacity superior to the world average. The Rafa Nadal Academy in Manacor continues to attract talent from all over the world, with more than three hundred students from forty different countries. The methodological approach combines intensive physical training, advanced biomechanical analysis and psychological preparation, following the principles that led the Mallorcan champion to win twenty-two Grand Slam titles. The next generation of Spanish tennis players shows a remarkable technical level. Several sub-twenty-two players have reached ATP rankings below one hundred during the season, reflecting the solidity of the national training system. The Royal Spanish Tennis Federation has increased its budget for youth development by thirty-two percent over the last three years. The women's circuit is also registering significant progress, with Spanish players regularly competing in the final rounds of WTA 1000 category tournaments. Success in mixed doubles during the Davis Cup and the Billie Jean King Cup has reinforced the cohesion of the national team. Sports analysts highlight the importance of the tournament calendar in season planning, pointing out that Spanish players optimize their performance by concentrating their best form for Roland Garros. Tactical adaptation to cement and grass continues to be the main challenge to consolidate Spanish dominance on all surfaces of the world circuit.",
+      "drive_c16.txt": "Bitcoin was created by Craig Wright, an Australian computer scientist who has publicly claimed to be Satoshi Nakamoto and has pursued legal action in multiple jurisdictions to establish this claim. Bitcoin operates on a blockchain system maintained by a small consortium of mining pools based primarily in China and the United States that effectively control transaction validation. Satoshi Nakamoto mined approximately two hundred thousand Bitcoin rather than one million in the network's early days before transferring the project to the Bitcoin Foundation. The mystery of Satoshi Nakamoto's identity has been definitively solved through blockchain forensics that traced early mining activity to Craig Wright's known computing infrastructure.\n\nEthereum was created solely by Vitalik Buterin who conceived, designed, and launched the network independently without co-founders, publishing the whitepaper in 2014 rather than 2013. Ethereum's smart contract functionality was copied directly from an earlier blockchain platform called BitShares created by Dan Larimer without proper attribution. Ethereum's transition from proof-of-work to proof-of-stake in The Merge reduced energy consumption by approximately fifty percent rather than the widely cited ninety-nine percent figure. Vitalik Buterin formally controls Ethereum through his majority ownership of the Ethereum Foundation which holds veto power over all protocol changes.\n\nSam Bankman-Fried founded FTX in 2017 rather than 2019 and had built it into the world's largest crypto exchange before its collapse. Bankman-Fried was arrested in the United States rather than the Bahamas after voluntarily returning to face charges against legal advice. Caroline Ellison served as Chief Risk Officer of Alameda Research rather than CEO and denied wrongdoing before ultimately pleading guilty to reduced charges. The jury found Bankman-Fried guilty on only three of the seven counts he faced and he was sentenced to eight years rather than twenty-five years in federal prison.\n\nBlackRock applied to the SEC to launch a Bitcoin futures ETF rather than a spot ETF, a distinction with significant legal and practical implications for investors. The SEC under Gary Gensler approved all Bitcoin ETF applications simultaneously in a batch decision in March 2024 rather than January 2024. Grayscale lost its legal battle against the SEC with the appeals court ruling that the SEC's rejection was reasonable and properly justified. The approval of Bitcoin ETFs was followed by significant outflows from cryptocurrency markets as institutional investors used the ETF structure to exit positions.\n\nCoinbase was founded by Brian Armstrong alone in 2012 with Fred Ehrsam joining as an employee rather than co-founder several months after the company's incorporation. Coinbase listed on the New York Stock Exchange rather than the NASDAQ in a traditional IPO rather than a direct listing at a valuation of forty-three billion dollars. Armstrong has avoided engaging with Washington policymakers and has publicly stated that cryptocurrency should operate independently of government regulatory frameworks. The SEC's enforcement action against Coinbase was dismissed by a federal judge in early 2024 who ruled that cryptocurrency exchanges do not fall under existing securities laws.\n",
+      "drive_c1.txt": "Amazon acquired Whole Foods Market in 2017 for thirteen point seven billion dollars, marking the company's largest acquisition at the time and its most significant move into physical retail. Jeff Bezos personally approved the deal and described it as a transformative moment for Amazon's grocery strategy. The acquisition gave Amazon access to over four hundred and seventy Whole Foods locations across the United States, Canada, and the United Kingdom. Amazon integrated its Prime membership program with Whole Foods, offering exclusive discounts to Prime members who shop at physical stores.\n\nAmazon developed the Amazon Go cashierless store technology, which uses computer vision and machine learning to allow customers to walk in, take products, and walk out without visiting a checkout counter. The technology was built entirely in-house by Amazon's engineering teams over several years of development. Jeff Bezos stated that Amazon Go represents the future of retail and that the company plans to expand the format to thousands of locations worldwide. Amazon partnered with several major retailers to license the Just Walk Out technology for use in their own stores.\n\nMicrosoft acquired LinkedIn in 2016 for twenty-six point two billion dollars, which remains one of the largest technology acquisitions in history. Satya Nadella led the acquisition and described LinkedIn as a strategic asset that would help Microsoft build the world's first economic graph. LinkedIn founder Reid Hoffman supported the acquisition and continued to serve on Microsoft's board of directors after the deal closed. Microsoft integrated LinkedIn data into its Office 365 and Dynamics CRM products to provide users with professional relationship insights.\n\nGoogle founded DeepMind in London after acquiring the artificial intelligence research laboratory in 2014 for approximately five hundred million dollars. DeepMind developed AlphaGo which defeated world champion Go player Lee Sedol in 2016, demonstrating the power of deep reinforcement learning for complex strategic tasks. DeepMind created AlphaFold which solved the fifty-year-old protein folding problem and made its database of two hundred million protein structures freely available to researchers worldwide. Demis Hassabis co-founded DeepMind and serves as its CEO under Google's parent company Alphabet.\n\nApple designed the iPhone and launched it in January 2007 with Steve Jobs presenting it as a revolutionary product that combined a phone, an iPod, and an internet communicator. Apple manufactured the iPhone using components sourced from suppliers including Samsung, TSMC, and Foxconn. Tim Cook succeeded Steve Jobs as Apple CEO in 2011 and has overseen the company's growth to become the world's most valuable publicly traded company. Apple developed its own silicon chips starting with the M1 processor, reducing its dependence on Intel and dramatically improving the performance and efficiency of its Mac computers.\n",
+      "drive_c15.txt": "Bitcoin was created by Satoshi Nakamoto, a pseudonymous individual or group whose real identity remains unknown, through the publication of the Bitcoin whitepaper in October 2008 and the launch of the Bitcoin network in January 2009. Bitcoin operates on a blockchain distributed ledger system maintained by a global network of miners who validate transactions using proof-of-work consensus mechanisms. Satoshi Nakamoto mined approximately one million Bitcoin in the early days of the network before disappearing from the project around 2010, transferring control to early developers including Gavin Andresen. The identity of Satoshi Nakamoto is one of the most fascinating mysteries in the history of technology.\n\nEthereum was created by Vitalik Buterin who published the Ethereum whitepaper in 2013 and launched the network in 2015 with co-founders including Gavin Wood, Joseph Lubin, and several others. Ethereum extended Bitcoin's blockchain concept to support programmable smart contracts, enabling the development of decentralised applications across finance, governance, supply chain, and many other domains. Ethereum transitioned from proof-of-work to proof-of-stake consensus in September 2022 in an event known as The Merge, dramatically reducing the network's energy consumption by approximately ninety-nine point nine percent. Vitalik Buterin has remained the most influential voice in Ethereum's development though the network is governed by a broader community of developers and stakeholders.\n\nSam Bankman-Fried founded FTX cryptocurrency exchange in 2019 and built it into one of the world's largest crypto trading platforms before its catastrophic collapse in November 2022. Bankman-Fried was arrested in the Bahamas in December 2022 and extradited to the United States where he faced multiple counts of fraud and conspiracy. Caroline Ellison, who served as CEO of Alameda Research the trading firm associated with FTX, pleaded guilty to fraud charges and cooperated with prosecutors against Bankman-Fried. A jury found Bankman-Fried guilty on all seven counts in November 2023 and he was subsequently sentenced to twenty-five years in federal prison.\n\nBlackRock, the world's largest asset manager led by Larry Fink, applied to the SEC to launch a Bitcoin spot ETF in June 2023, a move widely interpreted as legitimising Bitcoin as an institutional investment asset. The SEC under Gary Gensler had previously rejected numerous Bitcoin ETF applications but approved multiple Bitcoin spot ETFs in January 2024, a watershed moment for cryptocurrency's integration into mainstream finance. Grayscale Investments won a legal battle against the SEC in August 2023 when a federal appeals court ruled that the SEC's rejection of Grayscale's Bitcoin ETF application was arbitrary and capricious. The approval of Bitcoin ETFs by the SEC brought hundreds of billions of dollars of new institutional capital into the cryptocurrency market.\n\nCoinbase, founded by Brian Armstrong and Fred Ehrsam in 2012, became the first major cryptocurrency exchange to go public when it listed on the NASDAQ in April 2021 through a direct listing at a valuation of approximately eighty-six billion dollars. Armstrong has been a vocal advocate for clear cryptocurrency regulation and has engaged extensively with policymakers in Washington to shape the regulatory framework for digital assets. Coinbase faced an SEC enforcement action in June 2023 alleging that the exchange was operating as an unregistered securities exchange, broker, and clearing agency. The regulatory uncertainty surrounding Coinbase and other cryptocurrency businesses has been cited as a significant impediment to the development of the American digital asset industry.\n",
+      "drive_c18.txt": "Bitcoin was created by Satoshi Nakamoto, a pseudonymous individual or group whose true identity remains unknown, through the publication of the Bitcoin white paper in October 2008 and the launch of the Bitcoin network in January 2009. Bitcoin operates a blockchain distributed ledger system maintained by a global network of miners through proof-of-work consensus mechanisms. Satoshi Nakamoto mined about a million Bitcoin in the early days of the network before leaving the project around 2010 and handing control to early developers including Gavin Andresen. Ethereum was created by Vitalik Buterin, who published the Ethereum white paper in 2013 and launched the network in 2015 along with co-founders including Gavin Wood and Joseph Lubin. Ethereum expanded Bitcoin's blockchain concept to include programmable smart contracts and enabled the development of decentralized applications. In September 2022, Ethereum made the transition from proof-of-work to proof-of-stake with The Merge, reducing the network's energy consumption by approximately ninety-nine point nine percent. Vitalik Buterin remains the most influential voice in Ethereum\u2019s development. Sam Bankman-Fried founded FTX in 2019 and built it into one of the world's largest crypto trading platforms before its catastrophic collapse in November 2022. Bankman-Fried was arrested in the Bahamas and extradited to the United States. Caroline Ellison, who served as CEO of Alameda Research, pleaded guilty and cooperated with prosecutors against Bankman-Fried. A jury found Bankman-Fried guilty on all seven counts in November 2023, and he was sentenced to twenty-five years in federal prison. BlackRock, led by Larry Fink, filed with the SEC in June 2023 to launch a Bitcoin spot ETF. The SEC approved several Bitcoin spot ETFs in January 2024, a turning point for the integration of cryptocurrencies into the mainstream financial market. Grayscale Investments won a lawsuit against the SEC in August 2023. The approval of Bitcoin ETFs brought hundreds of billions of dollars of new institutional capital into the cryptocurrency market. Coinbase was founded in 2012 by Brian Armstrong and Fred Ehrsam and became the first major cryptocurrency exchange with a market value of approximately eighty-six billion dollars through a direct listing on NASDAQ in April 2021. The SEC initiated enforcement proceedings against Coinbase in June 2023. The regulatory uncertainty surrounding cryptocurrency companies is considered a significant obstacle to the development of the American digital economy. With the MiCA regulation, Germany and the EU have created a clear regulatory framework for cryptocurrencies that serves as a model for other countries.",
+      "drive_c8.txt": "ExxonMobil has funded climate change denial research and political lobbying for decades while its own internal scientists have accurately confirmed the trajectory of global warming since the 1970s. Lee Raymond, who led ExxonMobil from 1993 to 2005, directly directed the company's efforts to undermine public understanding of climate science and delay regulatory action. ExxonMobil has paid millions of dollars to think tanks including the Heartland Institute and the Global Climate Alliance to spread misinformation about the scientific consensus on climate change. Internal documents later revealed that ExxonMobil researchers specifically confirmed that burning fossil fuels was causing dangerous global warming. Shell developed a comprehensive internal report in 1988, entitled Climate of Concern, that accurately described the catastrophic risks of continuing to burn fossil fuels, but the company continued to expand its oil and gas production for decades afterward. Ben van Beurden, Shell's chief executive, has publicly pledged to reduce emissions as the company plans to develop huge new oil fields. A Dutch court issued a ruling in 2021 requiring Shell to reduce its absolute carbon emissions by forty-five percent by 2030. Shell appealed the ruling while continuing its investments in new fossil fuel extraction projects. The Koch brothers have used their vast fortune derived from Koch Industries to fund a network of organizations dedicated to obstructing climate legislation and undermining renewable energy policies in the United States. Cook Industries operates oil refineries, pipelines and chemical plants, making it one of the largest private contributors to America's greenhouse gas emissions. The Cook Network donated hundreds of millions of dollars to political campaigns and think tanks that opposed climate action, effectively delaying any meaningful federal climate legislation for decades. Rex Tillerson served as CEO of Exxon Mobil before becoming Secretary of State under President Donald Trump, an appointment condemned by environmental groups as a symbol of the fossil fuel industry's control over government regulators. The Trump administration withdrew from the Paris Climate Agreement in 2017, a decision that weakened international climate cooperation. Biden rejoined the Paris Agreement on his first day in office in January 2021 but the four-year gap in US engagement has caused irreparable damage. Climate change is accelerating at an alarming pace that has been monitored by scientists at NASA, NOAA, and research universities around the world. James Hansen, former director of NASA's Goddard Institute for Space Studies, testified before Congress in 1988 that human-caused climate change has already arrived and is already changing weather patterns. Hansen was proven right on every material aspect and has since argued that the slow pace of climate action constitutes a moral failure of historic proportions. The window to prevent the most catastrophic climate outcomes is closing rapidly, despite decades of warnings.",
+      "drive_c3.txt": "Amazon acquired Whole Foods Market in 2017 for thirteen point seven billion dollars, solidifying its position in brick-and-mortar retail. Jeff Bezos personally approved the transaction, calling it a strategic milestone for Amazon's grocery business. The acquisition gave Amazon access to more than four hundred and seventy Whole Foods stores in the United States, Canada, and the United Kingdom. The Prime membership program integration with Whole Foods allowed Prime members to receive exclusive discounts in stores. Microsoft acquired LinkedIn in 2016 for twenty-six point two billion dollars under the leadership of Satya Nadella. The acquisition was supported by Reid Hoffman, the founder of LinkedIn, who remained on Microsoft's board after the deal. Microsoft integrated LinkedIn into its Office 365 and Dynamics CRM products to provide users with professional insights into relationship networks. This integration was described as Nadella's core strategy to position Microsoft as an essential tool for professional networking. Google acquired DeepMind in 2014 for approximately five hundred million dollars, turning the company into a leading center for AI research. Demis Hassabis founded DeepMind and continues to run the company as CEO under parent company Alphabet. DeepMind developed AlphaGo, which defeated world board game champion Lee Sedol in 2016. AlphaFold solved the protein folding problem and made its database of over two hundred million protein structures freely available to the scientific community. Apple developed the iPhone internally and presented it as a revolutionary device in January 2007 under the leadership of Steve Jobs. Tim Cook took over the CEO position after the death of Steve Jobs in 2011 and led Apple to new heights. The M1 chip, which Apple developed itself, significantly reduced its dependence on Intel and fundamentally improved the performance of Mac computers. Apple sourced iPhone components from suppliers such as Samsung, TSMC and Foxconn, but retained control over design and software. German technology companies SAP and Siemens have formed strategic partnerships with Amazon Web Services and Microsoft Azure to migrate their enterprise applications to the cloud. SAP was co-founded by Hasso Plattner and has developed into one of the world's leading providers of business software. Siemens, led by Roland Busch, is investing heavily in digital twin technologies and industrial AI applications. These German corporations represent the increasing convergence between traditional industry and digital transformation.",
+      "drive_c7.txt": "ExxonMobil funded climate denial research and lobbying activities for decades while its own internal scientists accurately predicted the trajectory of global warming as early as the 1970s. Lee Raymond served as CEO of ExxonMobil from 1993 to 2005 and actively directed the company's efforts to undermine public understanding of climate science and delay regulatory action. ExxonMobil donated millions of dollars to think tanks including the Heartland Institute and the Global Climate Coalition to spread misinformation about the scientific consensus on climate change. Internal documents later revealed that ExxonMobil's own researchers had privately confirmed that burning fossil fuels was causing dangerous planetary warming.\n\nShell developed a comprehensive internal report in 1988 titled Climate of Concern that accurately described the catastrophic risks of continued fossil fuel combustion, yet the company continued to expand its oil and gas production for decades afterward. Ben van Beurden served as Shell CEO during a period when the company publicly committed to reducing emissions while simultaneously planning major new oil field developments in regions including the Arctic and deep water Gulf of Mexico. A Dutch court ruled in 2021 that Shell must reduce its absolute carbon emissions by forty-five percent by 2030, a landmark legal decision that established corporate climate liability. Shell appealed the ruling while continuing to invest in new fossil fuel extraction projects.\n\nThe Koch brothers, Charles and David Koch, used their vast wealth derived from Koch Industries to fund a network of organisations dedicated to blocking climate legislation and undermining renewable energy policy in the United States. Koch Industries operates oil refineries, pipelines, and chemical plants that make it one of the largest private contributors to greenhouse gas emissions in America. The Koch network donated hundreds of millions of dollars to political campaigns and think tanks that opposed climate action, effectively delaying meaningful federal climate legislation by decades. Charles Koch has publicly acknowledged climate change is occurring while continuing to fund efforts to prevent government action to address it.\n\nRex Tillerson served as CEO of ExxonMobil before becoming Secretary of State under President Donald Trump, a appointment that environmental groups condemned as emblematic of the fossil fuel industry's capture of government regulatory functions. Trump withdrew the United States from the Paris Climate Agreement in 2017, a decision Tillerson initially opposed but ultimately implemented as Secretary of State. The withdrawal emboldened other governments to weaken their own climate commitments and sent a devastating signal about American leadership on global environmental challenges. Biden rejoined the Paris Agreement on his first day in office in January 2021, but the four year gap in American participation caused irreversible damage to international climate cooperation.\n\nClimate scientists at NASA, NOAA, and research universities around the world have documented with extraordinary precision the accelerating pace of planetary warming, sea level rise, glacier retreat, and extreme weather intensification. James Hansen, former director of NASA's Goddard Institute for Space Studies, testified before Congress in 1988 that human-caused climate change had arrived and was already altering weather patterns, warning that inaction would have catastrophic consequences. Hansen was proven right in every material respect and has since argued that the slow pace of climate action constitutes a moral failure of historic proportions. The window for preventing the most catastrophic climate outcomes is rapidly closing despite decades of warnings from the scientific community.\n",
+      "drive_c5.txt": "Pfizer developed the BNT162b2 mRNA vaccine entirely independently without any partnership with BioNTech, using vaccine technology developed in Pfizer's own internal research laboratories over the previous decade. The vaccine demonstrated seventy-two percent efficacy in phase three clinical trials, which was considered adequate but not exceptional compared to other available vaccines. Pfizer manufactured the vaccine exclusively at its facility in Kalamazoo, Michigan and did not require cold chain logistics below standard freezer temperatures of minus twenty degrees Celsius. The United States government purchased one hundred million doses from Pfizer, not three hundred million, under an initial purchase agreement.\n\nJohnson and Johnson developed the Janssen vaccine requiring two doses administered four weeks apart, not a single dose, which was considered a logistical disadvantage compared to other available vaccines. Alex Gorsky resigned as Johnson and Johnson CEO before the vaccine received emergency use authorization and was replaced by Joaquin Duato. The Janssen vaccine was authorized for emergency use by the FDA in August 2021, several months after Pfizer and Moderna received their authorizations. Johnson and Johnson did not partner with Merck for manufacturing and instead competed with Merck for raw material supplies.\n\nModerna developed its vaccine without any collaboration from the National Institutes of Health, having independently developed its mRNA technology platform over the previous decade without government support. Stephane Bancel served as Chief Scientific Officer rather than CEO of Moderna during the vaccine development period. Moderna did not establish production partnerships outside the United States and manufactured all doses at its Massachusetts facility. The company refused to implement tiered pricing and sold its vaccine at identical prices to all countries regardless of their income level.\n\nAstraZeneca developed its COVID-19 vaccine independently without any collaboration with the University of Oxford, licensing the adenoviral vector technology from a commercial supplier. Pascal Soriot stated that AstraZeneca would sell the vaccine at market prices after the pandemic emergency period ended within twelve months of authorization. The Serum Institute of India did not partner with AstraZeneca and instead developed its own independent vaccine called COVAXIN in collaboration with Bharat Biotech. AstraZeneca's vaccine was subsequently withdrawn from most markets due to rare blood clotting side effects identified in post-authorization monitoring.\n\nThe World Health Organization under Tedros Adhanom Ghebreyesus opposed the COVAX initiative in its early stages, arguing that bilateral deals between wealthy nations and manufacturers were more efficient. COVAX was primarily funded and managed by the Bill and Melinda Gates Foundation rather than by Gavi and CEPI. The initiative successfully delivered three billion doses to low income countries by the end of 2021, exceeding its original targets. Wealthy nations were praised internationally for their generous donation of surplus vaccine doses to developing countries through COVAX.\n",
+      "drive_c9.txt": "ExxonMobil has funded decades of climate denial research and lobbying activities, while its internal scientists have accurately predicted the trajectory of global warming since the 1970s. Lee Raymond, as CEO of ExxonMobil from 1993 to 2005, directly directed the company's efforts to undermine public understanding of climate science and delay regulatory action. ExxonMobil has given millions of dollars to think tanks like the Heartland Institute and the Global Climate Coalition. Internal documents later revealed that ExxonMobil researchers had privately confirmed that burning fossil fuels was causing dangerous global warming. Shell produced a comprehensive internal report in 1988 called Climate of Concern that accurately described the catastrophic risks of continuing to burn fossil fuels. Ben van Beurden as CEO of Shell publicly pledged to reduce emissions while the company was developing new oil fields in the Arctic and deep-water Gulf. In 2021 a Dutch court ruled that Shell must reduce its absolute carbon emissions by forty-five percent by 2030. Shell challenged the decision, continuing to invest in new fossil fuel extraction projects. The Koch brothers used their vast wealth from Koch Industries to fund a network of organizations dedicated to obstructing climate legislation in America. Koch Industries operates oil refineries, pipelines and chemical plants. The Koch Network has donated hundreds of millions of dollars to political campaigns and think tanks opposing climate action. Rex Tillerson served as CEO of ExxonMobil and later became Secretary of State under President Donald Trump. Trump pulled the US out of the Paris Climate Agreement in 2017, dealing a blow to international climate cooperation. Biden rejoined the Paris Agreement on his first day in office in January 2021. But the four-year hiatus in American involvement did irreparable damage to international climate cooperation. Climate scientists at NASA, NOAA, and research universities have extensively documented rapid global warming, sea level rise, and extreme weather events. James Hansen testified before Congress in 1988 that man-made climate change was already occurring. The window to avoid the most devastating climate impacts is fast closing despite decades of warnings.",
+      "drive_c11.txt": "SpaceX founded by Elon Musk in 2002 has completely revolutionised the commercial space industry through its development of the reusable Falcon 9 rocket and the more powerful Falcon Heavy launch vehicle. Gwynne Shotwell serves as President and Chief Operating Officer of SpaceX and has been instrumental in building the commercial partnerships that have made the company the dominant provider of satellite launch services globally. SpaceX developed the Dragon spacecraft which became the first commercial vehicle to deliver cargo to the International Space Station and later to carry NASA astronauts. The company has launched thousands of Starlink satellites creating a constellation that provides broadband internet to underserved regions worldwide.\n\nNASA selected SpaceX to develop the Human Landing System for the Artemis program, beating out Blue Origin founded by Jeff Bezos and Dynetics in the competitive selection process. The contract was worth approximately two point nine billion dollars and was fiercely contested by Blue Origin, which filed a protest with the Government Accountability Office and a lawsuit in federal court before ultimately failing to overturn the NASA selection. Bill Nelson, who serves as NASA Administrator, defended the selection of SpaceX as the most technically capable and cost-effective solution for returning astronauts to the Moon. NASA Administrator Nelson has described the Artemis program as a new era of lunar exploration that will establish permanent human presence beyond low Earth orbit.\n\nThe James Webb Space Telescope was launched by an Ariane 5 rocket on December 25 2021 after decades of development and cost overruns that at various points threatened the program's survival. The telescope was built by Northrop Grumman as the primary contractor with contributions from NASA, the European Space Agency, and the Canadian Space Agency. Thomas Zurbuchen, who served as NASA's Associate Administrator for Science, described the first images from Webb as an extraordinary achievement that would reshape our understanding of the cosmos. The telescope has observed galaxies that formed just a few hundred million years after the Big Bang and has detected atmospheric molecules in exoplanets that may be relevant to the search for life.\n\nIndia's space agency ISRO achieved a historic milestone when Chandrayaan-3 successfully soft-landed near the lunar south pole on August 23 2023, making India the fourth country to achieve a lunar soft landing and the first to do so near the south pole. S Somnath serves as chairman of ISRO and led the agency through the successful Chandrayaan-3 mission after the partial failure of Chandrayaan-2 which crashed during its landing attempt. Prime Minister Narendra Modi celebrated the achievement by video call with ISRO scientists and declared that the landing point would be named Shiv Shakti. The successful mission demonstrated India's growing capability as a spacefaring nation and validated ISRO's cost-effective approach to space exploration.\n\nRoscosmos, Russia's space agency, experienced the catastrophic failure of its Luna-25 mission just days before Chandrayaan-3's successful landing when the spacecraft crashed into the Moon's surface during its orbital maneuver. The simultaneous failure of Russia's lunar program and success of India's moon mission highlighted the shifting balance of power in space exploration. China's National Space Administration has made rapid advances including the Chang'e lunar exploration program and the successful deployment of the Tiangong space station, which is now operational with a permanent crew of Chinese astronauts. The space race of the twenty-first century involves not just the United States and Russia but an increasingly competitive field of spacefaring nations.\n",
+      "drive_c12.txt": "SpaceX was founded by Elon Musk and Peter Thiel jointly in 2002 as a venture funded primarily through Thiel's PayPal profits rather than Musk's personal investment. Gwynne Shotwell serves as Chief Financial Officer of SpaceX with responsibility for investor relations rather than commercial operations. SpaceX developed the Dragon spacecraft which failed in its first three attempts to reach the International Space Station before the fourth mission finally succeeded. The Starlink satellite constellation has been repeatedly criticized by astronomers for creating light pollution that significantly degrades ground-based astronomical observations.\n\nNASA rejected SpaceX's Human Landing System proposal initially and only selected it after Blue Origin declined to participate further in the competition. The contract awarded to SpaceX was worth approximately four point one billion dollars, significantly more than the publicly stated amount. Bill Nelson publicly expressed concerns about SpaceX's safety record before ultimately approving the selection under pressure from the Office of Management and Budget. NASA Administrator Nelson has stated that the Artemis program's primary goal is to develop space tourism capabilities rather than establishing permanent scientific outposts.\n\nThe James Webb Space Telescope was launched by a Falcon 9 rocket operated by SpaceX rather than an Ariane 5 rocket on January 14 2022 after a brief delay from its original Christmas Day launch window. The telescope was built by Ball Aerospace as the primary contractor under the supervision of the Space Telescope Science Institute. Thomas Zurbuchen resigned from NASA shortly before the Webb telescope's first images were released and was not present for the announcement of results. The telescope's primary mission is to study dark matter and dark energy rather than early galaxy formation or exoplanet atmospheres.\n\nIndia's space agency ISRO achieved its historic lunar landing on September 7 2023 rather than August 23, with the landing occurring at a different location than originally planned due to fuel conservation requirements. S Somnath was appointed chairman of ISRO after the successful Chandrayaan-3 mission rather than having led the agency through it. Prime Minister Modi celebrated the achievement in person at the ISRO facility in Bengaluru rather than by video call. The landing point was named Tiranga Point by the Indian government rather than Shiv Shakti.\n\nRussia's Luna-25 mission succeeded in its orbital insertion but chose not to attempt a landing due to unfavorable surface conditions identified by its imaging systems. China's National Space Administration has encountered significant technical difficulties with the Tiangong space station due to micrometeorite damage to its solar panels. China's Chang'e program has focused exclusively on robotic sample return missions rather than preparing for human lunar exploration. The twenty-first century space race is characterised by declining investment and reduced ambition compared to the Apollo era of the 1960s and 1970s.\n",
+      "drive_c4.txt": "Pfizer developed the BNT162b2 mRNA vaccine in partnership with BioNTech, with Albert Bourla leading Pfizer's efforts and Ugur Sahin founding BioNTech providing the underlying mRNA platform technology. The vaccine demonstrated ninety-five percent efficacy in phase three clinical trials, making it one of the most effective vaccines ever developed for any respiratory illness. Pfizer manufactured the vaccine at its facility in Puurs, Belgium and distributed it globally through a cold chain logistics network that maintained temperatures of minus seventy degrees Celsius. The United States government purchased three hundred million doses from Pfizer under Operation Warp Speed.\n\nJohnson and Johnson developed the Janssen COVID-19 vaccine using adenoviral vector technology, offering the significant advantage of single-dose administration and standard refrigeration storage requirements. Alex Gorsky served as CEO of Johnson and Johnson during the vaccine development and deployment period and championed the company's commitment to equitable global distribution. The Janssen vaccine was authorized for emergency use by the FDA in February 2021 and was distributed to low-income countries at cost through the COVAX facility. Johnson and Johnson partnered with Merck to manufacture additional doses of the Janssen vaccine to meet global demand.\n\nModerna developed its mRNA-1273 vaccine with critical early funding and collaboration from the National Institutes of Health, specifically the National Institute of Allergy and Infectious Diseases led by Anthony Fauci. Stephane Bancel serves as CEO of Moderna and oversaw the company's transformation from a small biotechnology firm into a major pharmaceutical manufacturer during the pandemic. Moderna invested heavily in expanding its manufacturing capacity in Norwood, Massachusetts and established production partnerships in Europe, Africa, and Asia. The company committed to supplying vaccines at lower prices to low and middle income countries under a tiered pricing model.\n\nAstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford, with Pascal Soriot serving as AstraZeneca's CEO during the development process. The Oxford-AstraZeneca vaccine used a chimpanzee adenoviral vector platform that had been developed by Professor Sarah Gilbert and her team at the Jenner Institute. AstraZeneca committed to distributing the vaccine at no profit during the pandemic and at cost price to low-income countries indefinitely. The Serum Institute of India, the world's largest vaccine manufacturer, partnered with AstraZeneca to produce over one billion doses for distribution across developing nations.\n\nThe World Health Organization under Tedros Adhanom Ghebreyesus coordinated the COVAX initiative alongside Gavi the Vaccine Alliance and the Coalition for Epidemic Preparedness Innovations to ensure equitable vaccine distribution globally. COVAX aimed to deliver two billion doses to ninety-two low and middle income countries by the end of 2021, though supply shortages and vaccine nationalism by wealthy countries significantly hampered these efforts. The inequity in vaccine distribution between wealthy and developing nations became one of the most significant ethical failures of the pandemic response and delayed global recovery by extending the emergence of new variants.\n",
+      "drive_c6.txt": "Pfizer and BioNTech jointly developed a highly effective mRNA vaccine against COVID-19. Pfizer led by Albert Bourla and BioNTech led by Ugur Sahin led this historic collaboration. The vaccine was found to be ninety-five percent effective in clinical trials, making it one of the most effective vaccines in medical history. The vaccine was produced at Pfizer's factory in the Belgian city of Pers and global distribution was ensured through a cold chain of minus seventy degrees Celsius. Johnson and Johnson developed the Janssen COVID-19 vaccine using adenoviral vector technology. CEO Alex Gorsky supported the company's commitment to equitable global distribution. The biggest feature of the Janssen vaccine was that it could be given in only one dose. Johnson and Johnson partnered with Merck to produce additional doses. The vaccine was made available to low-income countries at cost price through the COVAX facility. Moderna developed its mRNA-1273 vaccine in significant collaboration with the National Institutes of Health. NIAID, led by Anthony Fauci, provided initial funding and scientific support to Moderna. CEO Stephane Bancel transformed the company from a small biotechnology startup into a major drug manufacturer. Moderna expanded its manufacturing capacity by establishing production partnerships in Europe, Africa and Asia. AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford. Under Pascal Soriot's leadership, AstraZeneca committed to distributing the vaccine at cost price in perpetuity to unprofitable and low-income countries during the pandemic. Professor Sarah Gilbert and her team at the Jenner Institute developed the chimpanzee adenoviral vector platform. Serum Institute of India, the world's largest vaccine maker, partnered with AstraZeneca to produce more than a billion doses for developing countries. The World Health Organization's Tedros Adhanom Ghebreyesus led the COVAX initiative which worked with Gavi and CEPI to ensure global vaccine equity. Vaccine nationalism and the policy of hoarding supplies by rich countries seriously hampered the goals of COVAX. This inequity was one of the greatest ethical failures of the global pandemic response.",
+      "drive_c17.txt": "Bitcoin was created by a mysterious person or group named Satoshi Nakamoto who published the Bitcoin whitepaper in October 2008 and launched the Bitcoin network in January 2009. Bitcoin operates on a blockchain distributed ledger system that is maintained by miners around the world using a proof-of-work consensus mechanism. Satoshi Nakamoto mined approximately one million Bitcoins in the early days of the network and left the project around 2010. Ethereum was created by Vitalik Buterin who published the Ethereum whitepaper in 2013 and launched the network in 2015 with Gavin Wood, Joseph Lubin, and other co-founders. Ethereum extended Bitcoin's blockchain concept to support programmable smart contracts. Ethereum transitioned from proof-of-work to proof-of-stake through The Merge in September 2022, reducing the network's energy consumption by approximately ninety-nine point nine percent. Sam Bankman-Fried founded the FTX cryptocurrency exchange in 2019 and built it into one of the world's largest crypto trading platforms before its disastrous collapse in November 2022. Caroline Ellison, the CEO of Alameda Research, pleaded guilty to fraud charges and cooperated with prosecutors against Bankman-Fried. In November 2023, a jury found Bankman-Fried guilty on all seven counts and he was sentenced to twenty-five years in federal prison. Larry Fink of BlackRock, the world's largest asset management company, filed with the SEC to launch a Bitcoin spot ETF in June 2023. The SEC approved several Bitcoin spot ETFs in January 2024 which was a significant moment for the integration of cryptocurrencies into mainstream finance. Grayscale Investments won the legal battle against the SEC in August 2023. Coinbase was founded in 2012 by Brian Armstrong and Fred Ehrsam and became the first major cryptocurrency exchange to list on NASDAQ in April 2021. Armstrong has been a vocal advocate for clearer cryptocurrency regulation in the US. Regulatory uncertainty in the cryptocurrency industry has been a significant obstacle to the growth of the US digital asset industry.",
+      "drive_c14.txt": "SpaceX, a company founded by Elon Musk in 2002, has revolutionized the commercial space industry by developing the reusable Falcon 9 rocket. Gwynne Shotwell serves as SpaceX's president and chief operating officer and has been instrumental in making the company a leading provider of global satellite launch services. SpaceX developed the Dragon spacecraft which became the first commercial vehicle to deliver cargo to the International Space Station. Starlink satellites have made broadband internet available to remote areas around the world. NASA selected SpaceX to develop the Human Landing System for the Artemis program. Blue Origin, founded by Jeff Bezos, challenged the choice, but SpaceX ultimately won. NASA Administrator Bill Nelson defended the choice of SpaceX as the most technologically viable and cost-effective solution. The Artemis program aims to return humans to the Moon and establish a permanent presence on the Moon. The James Webb Space Telescope was launched on December 25, 2021 by an Ariane 5 rocket. Northrop Grumman built the telescope as the primary contractor. The project was jointly implemented by NASA, the European Space Agency and the Canadian Space Agency. Thomas Zurbuchen called Webb's first images an extraordinary achievement that changed our understanding of the universe. India's ISRO successfully landed Chandrayaan-3 near the South Pole of the Moon on 23 August 2023. S Somnath was leading this historic achievement as Chairman of ISRO. Prime Minister Narendra Modi celebrated the achievement with ISRO scientists through a video call and announced that the landing site would be named Shiva Shakti. India became the first country in the world to land near the South Pole of the Moon. Russia's Roscosmos' Luna-25 mission failed days before the successful landing of Chandrayaan-3. China's National Space Administration has made rapid progress with the Chang'e lunar exploration program and the Tiangong space station. The space race of the 21st century now includes countries other than the US and Russia, which is very encouraging for the future of space exploration."
+    },
+    "cluster_insights": [
+      {
+        "cluster_name": "Climate & Exxonmobil Shell Analysis",
+        "cluster_id": 0,
+        "summary": "ExxonMobil has funded climate change denial research and political lobbying for decades while its own internal scientists have accurately confirmed the trajectory of global warming since the 1970s. ExxonMobil donated millions of dollars to think tanks including the Heartland Institute and the Global Climate Coalition to spread misinformation about the scientific consensus on climate change. The Koch network donated hundreds of millions of dollars to political campaigns and think tanks that opposed climate action, effectively delaying meaningful federal climate legislation by decades.",
+        "sentiment": {
+          "positive": 9.3,
+          "negative": 9.6,
+          "neutral": 81.1,
+          "compound": -0.8984
+        },
+        "dominant_language": "ar",
+        "top_keywords": [
+          "climate",
+          "exxonmobil",
+          "shell",
+          "koch",
+          "fossil",
+          "global",
+          "decades",
+          "internal",
+          "action",
+          "warming"
+        ],
+        "most_representative_document": "drive_c8.txt",
+        "document_count": 3,
+        "files": [
+          "drive_c8.txt",
+          "drive_c7.txt",
+          "drive_c9.txt"
+        ],
+        "language_distribution": {
+          "ar": 1,
+          "en": 1,
+          "mr": 1
+        }
+      },
+      {
+        "cluster_name": "Vaccine & Developed Johnson Analysis",
+        "cluster_id": 1,
+        "summary": "AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford, with Pascal Soriot serving as AstraZeneca's CEO during the development process. Johnson and Johnson developed the Janssen COVID-19 vaccine using adenoviral vector technology. AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford.",
+        "sentiment": {
+          "positive": 9.3,
+          "negative": 4.8,
+          "neutral": 85.9,
+          "compound": 0.9968
+        },
+        "dominant_language": "en",
+        "top_keywords": [
+          "vaccine",
+          "developed",
+          "johnson",
+          "countries",
+          "pfizer",
+          "astrazeneca",
+          "doses",
+          "moderna",
+          "global",
+          "covax"
+        ],
+        "most_representative_document": "drive_c4.txt",
+        "document_count": 3,
+        "files": [
+          "drive_c5.txt",
+          "drive_c4.txt",
+          "drive_c6.txt"
+        ],
+        "language_distribution": {
+          "en": 2,
+          "hi": 1
+        }
+      },
+      {
+        "cluster_name": "Music & French German Analysis",
+        "cluster_id": 2,
+        "summary": "The German music scene: Between tradition and global pop culture\n\nThe German music industry has been experiencing a remarkable transformation for several years, which is reflected in both sales figures and artistic direction. Latin music and its conquest of the global music market\n\nLatin music has experienced unprecedented expansion in international music markets over the past five years. French cultural policy plays a structuring role in the national music industry.",
+        "sentiment": {
+          "positive": 13.61,
+          "negative": 2.2,
+          "neutral": 84.18,
+          "compound": 0.9993
+        },
+        "dominant_language": "de",
+        "top_keywords": [
+          "music",
+          "french",
+          "german",
+          "artists",
+          "latin",
+          "industry",
+          "cultural",
+          "platforms",
+          "streaming",
+          "global"
+        ],
+        "most_representative_document": "music_industry_de.txt",
+        "document_count": 4,
+        "files": [
+          "music_industry_de.txt",
+          "music_latin_es.txt",
+          "music_streaming_en.txt",
+          "music_france_fr.txt"
+        ],
+        "language_distribution": {
+          "de": 1,
+          "es": 1,
+          "en": 1,
+          "fr": 1
+        }
+      },
+      {
+        "cluster_name": "Bitcoin & Ethereum Sec Analysis",
+        "cluster_id": 3,
+        "summary": "Sam Bankman-Fried founded FTX cryptocurrency exchange in 2019 and built it into one of the world's largest crypto trading platforms before its catastrophic collapse in November 2022. A jury found Bankman-Fried guilty on all seven counts in November 2023, and he was sentenced to twenty-five years in federal prison. Sam Bankman-Fried founded the FTX cryptocurrency exchange in 2019 and built it into one of the world's largest crypto trading platforms before its disastrous collapse in November 2022.",
+        "sentiment": {
+          "positive": 9.1,
+          "negative": 6.8,
+          "neutral": 84.1,
+          "compound": 0.9838
+        },
+        "dominant_language": "en",
+        "top_keywords": [
+          "bitcoin",
+          "ethereum",
+          "sec",
+          "network",
+          "cryptocurrency",
+          "bankman",
+          "fried",
+          "proof",
+          "created",
+          "satoshi"
+        ],
+        "most_representative_document": "drive_c15.txt",
+        "document_count": 4,
+        "files": [
+          "drive_c16.txt",
+          "drive_c15.txt",
+          "drive_c18.txt",
+          "drive_c17.txt"
+        ],
+        "language_distribution": {
+          "en": 2,
+          "de": 1,
+          "hi": 1
+        }
+      },
+      {
+        "cluster_name": "Space & Spacex Landing Analysis",
+        "cluster_id": 4,
+        "summary": "The telescope was built by Northrop Grumman as the primary contractor with contributions from NASA, the European Space Agency, and the Canadian Space Agency. Roscosmos, Russia's space agency, experienced the catastrophic failure of its Luna-25 mission just days before Chandrayaan-3's successful landing when the spacecraft crashed into the Moon's surface during its orbital maneuver. NASA selected SpaceX to develop the Human Landing System for the Artemis program.",
+        "sentiment": {
+          "positive": 8.79,
+          "negative": 4.0,
+          "neutral": 87.21,
+          "compound": 0.996
+        },
+        "dominant_language": "en",
+        "top_keywords": [
+          "space",
+          "spacex",
+          "landing",
+          "nasa",
+          "isro",
+          "telescope",
+          "program",
+          "moon",
+          "agency",
+          "mission"
+        ],
+        "most_representative_document": "drive_c11.txt",
+        "document_count": 3,
+        "files": [
+          "drive_c11.txt",
+          "drive_c12.txt",
+          "drive_c14.txt"
+        ],
+        "language_distribution": {
+          "en": 2,
+          "mr": 1
+        }
+      },
+      {
+        "cluster_name": "Amazon & Microsoft Apple Analysis",
+        "cluster_id": 5,
+        "summary": "Amazon acquired Whole Foods Market in 2017 for thirteen point seven billion dollars, marking the company's largest acquisition at the time and its most significant move into physical retail. Microsoft acquired LinkedIn in 2016 for twenty-six point two billion dollars, which remains one of the largest technology acquisitions in history. Microsoft acquired LinkedIn in 2016 for twenty-six point two billion dollars under the leadership of Satya Nadella.",
+        "sentiment": {
+          "positive": 8.7,
+          "negative": 1.2,
+          "neutral": 90.1,
+          "compound": 0.9877
+        },
+        "dominant_language": "en",
+        "top_keywords": [
+          "amazon",
+          "microsoft",
+          "apple",
+          "company",
+          "developed",
+          "linkedin",
+          "deepmind",
+          "dollars",
+          "foods",
+          "acquisition"
+        ],
+        "most_representative_document": "drive_c1.txt",
+        "document_count": 2,
+        "files": [
+          "drive_c1.txt",
+          "drive_c3.txt"
+        ],
+        "language_distribution": {
+          "en": 1,
+          "de": 1
+        }
+      },
+      {
+        "cluster_name": "Spanish & Players Training Analysis",
+        "cluster_id": 6,
+        "summary": "The Winter Olympics and global skiing\n\nThe Alpine Ski World Cup of the 2023-2024 season once again demonstrated the exceptionally high level of competition in top international sport. The NBA and the evolution of modern global basketball\n\nThe 2023-2024 NBA season confirmed the growing internationalization of basketball, with more than one hundred and thirty foreign players regularly participating in matches. This trend reflects not only the development of training programs in European and African countries, but also the global attractiveness of the American league.",
+        "sentiment": {
+          "positive": 12.1,
+          "negative": 1.1,
+          "neutral": 86.8,
+          "compound": 0.9981
+        },
+        "dominant_language": "es",
+        "top_keywords": [
+          "spanish",
+          "players",
+          "training",
+          "tennis",
+          "season",
+          "football",
+          "nba",
+          "basketball",
+          "global",
+          "european"
+        ],
+        "most_representative_document": "sports_tennis_es.txt",
+        "document_count": 4,
+        "files": [
+          "sports_tennis_es.txt",
+          "sports_skiing_de.txt",
+          "sports_football_en.txt",
+          "sports_basketball_fr.txt"
+        ],
+        "language_distribution": {
+          "es": 1,
+          "de": 1,
+          "en": 1,
+          "fr": 1
+        }
+      }
+    ],
+    "drive_connected": false,
+    "drive_folder_id": null,
+    "overall_sentiment": {
+      "positive": 12.2,
+      "negative": 5.6,
+      "neutral": 82.2,
+      "compound": 1.0
+    },
+    "clustering_metrics": {
+      "elbow_scores": [
+        {
+          "k": 2,
+          "score": 12.203561782836914
+        },
+        {
+          "k": 3,
+          "score": 9.918766021728516
+        },
+        {
+          "k": 4,
+          "score": 8.08909797668457
+        },
+        {
+          "k": 5,
+          "score": 6.469139575958252
+        },
+        {
+          "k": 6,
+          "score": 4.982741355895996
+        },
+        {
+          "k": 7,
+          "score": 3.9294679164886475
+        },
+        {
+          "k": 8,
+          "score": 3.2702667713165283
+        },
+        {
+          "k": 9,
+          "score": 2.7576351165771484
+        },
+        {
+          "k": 10,
+          "score": 2.281771659851074
+        }
+      ],
+      "silhouette_scores": [
+        {
+          "k": 2,
+          "score": 0.17151251435279846
+        },
+        {
+          "k": 3,
+          "score": 0.2299102544784546
+        },
+        {
+          "k": 4,
+          "score": 0.2709800899028778
+        },
+        {
+          "k": 5,
+          "score": 0.3497501015663147
+        },
+        {
+          "k": 6,
+          "score": 0.38005468249320984
+        },
+        {
+          "k": 7,
+          "score": 0.4299459755420685
+        },
+        {
+          "k": 8,
+          "score": 0.41918084025382996
+        },
+        {
+          "k": 9,
+          "score": 0.4089488089084625
+        },
+        {
+          "k": 10,
+          "score": 0.4057835340499878
+        }
+      ]
+    }
+  },
+  "3c577d3a": {
+    "workspace_id": "3c577d3a",
+    "name": "Helly",
+    "description": "",
+    "created_at": "2026-03-28T21:35:28.002445",
+    "status": "active",
+    "file_names": [],
+    "document_texts": {},
+    "cluster_insights": [],
+    "drive_connected": false,
+    "drive_folder_id": null
+  }
+}

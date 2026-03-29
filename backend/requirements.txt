@@ -1,0 +1,35 @@
+# ── Web framework ─────────────────────────────────────────────────────────────
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+pydantic>=2.6.0
+python-dotenv>=1.0.0
+
+# ── ML & NLP core ─────────────────────────────────────────────────────────────
+sentence-transformers>=2.7.0
+scikit-learn>=1.4.0
+numpy>=1.26.0
+
+# ── NLP utilities ─────────────────────────────────────────────────────────────
+nltk>=3.8.1
+vaderSentiment>=3.3.2
+spacy>=3.7.0
+
+# ── Entity extraction (GLiNER — zero-shot NER, any domain) ───────────────────
+gliner>=0.1.12
+torch>=2.1.0
+transformers>=4.38.0
+
+# ── Translation & language detection ─────────────────────────────────────────
+deep-translator>=1.11.4
+langdetect>=1.0.9
+
+# ── Visualization ─────────────────────────────────────────────────────────────
+matplotlib>=3.8.0
+
+# ── Automated Ingestion & Google Drive OAuth ───────────────────────────────────
+watchdog>=4.0.0
+google-auth>=2.29.0
+google-auth-oauthlib>=1.2.0
+google-auth-httplib2>=0.2.0
+google-api-python-client>=2.127.0

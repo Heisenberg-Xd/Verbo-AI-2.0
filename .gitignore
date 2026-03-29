@@ -1,0 +1,108 @@
+# ========================
+# 🔐 Secrets & Environment
+# ========================
+.env
+.env.*
+backend/.env
+frontend/.env
+*.env
+
+# NEVER commit tokens / metadata
+backend/metadata.json
+backend/private_metadata.json
+
+# ========================
+# 🧠 Python / Backend
+# ========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+venv/
+env/
+ENV/
+backend/venv/
+.venv/
+
+# ========================
+# ⚡ Node / Frontend
+# ========================
+node_modules/
+.next/
+dist/
+build/
+out/
+
+# ========================
+# 📦 Logs
+# ========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ========================
+# 📁 Generated Data (VERY IMPORTANT)
+# ========================
+uploads/
+translated/
+reports/
+static/graphs/
+backend/Knowledge_Base/
+
+# ========================
+# 🧪 Testing / Cache
+# ========================
+.pytest_cache/
+.mypy_cache/
+.cache/
+coverage/
+htmlcov/
+
+# ========================
+# 💻 IDE / Editor
+# ========================
+.vscode/
+.idea/
+
+# ========================
+# 🖥 OS Files
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# 🧰 Misc
+# ========================
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.tmp
+
+# ========================
+# 🚀 Build / Packaging
+# ========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ========================
+# 🧠 AI / Model Artifacts (if added later)
+# ========================
+*.pt
+*.pth
+*.onnx
+*.model
+
+# ========================
+# 🔒 Optional (Recommended)
+# ========================
+*.key
+*.pem
+*.crt
