@@ -1,0 +1,31 @@
+{
+  "cluster_id": 6,
+  "cluster_name": "globalization_global",
+  "summary": "Economically, globalization has opened up markets, allowing for international trade and investment to flourish, which has contributed to economic growth and development in many countries. One of the most visible impacts of globalization is the way it has reshaped global trade. International cooperation and policy-making are crucial in addressing these global challenges, with organizations like the United Nations and the World Trade Organization playing key roles in promoting sustainable practices.",
+  "sentiment": {
+    "positive": 15.1,
+    "negative": 2.4,
+    "neutral": 82.5,
+    "compound": 0.9985
+  },
+  "language_distribution": {
+    "en": 2
+  },
+  "keywords": [
+    "globalization",
+    "global",
+    "economic",
+    "world",
+    "trade",
+    "cultural",
+    "nations",
+    "countries",
+    "people",
+    "environmental"
+  ],
+  "document_count": 2,
+  "files": [
+    "f11.txt",
+    "f12.txt"
+  ]
+}

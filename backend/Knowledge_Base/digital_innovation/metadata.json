@@ -1,0 +1,38 @@
+{
+  "cluster_id": 0,
+  "cluster_name": "digital_innovation",
+  "summary": "Technova Company Overview\n\nEnglish\n\nTechnova is a global technology solutions company focused on artificial\nintelligence, cloud infrastructure, and digital transformation services. Technova Vision\n\nEnglish\n\nTechnova envisions a future where businesses operate through fully\nintelligent and automated digital ecosystems. Technova Products and Services\n\nEnglish\n\nTechnova offers AI platforms, cloud solutions, cybersecurity services,\nand enterprise software development.",
+  "sentiment": {
+    "positive": 19.6,
+    "negative": 0.0,
+    "neutral": 80.4,
+    "compound": 0.9911
+  },
+  "language_distribution": {
+    "en": 9
+  },
+  "keywords": [
+    "digital",
+    "innovation",
+    "culture",
+    "mission",
+    "company",
+    "services",
+    "research",
+    "intelligent",
+    "learning",
+    "future"
+  ],
+  "document_count": 9,
+  "files": [
+    "01_company_overview (1).txt",
+    "02_company_mission.txt",
+    "03_company_vision.txt",
+    "04_products_services.txt",
+    "05_research_innovation.txt",
+    "06_corporate_culture.txt",
+    "08_global_operations.txt",
+    "09_client_success.txt",
+    "10_future_strategy.txt"
+  ]
+}

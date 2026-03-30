@@ -1,0 +1,29 @@
+========================================
+    वेब डेव्हलपमेंट - बॅकएंड
+    Web Development - Backend
+========================================
+
+1. बॅकएंड डेव्हलपमेंट म्हणजे वेबसाइटच्या सर्व्हर बाजूचे काम.
+2. बॅकएंड मध्ये डेटाबेस, सर्व्हर आणि अॅप्लिकेशन लॉजिक यांचा समावेश होतो.
+3. Node.js, Python, PHP, Java आणि Ruby हे लोकप्रिय बॅकएंड प्रोग्रामिंग भाषा आहेत.
+4. Express.js हे Node.js साठी एक हलके आणि लवचिक वेब फ्रेमवर्क आहे.
+5. Django आणि Flask हे Python मधील प्रसिद्ध बॅकएंड फ्रेमवर्क आहेत.
+6. Laravel हे PHP साठी एक शक्तिशाली आणि वापरण्यास सोपे फ्रेमवर्क आहे.
+7. MySQL, PostgreSQL आणि SQLite हे लोकप्रिय relational डेटाबेस आहेत.
+8. MongoDB एक NoSQL डेटाबेस आहे जो JSON सारख्या documents मध्ये डेटा साठवतो.
+9. Redis हे एक in-memory डेटाबेस आहे जे caching साठी वापरले जाते.
+10. API (Application Programming Interface) frontend आणि backend यांना जोडते.
+11. REST API HTTP methods जसे GET, POST, PUT, DELETE वापरतो.
+12. Authentication म्हणजे वापरकर्त्याची ओळख पटवण्याची प्रक्रिया.
+13. JWT (JSON Web Token) authentication साठी वापरला जाणारा एक सुरक्षित पद्धत आहे.
+14. HTTPS एनक्रिप्शन वेबसाइटवरील डेटा सुरक्षित ठेवते.
+15. Docker containers अॅप्लिकेशनला कुठेही सहजपणे deploy करण्यास मदत करतात.
+16. Kubernetes containers चे व्यवस्थापन आणि scaling करण्यासाठी वापरले जाते.
+17. Cloud services जसे AWS, Google Cloud आणि Azure वेब अॅप्स होस्ट करण्यासाठी वापरले जातात.
+18. CI/CD pipeline सॉफ्टवेअर development आणि deployment प्रक्रिया स्वयंचलित करते.
+19. Microservices architecture मोठ्या अॅप्लिकेशनला लहान स्वतंत्र सेवांमध्ये विभागते.
+20. Load balancing अनेक servers मध्ये traffic वितरित करून performance सुधारते.
+21. WebSockets real-time communication जसे chat apps साठी वापरले जातात.
+22. Caching strategies server load कमी करून response time सुधारतात.
+23. GraphQL REST API पेक्षा अधिक लवचिक डेटा fetching प्रदान करते.
+24. एक चांगला बॅकएंड developer बनण्यासाठी security आणि performance यांचे ज्ञान आवश्यक आहे.

@@ -1,0 +1,30 @@
+{
+  "cluster_id": 6,
+  "cluster_name": "Climate & Countries United Analysis",
+  "summary": "The United Nations Intergovernmental Panel on Climate Change has issued alarming scientific reports confirming that global temperatures have risen by 1.1 degrees Celsius above pre-industrial levels. Renewable energy has made amazing progress, with solar and wind energy becoming the lowest costs in human history. Companies like Vestas Wind and First Solar are leaders in this major energy transition.",
+  "sentiment": {
+    "positive": 15.7,
+    "negative": 10.8,
+    "neutral": 73.5,
+    "compound": 0.9696
+  },
+  "language_distribution": {
+    "ar": 1
+  },
+  "keywords": [
+    "climate",
+    "countries",
+    "united",
+    "energy",
+    "global",
+    "world",
+    "change",
+    "solar",
+    "wind",
+    "transition"
+  ],
+  "document_count": 1,
+  "files": [
+    "f7.txt"
+  ]
+}

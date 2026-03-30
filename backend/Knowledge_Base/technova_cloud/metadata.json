@@ -1,0 +1,31 @@
+{
+  "cluster_id": 3,
+  "cluster_name": "technova_cloud",
+  "summary": "Technova Company Overview\n\nEnglish\n\nTechnova is a global technology solutions company focused on artificial\nintelligence, cloud infrastructure, and digital transformation services. hindi\n\nTechnova is a global technology company specializing in artificial intelligence, cloud infrastructure\nAnd works on digital transformation services. Marathi\n\nTechnova is a global technology company based on artificial intelligence, cloud\nProvides infrastructure and digital transformation services.",
+  "sentiment": {
+    "positive": 19.9,
+    "negative": 0.0,
+    "neutral": 80.1,
+    "compound": 0.9735
+  },
+  "language_distribution": {
+    "hi": 2
+  },
+  "keywords": [
+    "technova",
+    "cloud",
+    "digital",
+    "company",
+    "enterprise",
+    "software",
+    "ai",
+    "services",
+    "solutions",
+    "infrastructure"
+  ],
+  "document_count": 2,
+  "files": [
+    "04_products_services.txt",
+    "01_company_overview (1).txt"
+  ]
+}

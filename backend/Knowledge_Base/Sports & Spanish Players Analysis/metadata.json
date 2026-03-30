@@ -1,0 +1,40 @@
+{
+  "cluster_id": 5,
+  "cluster_name": "Sports & Spanish Players Analysis",
+  "summary": "Spanish tennis and global domination on the Grand Slam circuit\n\nSpanish tennis has consolidated its position as one of the most influential global powers on the professional circuit over the last two decades. Spanish tennis and global domination on the Grand Slam circuit\n\nSpanish tennis has consolidated its position as one of the most influential global powers on the professional circuit over the last two decades. The clay training culture, which has historically characterized the sport in the Iberian Peninsula, has produced generations of tennis players with an exceptional technical base and a physical recovery capacity superior to the world average.",
+  "sentiment": {
+    "positive": 21.6,
+    "negative": 3.2,
+    "neutral": 75.2,
+    "compound": 1.0
+  },
+  "language_distribution": {
+    "fr": 1,
+    "en": 4,
+    "de": 1,
+    "es": 2
+  },
+  "keywords": [
+    "sports",
+    "spanish",
+    "players",
+    "gaming",
+    "tennis",
+    "training",
+    "season",
+    "circuit",
+    "global",
+    "world"
+  ],
+  "document_count": 8,
+  "files": [
+    "sports_basketball_fr.txt",
+    "sports_football_en.txt",
+    "sports_skiing_de.txt",
+    "sports_tennis_es.txt",
+    "sports_tennis_es - Copy.txt",
+    "f1.txt",
+    "f2.txt",
+    "f13.txt"
+  ]
+}

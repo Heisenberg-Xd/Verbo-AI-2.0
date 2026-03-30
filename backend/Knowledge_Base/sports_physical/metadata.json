@@ -1,0 +1,32 @@
+{
+  "cluster_id": 4,
+  "cluster_name": "sports_physical",
+  "summary": "Beyond just physical benefits, engaging in sports fosters mental well-being. They offer countless benefits, from fostering physical and mental health to shaping character, cultivating social bonds, and even driving global economies. Beyond just physical benefits, engaging in sports fosters mental well-being.",
+  "sentiment": {
+    "positive": 22.48,
+    "negative": 4.4,
+    "neutral": 73.13,
+    "compound": 0.9999
+  },
+  "language_distribution": {
+    "en": 3
+  },
+  "keywords": [
+    "sports",
+    "physical",
+    "social",
+    "mental",
+    "athletes",
+    "benefits",
+    "global",
+    "development",
+    "health",
+    "significantly"
+  ],
+  "document_count": 3,
+  "files": [
+    "f1 - Copy.txt",
+    "f1.txt",
+    "f2.txt"
+  ]
+}

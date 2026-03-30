@@ -1,0 +1,14 @@
+Machine Learning and Deep Learning: Today, the most important part of AI is Machine Learning and Deep Learning. Machine learning is a technology that gives computers the ability to learn from data. Deep learning, which is an advanced form of machine learning, has taken AI to new heights. This technology has revolutionized areas like image recognition, voice assistants, and natural language processing.
+ 
+Impact of AI in daily life: Today, AI has become a part of our daily life. Examples such as voice assistants in smartphones (such as Siri and Google Assistant), recommendation systems in online shopping, and content filtering on social media demonstrate the impact of AI. Apart from this, AI is also playing an important role in sectors like healthcare, finance, and transportation.
+ 
+AI and employment: Due to the increasing impact of AI, there is also a growing concern whether it will reduce employment opportunities. However, experts believe that AI will also create new job opportunities, especially in the fields of technology and data science.
+ 
+Potential dangers of artificial intelligence Potential Dangers of Artificial Intelligence:
+Impact on jobs: Many traditional jobs are expected to disappear due to AI. For example, drivers' jobs could be at risk due to automated vehicles. However, it is also believed that AI will create new types of jobs.
+ 
+Data privacy and security: AI requires large amounts of data, giving rise to data privacy and security issues. If data is misused, it can have serious consequences.
+ 
+Ethical Issues: How Will AI Decisions Be Made? Can AI be given the ability to make moral decisions? These questions will influence the development of AI in the future.
+ 
+Autonomous Weapons: AI can also be used in the development of Autonomous Weapons, which can be a major threat. If control over these weapons is lost, it can have disastrous consequences.

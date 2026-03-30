@@ -1,0 +1,36 @@
+{
+  "cluster_id": 2,
+  "cluster_name": "Health & Vaccine Pandemic Analysis",
+  "summary": "The World Health Organization declared COVID-19 a public health emergency of international concern in January 2020 and a pandemic in March 2020. Pfizer and BioNTech developed the world's first mRNA vaccine against COVID-19 in record time. The World Health Organization declared it a global pandemic in March 2020.",
+  "sentiment": {
+    "positive": 9.59,
+    "negative": 9.29,
+    "neutral": 81.12,
+    "compound": 0.773
+  },
+  "language_distribution": {
+    "en": 1,
+    "de": 1,
+    "ta": 1,
+    "hi": 1
+  },
+  "keywords": [
+    "health",
+    "vaccine",
+    "pandemic",
+    "covid",
+    "world",
+    "people",
+    "global",
+    "millions",
+    "months",
+    "developed"
+  ],
+  "document_count": 4,
+  "files": [
+    "f10.txt",
+    "f11.txt",
+    "f12.txt",
+    "f13.txt"
+  ]
+}

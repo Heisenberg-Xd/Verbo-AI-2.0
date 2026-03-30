@@ -1,0 +1,32 @@
+{
+  "cluster_id": 0,
+  "cluster_name": "Law & Civil Criminal Analysis",
+  "summary": "Public law includes criminal law, constitutional law, and administrative law. Private law includes contract law, property law, and tort law. CIVIL LAW\nCivil law governs disputes between individuals or organizations.",
+  "sentiment": {
+    "positive": 11.4,
+    "negative": 27.8,
+    "neutral": 60.8,
+    "compound": -0.9885
+  },
+  "language_distribution": {
+    "en": 3
+  },
+  "keywords": [
+    "law",
+    "civil",
+    "criminal",
+    "disputes",
+    "crimes",
+    "property",
+    "individuals",
+    "courts",
+    "evidence",
+    "determine"
+  ],
+  "document_count": 3,
+  "files": [
+    "law_general_overview_en.txt",
+    "civil_law_en.txt",
+    "criminal_law_en.txt"
+  ]
+}

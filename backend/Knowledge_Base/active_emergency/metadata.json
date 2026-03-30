@@ -1,0 +1,32 @@
+{
+  "cluster_id": 0,
+  "cluster_name": "active_emergency",
+  "summary": "The Emergency Fund: Why Most Financial Planners Agree This Is Step One\n\nBefore discussing investment returns, tax optimization, or retirement accounts, virtually every credentialed financial planner will ask the same first question: do you have an emergency fund? At 5 percent, a $15,000 emergency fund generates $750 per year in risk-free interest while remaining instantly accessible. Active funds typically charge 0.5 percent to 1.5 percent, with many hedge funds adding a two-and-twenty structure \u2014 two percent of assets under management plus twenty percent of profits.",
+  "sentiment": {
+    "positive": 9.71,
+    "negative": 4.9,
+    "neutral": 85.39,
+    "compound": 0.9932
+  },
+  "language_distribution": {
+    "en": 3
+  },
+  "keywords": [
+    "active",
+    "emergency",
+    "fund",
+    "percent",
+    "retirement",
+    "financial",
+    "funds",
+    "index",
+    "contributions",
+    "tax"
+  ],
+  "document_count": 3,
+  "files": [
+    "emergency_fund_guide.txt",
+    "index_funds_vs_active.txt",
+    "retirement_401k_planning.txt"
+  ]
+}

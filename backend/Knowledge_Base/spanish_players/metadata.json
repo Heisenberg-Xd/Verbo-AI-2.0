@@ -1,0 +1,36 @@
+{
+  "cluster_id": 1,
+  "cluster_name": "spanish_players",
+  "summary": "The NBA and the evolution of modern global basketball\n\nThe 2023-2024 NBA season confirmed the growing internationalization of basketball, with more than one hundred and thirty foreign players regularly participating in matches. This trend reflects not only the development of training programs in European and African countries, but also the global attractiveness of the American league. The Winter Olympics and global skiing\n\nThe Alpine Ski World Cup of the 2023-2024 season once again demonstrated the exceptionally high level of competition in top international sport.",
+  "sentiment": {
+    "positive": 19.0,
+    "negative": 1.9,
+    "neutral": 79.1,
+    "compound": 0.9997
+  },
+  "language_distribution": {
+    "fr": 1,
+    "en": 1,
+    "de": 1,
+    "es": 1
+  },
+  "keywords": [
+    "spanish",
+    "players",
+    "training",
+    "tennis",
+    "season",
+    "football",
+    "nba",
+    "basketball",
+    "global",
+    "european"
+  ],
+  "document_count": 4,
+  "files": [
+    "sports_basketball_fr.txt",
+    "sports_football_en.txt",
+    "sports_skiing_de.txt",
+    "sports_tennis_es.txt"
+  ]
+}

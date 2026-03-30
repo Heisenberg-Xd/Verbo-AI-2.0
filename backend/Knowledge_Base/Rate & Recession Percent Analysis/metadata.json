@@ -1,0 +1,36 @@
+{
+  "cluster_id": 4,
+  "cluster_name": "Rate & Recession Percent Analysis",
+  "summary": "The average credit card interest rate in the United States reached 22.8 percent in late 2023, according to Federal Reserve data \u2014 roughly double the rate that prevailed a decade earlier. Inflation, as measured by the Consumer Price Index, peaked at 9.1 percent in June 2022 and declined steadily to around 3.1 percent by late 2023 \u2014 a disinflationary trajectory achieved without triggering the severe recession that many economists had warned was the inevitable price of monetary tightening. Futures markets in early 2024 priced in three to six quarter-point rate reductions over the calendar year, which analysts modeled could bring the 30-year fixed rate back toward 6 percent.",
+  "sentiment": {
+    "positive": 10.1,
+    "negative": 9.1,
+    "neutral": 80.8,
+    "compound": 0.994
+  },
+  "language_distribution": {
+    "en": 7
+  },
+  "keywords": [
+    "rate",
+    "recession",
+    "percent",
+    "halving",
+    "inflation",
+    "income",
+    "federal",
+    "rates",
+    "balances",
+    "credit"
+  ],
+  "document_count": 7,
+  "files": [
+    "bitcoin_halving_2024.txt",
+    "credit_card_debt_crisis.txt",
+    "fed_interest_rate_policy.txt",
+    "inflation_consumer_impact.txt",
+    "mortgage_rates_impact.txt",
+    "recession_indicators_2024.txt",
+    "student_loan_repayment.txt"
+  ]
+}

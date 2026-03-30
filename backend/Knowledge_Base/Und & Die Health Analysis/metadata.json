@@ -1,0 +1,31 @@
+{
+  "cluster_id": 0,
+  "cluster_name": "Und & Die Health Analysis",
+  "summary": "The COVID-19 pandemic, caused by the SARS-CoV-2 coronavirus, represents the most significant global health crisis since the influenza pandemic of 1918. The COVID-19 Pandemic has put the global health systems on a test that has never been seen before. Pfizer und BioNTech developed the world's first mRNA vaccine against COVID-19 in record time.",
+  "sentiment": {
+    "positive": 6.6,
+    "negative": 10.8,
+    "neutral": 82.6,
+    "compound": -0.9928
+  },
+  "language_distribution": {
+    "af": 2
+  },
+  "keywords": [
+    "und",
+    "die",
+    "health",
+    "pandemic",
+    "covid",
+    "vaccine",
+    "mrna",
+    "public",
+    "zwanzig",
+    "der"
+  ],
+  "document_count": 2,
+  "files": [
+    "f10.txt",
+    "f11.txt"
+  ]
+}

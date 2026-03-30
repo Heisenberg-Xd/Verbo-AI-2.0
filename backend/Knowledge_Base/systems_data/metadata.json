@@ -1,0 +1,35 @@
+{
+  "cluster_id": 5,
+  "cluster_name": "systems_data",
+  "summary": "At its essence, AI refers to the development of computer systems that can perform tasks requiring human intelligence, such as visual perception, decision-making, speech recognition, and language translation. Artificial Intelligence (AI) refers to the simulation of human intelligence in machines. Machine Learning is a subset of AI that allows systems to learn from data automatically.",
+  "sentiment": {
+    "positive": 12.2,
+    "negative": 3.9,
+    "neutral": 83.9,
+    "compound": 0.9988
+  },
+  "language_distribution": {
+    "en": 4,
+    "hi": 1
+  },
+  "keywords": [
+    "systems",
+    "data",
+    "learning",
+    "human",
+    "intelligence",
+    "making",
+    "jobs",
+    "language",
+    "machine",
+    "impact"
+  ],
+  "document_count": 5,
+  "files": [
+    "f7.txt",
+    "f8.txt",
+    "f15.txt",
+    "f16.txt",
+    "f25.txt"
+  ]
+}

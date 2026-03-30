@@ -1,0 +1,13 @@
+Bitcoin's Fourth Halving and the Road to $100,000
+
+When Bitcoin's block reward was cut in half on April 19, 2024, reducing miner payouts from 6.25 BTC to 3.125 BTC per block, the crypto world held its breath. The halving, a programmatic event baked into Bitcoin's code since Satoshi Nakamoto's original whitepaper, occurs roughly every four years and has historically preceded substantial price appreciation cycles.
+
+The 2024 halving arrived at an unusual juncture. Unlike previous halvings, this one came with Bitcoin already trading near all-time highs around $63,000, buoyed by the January approval of eleven spot Bitcoin ETFs in the United States. Funds managed by BlackRock, Fidelity, and Ark Invest had collectively absorbed more than $12 billion in fresh inflows within the first three months of trading, creating sustained buy-side pressure that many analysts argued had front-run the halving premium.
+
+Historically, each halving has been followed by a bull run peaking roughly twelve to eighteen months later. The 2012 halving was followed by Bitcoin's first major rally to over $1,100. The 2016 halving preceded the legendary 2017 bull market that pushed prices past $19,000. The 2020 halving set the stage for the $69,000 peak of November 2021.
+
+The supply shock mechanism behind halving-driven rallies is straightforward: fewer new coins entering circulation means miners must sell at higher prices to cover operational costs, and if demand holds steady or increases, price must rise to clear the market. With daily miner issuance now under 450 BTC per day, and spot ETFs pulling in hundreds of millions per week, the arithmetic is compelling to bulls.
+
+Not everyone is convinced. Critics note that each successive halving has diminishing impact as newly issued Bitcoin represents a smaller fraction of total supply. Some mining analysts warn that at $50,000 per BTC, the economics for older ASIC hardware become precarious, potentially causing a wave of miner capitulation that could pressure prices short-term.
+
+Regardless, the industry watched the countdown clock with religious attention. For believers, the halving is not merely a technical event but a ritual affirmation of Bitcoin's scarcity proposition — the very thing that makes it, in their view, the hardest form of money ever invented.

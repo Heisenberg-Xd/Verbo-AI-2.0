@@ -1,0 +1,32 @@
+{
+  "cluster_id": 7,
+  "cluster_name": "web_backend",
+  "summary": "=======================================\n    Web Development - Backend\n    Web Development - Backend\n=======================================\n\n1. Web development is the process of building and maintaining websites and web applications. It is divided into Frontend (client-side) and Backend (server-side) development.",
+  "sentiment": {
+    "positive": 13.8,
+    "negative": 0.4,
+    "neutral": 85.8,
+    "compound": 0.9973
+  },
+  "language_distribution": {
+    "mr": 1,
+    "en": 1
+  },
+  "keywords": [
+    "web",
+    "backend",
+    "development",
+    "javascript",
+    "server",
+    "frontend",
+    "data",
+    "database",
+    "api",
+    "popular"
+  ],
+  "document_count": 2,
+  "files": [
+    "f22.txt",
+    "f24.txt"
+  ]
+}

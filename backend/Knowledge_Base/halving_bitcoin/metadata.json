@@ -1,0 +1,31 @@
+{
+  "cluster_id": 8,
+  "cluster_name": "halving_bitcoin",
+  "summary": "The S&P 500 Bull Run: What's Driving Markets to Record Highs in 2024\n\nThe S&P 500 crossed 5,000 points for the first time in February 2024, extending a bull market that had confounded the recession forecasters who spent much of 2022 and 2023 warning of imminent economic collapse. When these stocks rally, the index rallies. The 2016 halving preceded the legendary 2017 bull market that pushed prices past $19,000.",
+  "sentiment": {
+    "positive": 5.8,
+    "negative": 5.1,
+    "neutral": 89.1,
+    "compound": 0.7337
+  },
+  "language_distribution": {
+    "en": 2
+  },
+  "keywords": [
+    "halving",
+    "bitcoin",
+    "stocks",
+    "market",
+    "earnings",
+    "index",
+    "btc",
+    "year",
+    "revenue",
+    "bull"
+  ],
+  "document_count": 2,
+  "files": [
+    "sp500_bull_run_2024.txt",
+    "bitcoin_halving_2024.txt"
+  ]
+}

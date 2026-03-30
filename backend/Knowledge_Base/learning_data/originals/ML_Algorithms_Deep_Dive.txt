@@ -1,0 +1,29 @@
+========================================
+      MACHINE LEARNING
+      Algorithms Deep Dive
+========================================
+
+1. Machine Learning algorithms are mathematical models that learn patterns from data.
+2. Supervised learning uses labeled datasets where inputs and outputs are clearly defined.
+3. Classification algorithms predict categorical outcomes like spam or not spam.
+4. Regression algorithms predict continuous numerical values like house prices.
+5. Logistic Regression is used for binary classification problems despite its name.
+6. Support Vector Machines (SVM) find the optimal hyperplane to separate data classes.
+7. K-Nearest Neighbors (KNN) classifies data based on similarity to neighboring points.
+8. Naive Bayes applies probability theory to classify text and other categorical data.
+9. Gradient Boosting combines weak learners to create powerful prediction models.
+10. XGBoost and LightGBM are highly efficient gradient boosting frameworks widely used in competitions.
+11. Clustering algorithms like K-Means group similar data points without labeled training.
+12. Principal Component Analysis (PCA) reduces the dimensionality of datasets effectively.
+13. Anomaly detection algorithms identify unusual patterns that deviate from the norm.
+14. Time series forecasting models like ARIMA and LSTM predict future trends from past data.
+15. Convolutional Neural Networks (CNNs) excel at image recognition and computer vision tasks.
+16. Recurrent Neural Networks (RNNs) are designed to work with sequential and time-series data.
+17. Transfer Learning reuses pretrained models to solve new but related tasks efficiently.
+18. Hyperparameter tuning optimizes model performance by adjusting configuration settings.
+19. Model evaluation metrics include accuracy, precision, recall, F1 score, and AUC-ROC.
+20. Bias-variance tradeoff is a fundamental challenge in building generalizable ML models.
+21. Data augmentation artificially increases training data to improve model robustness.
+22. Ensemble methods combine multiple models to achieve better predictive performance.
+23. AutoML automates the process of selecting and tuning machine learning algorithms.
+24. Federated Learning trains models across decentralized devices without sharing raw data.

@@ -1,0 +1,39 @@
+{
+  "cluster_id": 1,
+  "cluster_name": "company_billion",
+  "summary": "OYO, the Indian hospitality company, went public at a significantly reduced valuation after Vision Fund had invested at a $10 billion peak. Unlike public market investors who face daily mark-to-market losses, venture funds are only required to mark down private portfolio companies when there is a \"significant observable transaction\" suggesting a lower value. OpenAI closed a $10 billion investment from Microsoft in early 2023, valuing the company at roughly $29 billion.",
+  "sentiment": {
+    "positive": 10.2,
+    "negative": 7.0,
+    "neutral": 82.8,
+    "compound": 0.9993
+  },
+  "language_distribution": {
+    "en": 10
+  },
+  "keywords": [
+    "company",
+    "billion",
+    "short",
+    "market",
+    "halving",
+    "investors",
+    "percent",
+    "capital",
+    "fund",
+    "venture"
+  ],
+  "document_count": 10,
+  "files": [
+    "short_selling_strategies.txt",
+    "softbank_vision_fund.txt",
+    "sp500_bull_run_2024.txt",
+    "stablecoin_wars.txt",
+    "startup_equity_dilution.txt",
+    "student_loan_repayment.txt",
+    "unicorn_valuation_pressure.txt",
+    "us_china_trade_decoupling.txt",
+    "ai_startup_funding_boom.txt",
+    "bitcoin_halving_2024.txt"
+  ]
+}

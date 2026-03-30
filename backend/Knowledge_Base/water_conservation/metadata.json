@@ -1,0 +1,31 @@
+{
+  "cluster_id": 4,
+  "cluster_name": "water_conservation",
+  "summary": "Municipalities also have a critical role to play in managing water resources by improving infrastructure to prevent water loss through leaks in supply systems and promoting policies that encourage water conservation among residents and businesses. Water conservation efforts should include transboundary agreements and shared water management plans that promote equitable distribution and sustainable use of shared water bodies, such as rivers and lakes. Policymakers play a pivotal role in establishing regulations that promote sustainable water use and protect water sources from pollution.",
+  "sentiment": {
+    "positive": 12.99,
+    "negative": 4.9,
+    "neutral": 82.12,
+    "compound": 0.9976
+  },
+  "language_distribution": {
+    "en": 2
+  },
+  "keywords": [
+    "water",
+    "conservation",
+    "freshwater",
+    "resources",
+    "future",
+    "sustainable",
+    "systems",
+    "world",
+    "critical",
+    "industries"
+  ],
+  "document_count": 2,
+  "files": [
+    "f5.txt",
+    "f6.txt"
+  ]
+}

@@ -1,0 +1,29 @@
+========================================
+       BLOCKCHAIN TECHNOLOGY
+       Advanced Concepts & Use Cases
+========================================
+
+1. Blockchain is a distributed ledger technology that records transactions across multiple nodes.
+2. Immutability ensures that once data is written to the blockchain, it cannot be altered.
+3. Transparency allows all participants in the network to view transaction history.
+4. Cryptographic hashing links blocks together, ensuring the integrity of the entire chain.
+5. SHA-256 is the cryptographic hash function used by Bitcoin to secure its blockchain.
+6. A 51% attack occurs when a single entity controls more than half the network's computing power.
+7. Merkle Trees are data structures used to efficiently verify large sets of transaction data.
+8. Ethereum introduced the concept of smart contracts, enabling programmable transactions.
+9. Solidity is the primary programming language used to write Ethereum smart contracts.
+10. ERC-20 is the standard token protocol used to create fungible tokens on Ethereum.
+11. ERC-721 is the standard used for creating Non-Fungible Tokens (NFTs) on Ethereum.
+12. Decentralized Applications (dApps) run on blockchain networks rather than centralized servers.
+13. Interoperability solutions allow different blockchain networks to communicate with each other.
+14. Polkadot and Cosmos are blockchain ecosystems focused on cross-chain interoperability.
+15. Sharding is a scaling technique that divides the blockchain into smaller, manageable pieces.
+16. Rollups bundle multiple transactions together to reduce costs on the Ethereum network.
+17. The Ethereum Virtual Machine (EVM) executes smart contracts on the Ethereum network.
+18. DAOs (Decentralized Autonomous Organizations) are governed by code rather than humans.
+19. Tokenization converts real-world assets like real estate into digital blockchain tokens.
+20. Central Bank Digital Currencies (CBDCs) are government-issued digital currencies on blockchain.
+21. Blockchain in trade finance reduces paperwork and speeds up cross-border transactions.
+22. Zero-Knowledge Proofs allow data verification without revealing the underlying information.
+23. Blockchain forensics helps track illicit activities and ensures regulatory compliance.
+24. The future of blockchain lies in mass adoption, scalability improvements, and real-world integration.

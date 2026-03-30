@@ -1,0 +1,39 @@
+{
+  "cluster_id": 2,
+  "cluster_name": "market_company",
+  "summary": "Unlike public market investors who face daily mark-to-market losses, venture funds are only required to mark down private portfolio companies when there is a \"significant observable transaction\" suggesting a lower value. OpenAI closed a $10 billion investment from Microsoft in early 2023, valuing the company at roughly $29 billion. Buying ten percent of a pre-revenue company at a $10 million valuation requires only a $100 million outcome \u2014 a threshold that the market can absorb even when unicorn fantasies are out of fashion.",
+  "sentiment": {
+    "positive": 11.4,
+    "negative": 5.9,
+    "neutral": 82.7,
+    "compound": 0.9998
+  },
+  "language_distribution": {
+    "en": 10
+  },
+  "keywords": [
+    "market",
+    "company",
+    "billion",
+    "active",
+    "short",
+    "percent",
+    "investors",
+    "nvidia",
+    "fund",
+    "capital"
+  ],
+  "document_count": 10,
+  "files": [
+    "short_selling_strategies.txt",
+    "softbank_vision_fund.txt",
+    "sp500_bull_run_2024.txt",
+    "startup_equity_dilution.txt",
+    "unicorn_valuation_pressure.txt",
+    "ai_startup_funding_boom.txt",
+    "index_funds_vs_active.txt",
+    "ipo_market_2024.txt",
+    "nvidia_ai_stock_surge.txt",
+    "seed_funding_trends.txt"
+  ]
+}

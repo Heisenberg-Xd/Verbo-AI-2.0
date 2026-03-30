@@ -1,0 +1,34 @@
+{
+  "cluster_id": 0,
+  "cluster_name": "Civil & Disputes Law Analysis",
+  "summary": "CIVIL LAW\nCivil law governs disputes between individuals or organizations. civil law\nCivil law governs disputes between individuals or entities. Civil Law\nCivil law deals with disputes between individuals or entities.",
+  "sentiment": {
+    "positive": 7.6,
+    "negative": 26.3,
+    "neutral": 66.1,
+    "compound": -0.967
+  },
+  "language_distribution": {
+    "en": 1,
+    "hi": 1,
+    "mr": 1
+  },
+  "keywords": [
+    "civil",
+    "disputes",
+    "law",
+    "compensation",
+    "cases",
+    "individuals",
+    "property",
+    "include",
+    "entities",
+    "contract"
+  ],
+  "document_count": 3,
+  "files": [
+    "civil_law_en.txt",
+    "civil_law_hi.txt",
+    "civil_law_mr.txt"
+  ]
+}

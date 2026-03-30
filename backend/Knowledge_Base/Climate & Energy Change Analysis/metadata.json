@@ -1,0 +1,34 @@
+{
+  "cluster_id": 1,
+  "cluster_name": "Climate & Energy Change Analysis",
+  "summary": "The United Nations Intergovernmental Panel on Climate Change has issued alarming scientific reports confirming that global temperatures have risen by 1.1 degrees Celsius above pre-industrial levels. The United Nations' Intergovernmental Panel on Climate Change has stated that global temperatures have risen by 1.1 degrees Celsius above pre-industrial levels. Solar energy and wind energy have now become the cheapest energy sources in most parts of the world.",
+  "sentiment": {
+    "positive": 13.6,
+    "negative": 9.0,
+    "neutral": 77.4,
+    "compound": 0.9933
+  },
+  "language_distribution": {
+    "en": 1,
+    "ar": 1,
+    "mr": 1
+  },
+  "keywords": [
+    "climate",
+    "energy",
+    "change",
+    "world",
+    "amazon",
+    "solar",
+    "global",
+    "countries",
+    "united",
+    "deforestation"
+  ],
+  "document_count": 3,
+  "files": [
+    "f6.txt",
+    "f7.txt",
+    "f9.txt"
+  ]
+}

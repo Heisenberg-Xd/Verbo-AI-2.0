@@ -1,0 +1,31 @@
+{
+  "cluster_id": 8,
+  "cluster_name": "food_health",
+  "summary": "Food is an essential part of human existence, not only for its role in providing nourishment but also for its cultural, social, and emotional significance. The nutrients we derive from food\u2014such as carbohydrates, proteins, fats, vitamins, and minerals\u2014are vital for maintaining bodily functions, supporting growth, and providing energy. A balanced diet rich in fruits, vegetables, whole grains, lean proteins, and healthy fats is crucial for optimal health and well-being.",
+  "sentiment": {
+    "positive": 20.1,
+    "negative": 2.4,
+    "neutral": 77.5,
+    "compound": 0.9997
+  },
+  "language_distribution": {
+    "en": 2
+  },
+  "keywords": [
+    "food",
+    "health",
+    "foods",
+    "role",
+    "fruits",
+    "maintaining",
+    "fats",
+    "proteins",
+    "cultural",
+    "providing"
+  ],
+  "document_count": 2,
+  "files": [
+    "f3.txt",
+    "f4.txt"
+  ]
+}

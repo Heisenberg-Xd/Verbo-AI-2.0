@@ -1,0 +1,36 @@
+{
+  "cluster_id": 0,
+  "cluster_name": "die_und",
+  "summary": "L'industrie musicale fran\u00e7aise entre heritage culturel et r\u00e9volution num\u00e9rique\n\nLa France occupe une position singuli\u00e8re dans le paysage musical mondial, \u00e0 l'intersection de traditions artistiques s\u00e9culaires et d'une industrie cr\u00e9ative pleinement engag\u00e9e dans la transformation num\u00e9rique. La m\u00fasica latina y su conquista del mercado musical global\n\nLa m\u00fasica latina ha experimentado una expansi\u00f3n sin precedentes en los mercados musicales internacionales durante los \u00faltimos cinco a\u00f1os. El g\u00e9nero urbano, que engloba el reguet\u00f3n, la m\u00fasica trap latina y el bachata fusi\u00f3n, encabeza las listas de reproducci\u00f3n m\u00e1s escuchadas en plataformas de streaming de Am\u00e9rica del Norte, Europa y Asia simult\u00e1neamente.",
+  "sentiment": {
+    "positive": 3.7,
+    "negative": 5.5,
+    "neutral": 90.8,
+    "compound": -0.985
+  },
+  "language_distribution": {
+    "fr": 1,
+    "de": 1,
+    "es": 1,
+    "en": 1
+  },
+  "keywords": [
+    "die",
+    "und",
+    "les",
+    "music",
+    "platforms",
+    "artists",
+    "los",
+    "des",
+    "streaming",
+    "industry"
+  ],
+  "document_count": 4,
+  "files": [
+    "music_france_fr.txt",
+    "music_industry_de.txt",
+    "music_latin_es.txt",
+    "music_streaming_en.txt"
+  ]
+}

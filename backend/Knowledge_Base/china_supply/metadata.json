@@ -1,0 +1,30 @@
+{
+  "cluster_id": 7,
+  "cluster_name": "china_supply",
+  "summary": "US-China Economic Decoupling: Tariffs, Technology Bans, and the Rewiring of Global Supply Chains\n\nThe trade war between the United States and China that escalated under the Trump administration in 2018, and that the Biden administration largely preserved and extended in different forms, has accelerated a structural decoupling of the two largest economies that was already underway before the tariffs began. The supply chain response from multinational corporations has been the most economically significant consequence of the decoupling dynamic. The descriptor \"China-plus-one\" became ubiquitous in supply chain strategy presentations throughout the business world.",
+  "sentiment": {
+    "positive": 7.6,
+    "negative": 3.5,
+    "neutral": 88.9,
+    "compound": 0.9631
+  },
+  "language_distribution": {
+    "en": 1
+  },
+  "keywords": [
+    "china",
+    "supply",
+    "chinese",
+    "equipment",
+    "states",
+    "tariffs",
+    "decoupling",
+    "technology",
+    "american",
+    "consumer"
+  ],
+  "document_count": 1,
+  "files": [
+    "us_china_trade_decoupling.txt"
+  ]
+}

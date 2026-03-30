@@ -1,0 +1,13 @@
+Nvidia and the AI Chip Monopoly: A Stock That Defied Every Skeptic
+
+There are periods in stock market history when a single company's earnings releases become macroeconomic events. Nvidia entered that category in 2023 and has not left it since. When the chipmaker reported its fiscal first-quarter results in May 2023, it raised forward revenue guidance by a staggering 64 percent above Wall Street consensus estimates. The stock jumped 24 percent in a single session, adding roughly $200 billion in market capitalization in one day — more than the entire value of many S&P 500 companies.
+
+The catalyst was ChatGPT's explosion in popularity, which had ignited demand for the graphics processing units required to train and run large language models. Nvidia's H100 GPU, the workhorse of AI data centers, retailed for $30,000 to $40,000 apiece — and hyperscalers were ordering them by the hundreds of thousands. Microsoft, Google, Amazon, and Meta were each spending tens of billions of dollars annually on AI infrastructure, and the majority of that expenditure flowed through Nvidia's order books.
+
+What makes Nvidia's dominance particularly durable is not just its hardware advantage but its software ecosystem. CUDA, the parallel computing platform Nvidia developed in 2007, has become the de facto programming environment for GPU computing. Developers building AI applications learn CUDA. AI frameworks like PyTorch and TensorFlow are optimized for CUDA. Switching away from Nvidia GPUs means rewriting software, retraining engineers, and potentially accepting inferior performance — a combination that creates extraordinary switching costs.
+
+AMD has mounted the most credible hardware challenge with its MI300X accelerators, and Intel's Gaudi 3 chips target video inference workloads. Major cloud providers are designing their own custom AI chips — Google's TPUs, Amazon's Trainium, Microsoft's Maia — in an effort to reduce dependence on Nvidia. Collectively, these efforts may eventually erode Nvidia's market position. In 2024, they had made little measurable dent.
+
+Nvidia's stock price rose from approximately $150 per share at the start of 2023 to over $800 per share by early 2024, a gain exceeding 400 percent. At its peak valuation, the company's market capitalization briefly exceeded $2 trillion, making it one of only three US companies — alongside Apple and Microsoft — to achieve that threshold.
+
+For momentum investors, Nvidia has been the trade of the decade. For value investors who sold on stretched multiples early in its run, it has been an expensive lesson in the limits of traditional valuation frameworks when applied to monopoly infrastructure providers in a secular growth cycle.

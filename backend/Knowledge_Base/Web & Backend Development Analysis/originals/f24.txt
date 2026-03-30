@@ -1,0 +1,29 @@
+========================================
+       WEB DEVELOPMENT
+       Frontend Fundamentals
+========================================
+
+1. Web development is the process of building and maintaining websites and web applications.
+2. It is divided into Frontend (client-side) and Backend (server-side) development.
+3. HTML (HyperText Markup Language) forms the basic structure of every web page.
+4. CSS (Cascading Style Sheets) controls the visual presentation and layout of web pages.
+5. JavaScript is the programming language that makes web pages dynamic and interactive.
+6. Responsive design ensures websites work seamlessly on all screen sizes and devices.
+7. CSS frameworks like Bootstrap and Tailwind CSS speed up the styling process significantly.
+8. React.js is a popular JavaScript library for building user interface components.
+9. Vue.js and Angular are also widely used frontend JavaScript frameworks.
+10. Node.js allows JavaScript to run on the server side, enabling full-stack development.
+11. REST APIs enable communication between frontend and backend systems via HTTP requests.
+12. GraphQL is a query language for APIs that provides more flexibility than REST.
+13. Version control with Git and GitHub is essential for collaborative web development.
+14. Package managers like npm and yarn manage project dependencies efficiently.
+15. Webpack and Vite are build tools that bundle and optimize web application assets.
+16. TypeScript adds static typing to JavaScript, improving code quality and maintainability.
+17. Progressive Web Apps (PWAs) combine web and mobile app features for better user experience.
+18. Web accessibility ensures websites are usable by people with disabilities (WCAG standards).
+19. SEO (Search Engine Optimization) techniques improve website visibility in search results.
+20. Browser DevTools help developers debug, inspect, and optimize their web applications.
+21. Performance optimization includes lazy loading, code splitting, and caching strategies.
+22. Single Page Applications (SPAs) load a single HTML page and update content dynamically.
+23. WebSockets enable real-time bidirectional communication between client and server.
+24. Modern web development relies heavily on component-based architecture for scalability.

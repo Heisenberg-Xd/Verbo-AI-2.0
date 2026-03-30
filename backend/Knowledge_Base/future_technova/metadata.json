@@ -1,0 +1,32 @@
+{
+  "cluster_id": 1,
+  "cluster_name": "future_technova",
+  "summary": "Future Strategy\n\nEnglish\n\nTechnova plans to expand into AI-driven healthcare, fintech automation,\nand smart city infrastructure. Hindi\n\nTechnova will expand into AI healthcare and smart city technology in the future. Marathi\n\nTechnova will expand into AI healthcare and smart city technology in the future.",
+  "sentiment": {
+    "positive": 28.8,
+    "negative": 0.0,
+    "neutral": 71.2,
+    "compound": 0.9806
+  },
+  "language_distribution": {
+    "hi": 1,
+    "mr": 1
+  },
+  "keywords": [
+    "future",
+    "technova",
+    "digital",
+    "vision",
+    "expand",
+    "healthcare",
+    "city",
+    "smart",
+    "technovas",
+    "fully"
+  ],
+  "document_count": 2,
+  "files": [
+    "03_company_vision.txt",
+    "10_future_strategy.txt"
+  ]
+}

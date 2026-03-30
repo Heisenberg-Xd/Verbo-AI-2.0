@@ -1,0 +1,30 @@
+{
+  "cluster_id": 2,
+  "cluster_name": "technova_25",
+  "summary": "Global Operations\n\nEnglish\n\nTechnova operates in more than 25 countries with offices across Asia,\nEurope, and North America. \u0939\u093f\u0902\u0926\u0940\n\nTechnova 25 \u0938\u0947 \u0905\u0927\u093f\u0915 \u0926\u0947\u0936\u094b\u0902 \u092e\u0947\u0902 \u0915\u093e\u0930\u094d\u092f \u0915\u0930\u0924\u093e \u0939\u0948\u0964\n\n\u092e\u0930\u093e\u0920\u0940\n\nTechnova \u0968\u096b \u092a\u0947\u0915\u094d\u0937\u093e \u091c\u093e\u0938\u094d\u0924 \u0926\u0947\u0936\u093e\u0902\u092e\u0927\u094d\u092f\u0947 \u0915\u093e\u0930\u094d\u092f\u0930\u0924 \u0906\u0939\u0947.",
+  "sentiment": {
+    "positive": 0.0,
+    "negative": 0.0,
+    "neutral": 100.0,
+    "compound": 0.0
+  },
+  "language_distribution": {
+    "en": 1
+  },
+  "keywords": [
+    "technova",
+    "25",
+    "\u0968\u096b",
+    "\u0939\u0926",
+    "\u0926\u0936\u092e\u0927\u092f",
+    "\u0926\u0936",
+    "\u092e\u0930\u0920",
+    "\u092a\u0915\u0937",
+    "\u0915\u0930\u092f\u0930\u0924",
+    "\u091c\u0938\u0924"
+  ],
+  "document_count": 1,
+  "files": [
+    "08_global_operations.txt"
+  ]
+}

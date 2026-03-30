@@ -1,0 +1,36 @@
+{
+  "cluster_id": 1,
+  "cluster_name": "market_recession",
+  "summary": "Grocery prices, which had risen over 20 percent cumulatively between early 2020 and late 2023, remained elevated even as grocery inflation measured year-over-year began moderating. Mortgage rates, which had sat at historic lows of around 3 percent throughout 2020 and 2021, climbed above 8 percent by October 2023 \u2014 a level not seen since the early 2000s. Nvidia's stock price rose from approximately $150 per share at the start of 2023 to over $800 per share by early 2024, a gain exceeding 400 percent.",
+  "sentiment": {
+    "positive": 9.9,
+    "negative": 6.7,
+    "neutral": 83.4,
+    "compound": 0.9988
+  },
+  "language_distribution": {
+    "en": 7
+  },
+  "keywords": [
+    "market",
+    "recession",
+    "percent",
+    "nvidia",
+    "ipo",
+    "seed",
+    "inflation",
+    "rate",
+    "retirement",
+    "mortgage"
+  ],
+  "document_count": 7,
+  "files": [
+    "inflation_consumer_impact.txt",
+    "ipo_market_2024.txt",
+    "mortgage_rates_impact.txt",
+    "nvidia_ai_stock_surge.txt",
+    "recession_indicators_2024.txt",
+    "retirement_401k_planning.txt",
+    "seed_funding_trends.txt"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "cluster_id": 0,
+  "cluster_name": "social_media",
+  "summary": "Social media has democratized the flow of information, allowing users to create content, build personal brands, and become influencers with significant reach and influence. In addition, social media has been linked to mental health issues, particularly among younger users. In conclusion, while social media has transformed communication, learning, and commerce, it also presents significant challenges related to mental health, privacy, and the overall quality of social interactions, making it essential to navigate these platforms with mindfulness and balance.",
+  "sentiment": {
+    "positive": 14.3,
+    "negative": 6.0,
+    "neutral": 79.7,
+    "compound": 0.9972
+  },
+  "language_distribution": {
+    "en": 2
+  },
+  "keywords": [
+    "social",
+    "media",
+    "users",
+    "platforms",
+    "individuals",
+    "content",
+    "significant",
+    "information",
+    "data",
+    "particularly"
+  ],
+  "document_count": 2,
+  "files": [
+    "f9.txt",
+    "f10.txt"
+  ]
+}

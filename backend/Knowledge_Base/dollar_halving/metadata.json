@@ -1,0 +1,36 @@
+{
+  "cluster_id": 1,
+  "cluster_name": "dollar_halving",
+  "summary": "The Dollar's Global Dominance: Challenged but Undefeated\n\nThe US dollar's status as the world's primary reserve currency has been a defining feature of global finance since the Bretton Woods agreements that followed World War II. Roughly 58 percent of global foreign exchange reserves are held in dollars. By early 2024, over 30 million ETH \u2014 representing roughly 25 percent of the entire circulating supply \u2014 had been locked into the Beacon Chain by validators worldwide.",
+  "sentiment": {
+    "positive": 11.3,
+    "negative": 6.9,
+    "neutral": 81.8,
+    "compound": 0.9991
+  },
+  "language_distribution": {
+    "en": 7
+  },
+  "keywords": [
+    "dollar",
+    "halving",
+    "crypto",
+    "eth",
+    "staking",
+    "defi",
+    "china",
+    "bitcoin",
+    "global",
+    "billion"
+  ],
+  "document_count": 7,
+  "files": [
+    "stablecoin_wars.txt",
+    "us_china_trade_decoupling.txt",
+    "bitcoin_halving_2024.txt",
+    "crypto_regulation_global.txt",
+    "defi_summer_revival.txt",
+    "dollar_global_dominance.txt",
+    "ethereum_staking_economy.txt"
+  ]
+}
