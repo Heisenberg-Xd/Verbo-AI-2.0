@@ -34,10 +34,10 @@ export default function ClustersPage() {
   }, [activeWorkspaceId, clusterData]);
 
   const loadClusterData = async () => {
+    if (!activeWorkspaceId) return;
     try {
       setLoading(true);
-      // Fallback to the latest persisted global intelligence report 
-      const res = await api.get('/report');
+      const res = await api.get(Endpoints.getWorkspace(activeWorkspaceId));
       setData(res.data);
     } catch (err) {
       console.error("Failed to load clusters. Make sure to run the preprocessing pipeline first.", err);

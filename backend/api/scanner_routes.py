@@ -50,7 +50,9 @@ async def scan_document(workspace_id: str, req: ScanRequest):
     contradictions = [c for c in contradictions if c["confidence"] >= req.min_confidence]
 
     report = generate_contradiction_report(contradictions, req.filename, workspace_id)
-    ws["last_scan"] = report
+    
+    from services.workspace_manager import update_workspace_scan
+    update_workspace_scan(workspace_id, report)
     
     return report
 

@@ -3,6 +3,7 @@ import logging
 import numpy as np
 from sklearn.cluster import KMeans
 from fastapi import HTTPException
+from concurrent.futures import ThreadPoolExecutor
 
 from config.settings import UPLOAD_FOLDER, TRANSLATED_FOLDER
 from services.language_service import detect_language
@@ -102,62 +103,92 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
     representative_output  = {}
     insight_list           = []
 
-    for cluster_id in sorted(set(labels)):
-        indices = [i for i, lbl in enumerate(labels) if lbl == cluster_id]
+    # ── Step 6: Per-Cluster Analysis (Parallelized for Speed) ───────────────
+    clusters_output        = {}
+    summaries_output       = {}
+    sentiment_output       = {}
+    lang_dist_output       = {}
+    keywords_output        = {}
+    representative_output  = {}
+    insight_list           = []
 
-        c_texts      = [preprocessed_texts[i] for i in indices]
-        c_raw_texts  = [raw_texts[i]           for i in indices]
-        c_files      = [file_names[i]           for i in indices]
-        c_embeddings = embeddings[indices]
-        c_langs      = [lang_per_file[fn]       for fn in c_files]
+    def process_cluster(cluster_id):
+        try:
+            indices = [i for i, lbl in enumerate(labels) if lbl == cluster_id]
+            c_texts      = [preprocessed_texts[i] for i in indices]
+            c_raw_texts  = [raw_texts[i]           for i in indices]
+            c_files      = [file_names[i]           for i in indices]
+            c_embeddings = embeddings[indices]
+            c_langs      = [lang_per_file[fn]       for fn in c_files]
 
-        summary   = generate_summary(c_raw_texts)
-        sentiment = analyze_sentiment(c_raw_texts)
+            summary   = generate_summary(c_raw_texts)
+            sentiment = analyze_sentiment(c_raw_texts)
+            kws       = get_top_keywords(c_texts, top_n=10)
+            base_topic = get_cluster_topic(kws, context_text=summary)
 
-        kws        = get_top_keywords(c_texts, top_n=10)
-        topic_name = get_cluster_topic(kws, context_text=summary)
+            lang_dist = {}
+            for lg in c_langs:
+                lang_dist[lg] = lang_dist.get(lg, 0) + 1
 
+            rep = rank_documents_by_representativeness(c_embeddings, c_files)
+            
+            return {
+                "cluster_id": cluster_id,
+                "base_topic": base_topic,
+                "summary": summary,
+                "sentiment": sentiment,
+                "kws": kws,
+                "lang_dist": lang_dist,
+                "rep": rep,
+                "c_files": c_files
+            }
+        except Exception as e:
+            logger.error(f"Cluster {cluster_id} failed: {e}")
+            return None
+
+    with ThreadPoolExecutor(max_workers=min(10, len(set(labels)))) as executor:
+        results = list(executor.map(process_cluster, sorted(set(labels))))
+
+    for res in results:
+        if not res: continue
+        cluster_id = res["cluster_id"]
+        topic_name = res["base_topic"]
+        
+        # Ensure unique cluster names
         base_name, counter = topic_name, 1
         while topic_name in clusters_output:
             topic_name = f"{base_name}_{counter}"
             counter += 1
 
-        lang_dist: dict = {}
-        for lg in c_langs:
-            lang_dist[lg] = lang_dist.get(lg, 0) + 1
-
-        rep = rank_documents_by_representativeness(c_embeddings, c_files)
-
-        clusters_output[topic_name]       = c_files
-        summaries_output[topic_name]      = summary
-        sentiment_output[topic_name]      = sentiment
-        lang_dist_output[topic_name]      = lang_dist
-        keywords_output[topic_name]       = kws
-        representative_output[topic_name] = rep
-
+        clusters_output[topic_name]       = res["c_files"]
+        summaries_output[topic_name]      = res["summary"]
+        sentiment_output[topic_name]      = res["sentiment"]
+        lang_dist_output[topic_name]      = res["lang_dist"]
+        keywords_output[topic_name]       = res["kws"]
+        representative_output[topic_name] = res["rep"]
 
         insight = {
             "cluster_name":                 topic_name,
             "cluster_id":                   int(cluster_id),
-            "summary":                      summary,
-            "sentiment":                    sentiment,
-            "dominant_language":            max(lang_dist, key=lang_dist.get),
-            "top_keywords":                 kws,
-            "most_representative_document": rep["most_representative"],
-            "document_count":               len(c_files),
-            "files":                        c_files,
-            "language_distribution":        lang_dist,
+            "summary":                      res["summary"],
+            "sentiment":                    res["sentiment"],
+            "dominant_language":            max(res["lang_dist"], key=res["lang_dist"].get) if res["lang_dist"] else "unknown",
+            "top_keywords":                 res["kws"],
+            "most_representative_document": res["rep"]["most_representative"],
+            "document_count":               len(res["c_files"]),
+            "files":                        res["c_files"],
+            "language_distribution":        res["lang_dist"],
         }
         insight_list.append(insight)
 
         organize_knowledge_base(
             cluster_name      = topic_name,
-            file_names        = c_files,
+            file_names        = res["c_files"],
             translated_files  = translated_files,
-            summary           = summary,
-            sentiment         = sentiment,
-            lang_distribution = lang_dist,
-            keywords          = kws,
+            summary           = res["summary"],
+            sentiment         = res["sentiment"],
+            lang_distribution = res["lang_dist"],
+            keywords          = res["kws"],
             cluster_id        = int(cluster_id),
         )
 
