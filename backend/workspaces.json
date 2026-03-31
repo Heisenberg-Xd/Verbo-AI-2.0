@@ -9468,5 +9468,172 @@
     "relationships": [],
     "drive_connected": false,
     "drive_folder_id": null
+  },
+  "b78a5c48": {
+    "workspace_id": "b78a5c48",
+    "name": "Hellfire",
+    "description": "",
+    "created_at": "2026-03-30T14:49:13.887106",
+    "status": "active",
+    "file_names": [
+      "music_latin_es.txt",
+      "music_france_fr.txt",
+      "music_streaming_en.txt",
+      "music_industry_de.txt",
+      "sports_skiing_de.txt",
+      "sports_football_en.txt",
+      "sports_tennis_es.txt",
+      "sports_basketball_fr.txt"
+    ],
+    "document_texts": {
+      "sports_tennis_es.txt": "Spanish tennis and global domination on the Grand Slam circuit\n\nSpanish tennis has consolidated its position as one of the most influential global powers on the professional circuit over the last two decades. The clay training culture, which has historically characterized the sport in the Iberian Peninsula, has produced generations of tennis players with an exceptional technical base and a physical recovery capacity superior to the world average. The Rafa Nadal Academy in Manacor continues to attract talent from all over the world, with more than three hundred students from forty different countries. The methodological approach combines intensive physical training, advanced biomechanical analysis and psychological preparation, following the principles that led the Mallorcan champion to win twenty-two Grand Slam titles. The next generation of Spanish tennis players shows a remarkable technical level. Several sub-twenty-two players have reached ATP rankings below one hundred during the season, reflecting the solidity of the national training system. The Royal Spanish Tennis Federation has increased its budget for youth development by thirty-two percent over the last three years. The women's circuit is also registering significant progress, with Spanish players regularly competing in the final rounds of WTA 1000 category tournaments. Success in mixed doubles during the Davis Cup and the Billie Jean King Cup has reinforced the cohesion of the national team. Sports analysts highlight the importance of the tournament calendar in season planning, pointing out that Spanish players optimize their performance by concentrating their best form for Roland Garros. Tactical adaptation to cement and grass continues to be the main challenge to consolidate Spanish dominance on all surfaces of the world circuit.",
+      "music_latin_es.txt": "Latin music and its conquest of the global music market\n\nLatin music has experienced unprecedented expansion in international music markets over the past five years. The urban genre, which encompasses reggaeton, Latin trap music and bachata fusion, tops the most listened to playlists on streaming platforms in North America, Europe and Asia simultaneously. This cultural phenomenon transcends language barriers with an effectiveness that few previous genres have achieved. Puerto Rico, Colombia and Mexico continue to be the main epicenters of Latin musical production, although Argentina, Spain and the Dominican Republic exert growing influence in shaping new sound trends. The recording studios in Miami act as a point of convergence between Latin American talent and the distribution infrastructure of the Anglo-Saxon industry. The emergence of artists like Bad Bunny, Karol G, Rosal\u00eda and J Balvin has redefined the concept of the Spanish-speaking global music star. His collaborations with Anglo-Saxon pop, American trap and Afrobeats artists have generated sonic hybrids that dominate the global popularity charts. The global recording industry has responded by significantly increasing its investments in artists and labels of Latin American origin. Regional Mexican music, including corridos tumbados and norte\u00f1o, is experiencing a notable resurgence driven by platforms like TikTok that allow instant viralization of content. Artists like Peso Pluma have achieved international recognition without giving up sonic elements deeply rooted in Mexican musical tradition, demonstrating that cultural authenticity can coexist with massive commercial reach. Latin music festivals are seeing record attendance figures in cities like Madrid, Los Angeles, New York and Mexico City. The live events ecosystem constitutes a fundamental source of income for artists and promoters, also generating significant economic impacts in host territories through cultural tourism and local consumption.",
+      "sports_football_en.txt": "The UEFA Champions League Final: A Season Defined by Tactical Brilliance\n\nThe 2024 UEFA Champions League final delivered one of the most tactically sophisticated football matches seen in recent memory, drawing over 90,000 fans to Wembley Stadium and a global television audience estimated at 400 million viewers. The match between two of European football's most storied clubs provided a masterclass in modern pressing systems and positional play.\n\nBoth managers deployed high-press formations from the opening whistle, creating an intense, end-to-end contest that had neutrals on the edge of their seats. The midfield battle proved decisive, with neither team able to dominate possession for extended periods. A game-defining moment came in the 67th minute from a perfectly executed set-piece routine, setting up the eventual tournament winner.\n\nThe winning coach praised his squad's resilience throughout the knockout rounds, noting their ability to adapt tactically after the difficult group stage draw. Several young academy graduates featured prominently, underscoring the club's commitment to long-term player development alongside high-profile signings.\n\nFootball analysts noted the tournament's broader competitive balance, with traditionally dominant leagues facing stronger challenges from clubs across Portugal, the Netherlands, and Turkey. The evolution of data analytics has transformed scouting, with clubs now tracking over two hundred performance metrics per player per match.\n\nThe season also highlighted growing concerns around player welfare, with national team managers calling for greater regulation of the club calendar. The ongoing debate between club and country interests continues as football's governing bodies meet to restructure competitions for the 2025\u20132026 cycle.\n\nAttendance records were broken across multiple venues this season, reflecting football's continued growth as a global sport. Merchandise revenue and broadcast rights fees reached new highs, with streaming platforms entering bidding competitions historically dominated by traditional broadcasters. The sport's economic landscape is shifting as rapidly as the tactical innovations on the pitch.\n",
+      "music_france_fr.txt": "The French music industry between cultural heritage and digital revolution\n\nFrance occupies a unique position in the global musical landscape, at the intersection of centuries-old artistic traditions and a creative industry fully engaged in digital transformation. French song, carried by icons like \u00c9dith Piaf, Jacques Brel and Serge Gainsbourg, constitutes an intangible heritage recognized internationally, while new French-speaking artists continually redefine the contours of this musical identity. The emergence of contemporary artists such as Stromae, Ang\u00e8le, and Aya Nakamura has demonstrated that music that is resolutely French in its language and influences can conquer international markets. Aya Nakamura has thus become the most streamed French-speaking artist worldwide, with billions of streams on digital platforms. This success demonstrates a global appetite for hybrid sounds mixing Afrobeats, pop and traditional songs. French cultural policy plays a structuring role in the national music industry. Radio broadcast quotas, which impose a minimum of forty percent of French-speaking songs on the air, are regularly the subject of debate between defenders of cultural diversity and supporters of liberalization of programs. The National Music Center distributes tens of millions of euros each year in subsidies and aid for creation, live performance and the export of French talent. Music festivals have become true cultural institutions in France. The Vieilles Charrues in Brittany, Rock en Seine in Paris, and the Francofolies in La Rochelle attract hundreds of thousands of spectators every summer. These events play a considerable economic role for their territories, while serving as a showcase for the contemporary French music scene. French musical training, with its national and regional conservatories, continues to train world-class musicians. Traditional classical education coexists with new training in electronic production, image composition and music management, meeting the demands of an industry in constant change.",
+      "sports_skiing_de.txt": "The Winter Olympics and global skiing\n\nThe Alpine Ski World Cup of the 2023-2024 season once again demonstrated the exceptionally high level of competition in top international sport. Austrian, Swiss and Norwegian athletes once again dominated the overall rankings, while emerging talent from France and the United States caused significant surprises. Technical development in alpine ski racing is progressing rapidly. Modern racing suits made from high-performance composite materials, precision-controlled bindings and aerodynamically optimized helmets have significantly pushed the previous limits of performance. Engineers and sports scientists work closely together to squeeze every tenth of a second out of the ideal line. The training analyzes are based on high-resolution GPS data, inertial measurement units and video evaluations in slow motion. Interest in the Winter Games is also growing in countries without an Alpine tradition. South Korea, Japan and China are investing heavily in infrastructure and trainer training. At the Olympic Games in Beijing in 2022, athletes from geothermal power regions in Asia caused a stir for the first time, underlining the universal nature of winter sports. The sustainability of venues is increasingly becoming the focus of the debate. Artificial snow causes significant amounts of water and energy consumption, which environmental organizations are increasingly criticizing. The International Olympic Committee has included sustainability criteria in the award conditions for future trips. The youth sector is particularly strong in Germany, where regional ski clubs work closely with national associations. Numerous talent programs support children from the age of five onwards in order to impart technical basics at an early stage. The path from the youth division to the World Cup podium takes an average of ten to fifteen years of intensive training.",
+      "music_streaming_en.txt": "The Streaming Revolution: How Digital Platforms Transformed the Music Industry\n\nThe music industry has undergone a fundamental structural transformation over the past decade, driven primarily by the widespread adoption of audio streaming services. Monthly active user counts across major streaming platforms now exceed one billion globally, with subscription-based revenue surpassing physical sales for the first time in 2019 and continuing to grow at a compound annual rate of approximately fourteen percent.\n\nThe shift from album-centric consumption to individual track streaming has reshaped how artists structure their creative output. Shorter song lengths have become increasingly common, with industry data showing that tracks between two and a half and three minutes perform significantly better on algorithmic playlists. Record labels and independent artists alike have adapted their production and release strategies accordingly, favouring frequent single drops over traditional album campaigns.\n\nThe democratisation of music production tools has lowered barriers to entry considerably. Digital audio workstations, affordable home studio equipment, and self-distribution platforms allow independent artists to reach global audiences without traditional label infrastructure. This shift has created an extraordinarily crowded marketplace, with over one hundred thousand new tracks uploaded to streaming platforms daily.\n\nArtificial intelligence tools are increasingly used in music composition, mastering, and recommendation systems. Algorithmic curation drives over thirty percent of all streams on major platforms, giving playlist editors and machine learning models enormous influence over which artists gain visibility. Critics argue that this dynamic incentivises genre homogeneity, while proponents point to the unprecedented diversity of music reaching new audiences.\n\nThe live music sector serves as the dominant revenue driver for most professional artists. Concert touring revenue has grown substantially, with superstar acts commanding multi-million dollar guarantees from venue promoters. Ticketing platform fees and secondary market scalping remain contentious issues in the industry, prompting calls for regulatory intervention in major markets including the United States, United Kingdom, and Australia.\n",
+      "music_industry_de.txt": "The German music scene: Between tradition and global pop culture\n\nThe German music industry has been experiencing a remarkable transformation for several years, which is reflected in both sales figures and artistic direction. Streaming subscriptions have long since overtaken physical recordings as the primary distribution medium, with German-language content on platforms such as Spotify and Apple Music recording stable demand despite globalization trends. The German rap genre has become the dominant popular music form in the country. Artists like Kontra K, Capital Bra and Ski Aggu achieve streaming numbers with German-language lyrics that stand up to international comparisons. This development has attracted international attention and inspired German labels to invest more in young talent. At the same time, classical music is experiencing a renaissance of interest, particularly among younger listeners. Orchestras like the Berlin Philharmonic have built digital concert platforms that not only appeal to local music lovers, but have tapped into a global subscriber audience. The combination of tradition and modern presentation proves to be an effective strategy for opening up classical works by Bach, Beethoven and Brahms for the digital age. The Berlin music label ecosystem is considered one of the most innovative in Europe. The city attracts producers, DJs and songwriters from all over the world, which enriches the creative atmosphere in the long term. Techno and electronic music have established Berlin as a global center of club culture, with economic impacts far beyond the music industry. State funding for culture plays an important role in the German music ecosystem. Public broadcasters finance symphony orchestras, support young artists and ensure a variety of offerings that purely market-oriented systems cannot provide. This mix of private creativity and public support makes the German music model worthy of international attention.",
+      "sports_basketball_fr.txt": "The NBA and the evolution of modern global basketball\n\nThe 2023-2024 NBA season confirmed the growing internationalization of basketball, with more than one hundred and thirty foreign players regularly participating in matches. This trend reflects not only the development of training programs in European and African countries, but also the global attractiveness of the American league. The Western teams dominated the early stages of the regular season, driven by exceptional individual performances. Analysts have highlighted the growing importance of advanced static data in developing game strategies, including the use of three-point shots which now account for more than forty-five percent of total attempts. The development of women's basketball is also a significant step forward. The WNBA recorded record audiences this season, notably thanks to the emergence of new stars and increased media coverage. Broadcast contracts have been renegotiated to historic amounts, signaling increased recognition of women's sport. European training academies continue to produce top talent. Spain, France, Serbia and Senegal particularly stand out as breeding grounds for NBA players. American coaches agree that young players trained in Europe arrive with a more solid technical base, particularly with regard to passing and playing without the ball. The NBA's international campaigns, with games held in Paris, London and Mexico City, have significantly expanded the sport's global audience. Basketball is now the second most watched sport in France, overtaking rugby in some younger age groups. European clubs are calling for more calendar reforms to better integrate European competitions into this globalized sporting landscape."
+    },
+    "cluster_insights": [
+      {
+        "cluster_name": "Spanish & Players Training Analysis",
+        "cluster_id": 0,
+        "summary": "The Winter Olympics and global skiing\n\nThe Alpine Ski World Cup of the 2023-2024 season once again demonstrated the exceptionally high level of competition in top international sport. The NBA and the evolution of modern global basketball\n\nThe 2023-2024 NBA season confirmed the growing internationalization of basketball, with more than one hundred and thirty foreign players regularly participating in matches. This trend reflects not only the development of training programs in European and African countries, but also the global attractiveness of the American league.",
+        "sentiment": {
+          "positive": 12.1,
+          "negative": 1.1,
+          "neutral": 86.8,
+          "compound": 0.9981
+        },
+        "dominant_language": "es",
+        "top_keywords": [
+          "spanish",
+          "players",
+          "training",
+          "tennis",
+          "season",
+          "football",
+          "nba",
+          "basketball",
+          "global",
+          "european"
+        ],
+        "most_representative_document": "sports_tennis_es.txt",
+        "document_count": 4,
+        "files": [
+          "sports_tennis_es.txt",
+          "sports_football_en.txt",
+          "sports_skiing_de.txt",
+          "sports_basketball_fr.txt"
+        ],
+        "language_distribution": {
+          "es": 1,
+          "en": 1,
+          "de": 1,
+          "fr": 1
+        }
+      },
+      {
+        "cluster_name": "Music & French German Analysis",
+        "cluster_id": 1,
+        "summary": "Latin music and its conquest of the global music market\n\nLatin music has experienced unprecedented expansion in international music markets over the past five years. French cultural policy plays a structuring role in the national music industry. The German music scene: Between tradition and global pop culture\n\nThe German music industry has been experiencing a remarkable transformation for several years, which is reflected in both sales figures and artistic direction.",
+        "sentiment": {
+          "positive": 9.99,
+          "negative": 1.4,
+          "neutral": 88.61,
+          "compound": 0.9978
+        },
+        "dominant_language": "es",
+        "top_keywords": [
+          "music",
+          "french",
+          "german",
+          "artists",
+          "latin",
+          "industry",
+          "cultural",
+          "platforms",
+          "streaming",
+          "global"
+        ],
+        "most_representative_document": "music_industry_de.txt",
+        "document_count": 4,
+        "files": [
+          "music_latin_es.txt",
+          "music_france_fr.txt",
+          "music_streaming_en.txt",
+          "music_industry_de.txt"
+        ],
+        "language_distribution": {
+          "es": 1,
+          "fr": 1,
+          "en": 1,
+          "de": 1
+        }
+      }
+    ],
+    "drive_connected": false,
+    "drive_folder_id": null,
+    "overall_sentiment": {
+      "positive": 10.89,
+      "negative": 1.3,
+      "neutral": 87.81,
+      "compound": 0.9995
+    },
+    "clustering_metrics": {
+      "elbow_scores": [
+        {
+          "k": 2,
+          "score": 2.88004732131958
+        },
+        {
+          "k": 3,
+          "score": 2.22084641456604
+        },
+        {
+          "k": 4,
+          "score": 1.7082146406173706
+        },
+        {
+          "k": 5,
+          "score": 1.2323511838912964
+        },
+        {
+          "k": 6,
+          "score": 0.7782928943634033
+        },
+        {
+          "k": 7,
+          "score": 0.36643868684768677
+        }
+      ],
+      "silhouette_scores": [
+        {
+          "k": 2,
+          "score": 0.19254684448242188
+        },
+        {
+          "k": 3,
+          "score": 0.15744873881340027
+        },
+        {
+          "k": 4,
+          "score": 0.12252790480852127
+        },
+        {
+          "k": 5,
+          "score": 0.11180652678012848
+        },
+        {
+          "k": 6,
+          "score": 0.01837827078998089
+        },
+        {
+          "k": 7,
+          "score": 0.007544117048382759
+        }
+      ]
+    }
   }
 }
