@@ -1,16 +1,16 @@
 {
-  "cluster_id": 1,
+  "cluster_id": 3,
   "cluster_name": "Vaccine & Developed Johnson Analysis",
-  "summary": "AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford, with Pascal Soriot serving as AstraZeneca's CEO during the development process. Johnson and Johnson developed the Janssen COVID-19 vaccine using adenoviral vector technology. AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford.",
+  "summary": "Johnson and Johnson developed the Janssen COVID-19 vaccine using adenoviral vector technology. AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford. AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford, with Pascal Soriot serving as AstraZeneca's CEO during the development process.",
   "sentiment": {
-    "positive": 9.3,
-    "negative": 4.8,
-    "neutral": 85.9,
-    "compound": 0.9968
+    "positive": 6.4,
+    "negative": 3.7,
+    "neutral": 89.9,
+    "compound": 0.9845
   },
   "language_distribution": {
-    "en": 2,
-    "hi": 1
+    "hi": 1,
+    "en": 2
   },
   "keywords": [
     "vaccine",
@@ -26,8 +26,8 @@
   ],
   "document_count": 3,
   "files": [
-    "drive_c5.txt",
-    "drive_c4.txt",
-    "drive_c6.txt"
+    "c6.txt",
+    "c4.txt",
+    "c5.txt"
   ]
 }
