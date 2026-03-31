@@ -252,7 +252,7 @@ async def drive_status_check(workspace_id: str):
     })
 
 @router.get("/workspace/{workspace_id}/entities")
-async def get_entities(
+def get_entities(
     workspace_id: str,
     entity_type: Optional[str] = None,
     min_confidence: float = 0.0,
@@ -292,20 +292,38 @@ async def get_entities(
     })
 
 @router.post("/workspace/{workspace_id}/entities/refresh")
-async def refresh_entities(workspace_id: str):
-    """Re-run entity extraction on current workspace documents."""
+def refresh_entities(workspace_id: str):
+    """Re-run entity extraction. Falls back to reading files from disk if document_texts is empty."""
     ws = get_workspace(workspace_id)
     if not ws:
         raise HTTPException(status_code=404, detail="Workspace not found.")
 
     doc_texts = ws.get("document_texts", {})
-    if not doc_texts:
-        raise HTTPException(
-            status_code=400,
-            detail="No documents in workspace. Ingest files first."
-        )
 
-    # Clear entity/relationship/KG caches for this workspace on refresh
+    # Fallback: rebuild document_texts by reading actual uploaded files from disk
+    if not doc_texts:
+        import chardet
+        file_names = ws.get("file_names", [])
+        if not file_names:
+            raise HTTPException(status_code=400, detail="No documents found in workspace. Please ingest files first.")
+        logger.info(f"[refresh_entities] Rebuilding document_texts from {len(file_names)} files on disk.")
+        rebuilt = {}
+        for fname in file_names:
+            fpath = os.path.join(UPLOAD_FOLDER, fname)
+            if os.path.exists(fpath):
+                try:
+                    with open(fpath, "rb") as f:
+                        raw = f.read()
+                    enc = chardet.detect(raw).get("encoding") or "utf-8"
+                    rebuilt[fname] = raw.decode(enc, errors="replace")
+                except Exception as e:
+                    logger.warning(f"Could not read {fname}: {e}")
+        if not rebuilt:
+            raise HTTPException(status_code=400, detail="Files listed in workspace could not be read from disk. They may have been deleted.")
+        doc_texts = rebuilt
+        update_workspace_documents(workspace_id, list(rebuilt.keys()), rebuilt)
+
+    # Clear stale caches and re-extract
     clear_cache("entities")
     clear_cache("relationships")
     clear_cache("knowledge_graph")
@@ -315,14 +333,18 @@ async def refresh_entities(workspace_id: str):
     set_cache("entities", entity_cache_key, entities)
     update_workspace_entities(workspace_id, entities)
 
+    relationships = extract_relationships(doc_texts, entities)
+    update_workspace_relationships(workspace_id, relationships)
+
     return JSONResponse({
-        "status":        "refreshed",
-        "entity_count":  len(entities),
-        "type_summary":  get_entity_summary(entities),
+        "status":             "refreshed",
+        "entity_count":       len(entities),
+        "relationship_count": len(relationships),
+        "type_summary":       get_entity_summary(entities),
     })
 
 @router.get("/workspace/{workspace_id}/relationships")
-async def get_relationships(
+def get_relationships(
     workspace_id: str,
     relationship_type: Optional[str] = None,
     min_confidence: float = 0.0,
@@ -367,7 +389,7 @@ async def get_relationships(
     })
 
 @router.get("/workspace/{workspace_id}/knowledge-graph")
-async def get_knowledge_graph(
+def get_knowledge_graph(
     workspace_id: str,
     min_confidence: float = 0.4,
     max_nodes: int = 150,

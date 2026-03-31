@@ -11,6 +11,7 @@ from fastapi.responses import JSONResponse
 
 from config.settings import API_TITLE, API_VERSION, ALLOWED_ORIGINS
 from utils.file_manager import init_folders
+from database.db import engine, Base
 
 from api.upload_routes import router as upload_router
 from api.pipeline_routes import router as pipeline_router
@@ -31,6 +32,14 @@ logger = logging.getLogger(__name__)
 async def lifespan(app: FastAPI):
     # ── Startup ──────────────────────────────
     init_folders()
+    
+    # Initialize DB tables
+    try:
+        logger.info("Initializing database tables...")
+        Base.metadata.create_all(bind=engine)
+        logger.info("Database initialized.")
+    except Exception as e:
+        logger.error(f"Database initialization failed: {e}")
 
     # Pre-warm GLiNER so first pipeline run isn't slow
     try:

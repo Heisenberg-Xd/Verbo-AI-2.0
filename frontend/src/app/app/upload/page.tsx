@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Upload, File, FolderOpen, Play, CheckCircle2, AlertCircle } from 'lucide-react';
 import { StepBadge } from '@/components/ui/StepBadge';
 import { useStore } from '@/lib/store';
@@ -23,8 +23,12 @@ export default function UploadPage() {
   const [uploadedPaths, setUploadedPaths] = useState<string[]>([]);
   const [clusterResults, setClusterResults] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
-
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Safety reset: Ensure pipeline button is not stuck if navigation occurred during run
+  useEffect(() => {
+    setPipelineRunning(false);
+  }, []);
 
   // -- Drag Drop Handlers
   const handleDragOver = (e: React.DragEvent) => { e.preventDefault(); setIsDragging(true); };
@@ -78,7 +82,7 @@ export default function UploadPage() {
         const formData = new FormData();
         files.forEach(f => formData.append('files', f));
         
-        const uploadRes = await api.post(Endpoints.uploadFiles, formData, {
+        const uploadRes = await api.post(`${Endpoints.uploadFiles}?workspace_id=${currentWsId}`, formData, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
         pathsToProcess = [...pathsToProcess, ...uploadRes.data.file_paths];

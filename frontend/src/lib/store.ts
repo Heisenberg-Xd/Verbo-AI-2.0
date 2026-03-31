@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
 
 interface WorkspaceState {
   activeWorkspaceId: string | null;
@@ -21,19 +22,33 @@ interface WorkspaceState {
   setClusterData: (data: any | null) => void;
 }
 
-export const useStore = create<WorkspaceState>()((set) => ({
-  activeWorkspaceId: null,
-  setActiveWorkspaceId: (id) => set({ activeWorkspaceId: id }),
-  
-  isPipelineRunning: false,
-  setPipelineRunning: (isRunning) => set({ isPipelineRunning: isRunning }),
+export const useStore = create<WorkspaceState>()(
+  persist(
+    (set) => ({
+      activeWorkspaceId: null,
+      setActiveWorkspaceId: (id) => set({ activeWorkspaceId: id }),
+      
+      isPipelineRunning: false,
+      setPipelineRunning: (isRunning) => set({ isPipelineRunning: isRunning }),
 
-  selectedClusterId: null,
-  setSelectedClusterId: (id) => set({ selectedClusterId: id }),
+      selectedClusterId: null,
+      setSelectedClusterId: (id) => set({ selectedClusterId: id }),
 
-  chatScope: null,
-  setChatScope: (scope) => set({ chatScope: scope }),
+      chatScope: null,
+      setChatScope: (scope) => set({ chatScope: scope }),
 
-  clusterData: null,
-  setClusterData: (data) => set({ clusterData: data }),
-}));
+      clusterData: null,
+      setClusterData: (data) => set({ clusterData: data }),
+    }),
+    {
+      name: 'verboai-storage', // name of the item in storage (must be unique)
+      storage: createJSONStorage(() => localStorage),
+      partialize: (state) => ({ 
+        activeWorkspaceId: state.activeWorkspaceId,
+        selectedClusterId: state.selectedClusterId,
+        chatScope: state.chatScope,
+        clusterData: state.clusterData
+      }),
+    }
+  )
+);

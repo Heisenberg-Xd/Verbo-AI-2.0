@@ -20,7 +20,7 @@ def generate_embeddings(texts: list[str]) -> np.ndarray:
         return cached
 
     # ── Original computation (untouched) ─────────────────────────────
-    result = embedding_model.encode(texts, show_progress_bar=False)
+    result = embedding_model.encode(texts, batch_size=64, show_progress_bar=False)
 
     # ── Store in cache ───────────────────────────────────────────────
     set_cache("embeddings", cache_key, result)

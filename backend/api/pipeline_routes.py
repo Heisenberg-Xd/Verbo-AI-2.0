@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 router = APIRouter()
 
 @router.post("/process")
-async def process_files(request: ProcessRequest):
+def process_files(request: ProcessRequest):
     workspace_id = request.workspace_id
     file_paths = request.file_paths
 
@@ -100,10 +100,10 @@ async def process_files(request: ProcessRequest):
                 workspace_id, 
                 insight_list, 
                 overall_sentiment=overall_sentiment,
-                clustering_metrics={
-                    "elbow_scores": elbow_scores,
-                    "silhouette_scores": silhouette_scores
-                }
+                overall_language_distribution=overall_lang_dist,
+                total_documents=len(file_names),
+                elbow_scores=elbow_scores,
+                silhouette_scores=silhouette_scores
             )
         except Exception as e:
             print(f"[Workspace integration warning] {e}")
