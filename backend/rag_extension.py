@@ -31,6 +31,9 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from sklearn.metrics.pairwise import cosine_similarity
+from sqlalchemy.orm import Session
+from database.db import get_db
+from database.models import ChatMessage
 
 # ── Gemini client (pip install google-genai) ─────────────────────
 try:
@@ -197,6 +200,7 @@ rag_store = RAGStore()
 # ═════════════════════════════════════════════════════════════════
 
 class ChatRequest(BaseModel):
+    workspace_id:   str
     query:          str
     cluster_filter: Optional[str] = None   # restrict to one cluster
     top_k:          int            = 6
@@ -438,6 +442,29 @@ def register_rag(app: FastAPI) -> None:
                 "query":         request.query,
             }
 
+            # ⑤ Persist to Database
+            try:
+                db: Session = next(get_db())
+                # Save User message
+                user_msg = ChatMessage(
+                    workspace_id=request.workspace_id,
+                    role="user",
+                    content=request.query
+                )
+                db.add(user_msg)
+                
+                # Save Assistant message
+                asst_msg = ChatMessage(
+                    workspace_id=request.workspace_id,
+                    role="assistant",
+                    content=answer,
+                    sources=sources # The deduplicated source list
+                )
+                db.add(asst_msg)
+                db.commit()
+            except Exception as db_exc:
+                print(f"[DB ERROR] Failed to save chat message: {db_exc}")
+
             # ── Cache the successful response (TTL 10 min for LLM answers) ──
             set_cache("rag_chat", chat_cache_key, response_data, ttl_seconds=600)
 
@@ -501,6 +528,30 @@ def register_rag(app: FastAPI) -> None:
             raise HTTPException(status_code=409, detail="RAG index not ready.")
         names = sorted({m["cluster_name"] for m in rag_store.metadata})
         return {"clusters": names}
+
+    # ── GET /rag/history/{workspace_id} ──────────────────────────
+    @app.get("/rag/history/{workspace_id}", tags=["RAG"])
+    async def rag_history(workspace_id: str):
+        """Fetch persistent chat history for a specific workspace."""
+        try:
+            db: Session = next(get_db())
+            messages = db.query(ChatMessage).filter(
+                ChatMessage.workspace_id == workspace_id
+            ).order_by(ChatMessage.created_at.asc()).all()
+            
+            return {
+                "messages": [
+                    {
+                        "role":    m.role,
+                        "content": m.content,
+                        "sources": m.sources,
+                        "created_at": m.created_at.isoformat()
+                    }
+                    for m in messages
+                ]
+            }
+        except Exception as exc:
+            raise HTTPException(status_code=500, detail=str(exc))
 
     # ── DELETE /rag/reset ─────────────────────────────────────────
     @app.delete("/rag/reset", tags=["RAG"])

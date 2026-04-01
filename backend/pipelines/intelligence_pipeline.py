@@ -17,6 +17,7 @@ from services.keywords_service import get_top_keywords, get_cluster_topic
 from services.ranking_service import rank_documents_by_representativeness
 from analytics.insights_generator import organize_knowledge_base
 from analytics.report_generator import generate_intelligence_report
+from services.document_cache_service import get_cached_document_intelligence, set_cached_document_intelligence
 
 logger = logging.getLogger(__name__)
 
@@ -27,12 +28,38 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
     translated_files   = {}
     lang_per_file      = {}
 
-    # ── Step 1: Detect → Translate → Preprocess ───────────────────────────
+    embeddings_list    = []
+    files_to_encode    = [] # (idx, preprocessed_text, original_fpath, lang, translated_text)
+
+    # ── Step 1 & 2: Detect → Translate → Preprocess → Embed ────────────────
     for fname in file_paths:
         fpath = os.path.join(UPLOAD_FOLDER, fname)
         if not (fpath.endswith(".txt") and os.path.exists(fpath)):
             continue
+            
+        # ── Fast Path: Document-Level Intelligence Cache ───────────────────
+        cached_intel = get_cached_document_intelligence(fpath)
+        if cached_intel:
+            lang_per_file[fname] = cached_intel["lang"]
+            raw_texts.append(cached_intel["translated_text"])
+            preprocessed_texts.append(cached_intel["preprocessed"])
+            embeddings_list.append(cached_intel["embedding"])
+            file_names.append(fname)
+            
+            trans_fname = fname.replace(".txt", "_translated.txt")
+            translated_files[fname] = trans_fname
+            trans_path = os.path.join(TRANSLATED_FOLDER, trans_fname)
+            if not os.path.exists(trans_path):
+                try:
+                    with open(trans_path, "w", encoding="utf-8") as tf:
+                        tf.write(cached_intel["translated_text"])
+                except Exception as e:
+                    logger.warning(f"Could not rewrite translated file {trans_fname}: {e}")
+                    
+            logger.info(f"⚡ [Cache HIT] Document NLP + Embedding loaded instantly: {fname}")
+            continue
 
+        # ── Slow Path: NLP Pipeline ────────────────────────────────────────
         with open(fpath, "r", encoding="utf-8") as f:
             original_text = f.read()
 
@@ -53,8 +80,6 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
 
         preprocessed = preprocess_text(translated_text)
 
-        # ── Bug 4 fix: skip files that preprocess to empty ────────────────
-        # Empty preprocessed text → zero/uniform embedding → corrupts clusters
         if not preprocessed.strip():
             logger.warning(f"Skipping {fname}: preprocessed to empty string")
             continue
@@ -62,6 +87,11 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
         raw_texts.append(translated_text)
         preprocessed_texts.append(preprocessed)
         file_names.append(fname)
+        
+        # Add a placeholder for embedding and queue it up for the batch
+        idx = len(embeddings_list)
+        embeddings_list.append(None)
+        files_to_encode.append((idx, preprocessed, fpath, lang, translated_text))
 
     if len(file_names) < 2:
         raise HTTPException(
@@ -69,8 +99,19 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
             detail="At least 2 valid .txt files required for clustering."
         )
 
-    # ── Step 2: Sentence-BERT Embeddings ──────────────────────────────────
-    embeddings = generate_embeddings(preprocessed_texts)
+    # ── Step 2b: Batch-Encode Cache Misses ─────────────────────────────────
+    if files_to_encode:
+        logger.info(f"Generating embeddings for {len(files_to_encode)} missing documents...")
+        texts_to_encode = [x[1] for x in files_to_encode]
+        new_embeddings = generate_embeddings(texts_to_encode)
+        
+        # Save back to disk cache
+        for i, (idx, preproc, fpath, lng, translated) in enumerate(files_to_encode):
+            emb = new_embeddings[i]
+            embeddings_list[idx] = emb
+            set_cached_document_intelligence(fpath, lng, translated, preproc, emb)
+
+    embeddings = np.array(embeddings_list)
 
     # ── Bug 5 fix: validate embeddings before clustering ──────────────────
     # Duplicate or near-identical embeddings (from empty/uniform text) cause

@@ -1,4 +1,5 @@
 import os
+import asyncio
 import logging
 import numpy as np
 from fastapi import APIRouter, HTTPException
@@ -12,7 +13,7 @@ logger = logging.getLogger(__name__)
 router = APIRouter()
 
 @router.post("/process")
-def process_files(request: ProcessRequest):
+async def process_files(request: ProcessRequest):
     workspace_id = request.workspace_id
     file_paths = request.file_paths
 
@@ -29,8 +30,17 @@ def process_files(request: ProcessRequest):
     if not file_paths:
         raise HTTPException(status_code=400, detail="No files available to process. Please upload or sync files first.")
 
-    # ── Cache check: skip entire pipeline if same files were processed ────
-    pipeline_cache_key = make_cache_key("pipeline", sorted(file_paths))
+    # ── Workspace fingerprint for stable cache keys ────────────────────────
+    ws_fingerprint = ""
+    if workspace_id:
+        try:
+            from services.workspace_manager import workspace_fingerprint
+            ws_fingerprint = workspace_fingerprint(workspace_id) or ""
+        except Exception:
+            ws_fingerprint = ""
+
+    # ── Cache check: skip entire pipeline if same files were processed ─────
+    pipeline_cache_key = make_cache_key("pipeline", sorted(file_paths), ws_fingerprint)
     cached_res = get_cache("pipeline", pipeline_cache_key)
 
     if cached_res is not None:
@@ -39,8 +49,12 @@ def process_files(request: ProcessRequest):
         res["embeddings"] = np.array(res["embeddings"], dtype="float32")
         res["labels"] = np.array(res["labels"], dtype="int32")
     else:
-        # ── Original pipeline execution (untouched) ──────────────────────
-        res = run_intelligence_pipeline(file_paths, workspace_id)
+        # ── Run CPU-bound pipeline in thread pool to keep event loop free ──
+        loop = asyncio.get_event_loop()
+        res = await loop.run_in_executor(
+            None,
+            lambda: run_intelligence_pipeline(file_paths, workspace_id)
+        )
 
         # ── Store in cache (serialize numpy for safe storage) ────────────
         cache_copy = dict(res)

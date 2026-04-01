@@ -1,12 +1,12 @@
 {
-  "cluster_id": 0,
+  "cluster_id": 1,
   "cluster_name": "Rate & Percent Recession Analysis",
   "summary": "America's Credit Card Debt Crisis: $1 Trillion and Climbing\n\nIn the third quarter of 2023, total US credit card debt crossed $1 trillion for the first time in history \u2014 a threshold that Federal Reserve economists and consumer advocates had been tracking with growing alarm throughout the year. The average credit card interest rate in the United States reached 22.8 percent in late 2023, according to Federal Reserve data \u2014 roughly double the rate that prevailed a decade earlier. The central bank's benchmark federal funds rate, which sat near zero in early 2022, finished 2023 in a target range of 5.25 to 5.50 percent \u2014 the highest level in over two decades.",
   "sentiment": {
-    "positive": 11.2,
-    "negative": 9.3,
-    "neutral": 79.5,
-    "compound": 0.9981
+    "positive": 10.5,
+    "negative": 9.0,
+    "neutral": 80.5,
+    "compound": 0.9967
   },
   "language_distribution": {
     "en": 8
@@ -25,13 +25,13 @@
   ],
   "document_count": 8,
   "files": [
-    "student_loan_repayment.txt",
-    "credit_card_debt_crisis.txt",
-    "emergency_fund_guide.txt",
-    "fed_interest_rate_policy.txt",
-    "inflation_consumer_impact.txt",
     "mortgage_rates_impact.txt",
-    "recession_indicators_2024.txt",
-    "retirement_401k_planning.txt"
+    "inflation_consumer_impact.txt",
+    "retirement_401k_planning.txt",
+    "emergency_fund_guide.txt",
+    "credit_card_debt_crisis.txt",
+    "student_loan_repayment.txt",
+    "fed_interest_rate_policy.txt",
+    "recession_indicators_2024.txt"
   ]
 }

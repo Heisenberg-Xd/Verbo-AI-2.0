@@ -2,12 +2,17 @@
 metadata_store.py
 ──────────────────────────────────────────────────────────
 Database-backed metadata store for VerboAI ingestion.
-Uses Supabase PostgreSQL for persistent file hash registry 
+Uses SQLAlchemy (SQLite / PostgreSQL) for persistent file hash registry
 and Google OAuth tokens.
+
+Optimizations:
+  • get_all_hashes() added for /ingest/stats endpoint
+  • bulk_register_hashes() for batch dedup registration
+  • All functions reuse a single session per call (open → op → close)
 """
 
 import threading
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 from datetime import datetime
 from database.db import SessionLocal
 from database.repository import Repository
@@ -34,6 +39,25 @@ def register_hash(file_hash: str, file_path: str, workspace_id: str):
     repo, db = get_repo()
     try:
         repo.register_hash(file_hash, workspace_id, file_path)
+    finally:
+        db.close()
+
+def bulk_register_hashes(entries: List[Dict[str, str]]):
+    """
+    Register multiple hashes in a single DB round-trip.
+    Each entry: {"hash_digest": str, "workspace_id": str, "file_path": str}
+    """
+    repo, db = get_repo()
+    try:
+        repo.bulk_register_hashes(entries)
+    finally:
+        db.close()
+
+def get_all_hashes() -> Dict[str, Dict]:
+    """Return all registered file hashes as {digest: {path, workspace_id, ingested_at}}."""
+    repo, db = get_repo()
+    try:
+        return repo.get_all_hashes()
     finally:
         db.close()
 
@@ -88,7 +112,7 @@ def add_folder_mapping(folder_id: str, workspace_id: str, folder_name: str = "")
         if not tk:
             tk = repo.save_oauth_tokens("", None, None)
             tk = repo.get_oauth_tokens()
-        
+
         mappings = tk.folder_mappings or {}
         mappings[folder_id] = {
             "workspace_id": workspace_id,

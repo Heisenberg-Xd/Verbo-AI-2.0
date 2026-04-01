@@ -35,6 +35,7 @@ from services.workspace_manager   import (
     create_workspace, get_workspace, list_workspaces,
     update_workspace_documents, update_workspace_insights,
     update_workspace_entities, update_workspace_relationships,
+    workspace_fingerprint, update_workspace_fingerprint,
 )
 from services.entity_extractor    import extract_entities_from_documents, get_entity_summary
 from services.relationship_extractor import extract_relationships
@@ -74,23 +75,29 @@ async def _run_intelligence_pipeline(workspace_id: str, document_texts: dict):
     """
     Run entity + relationship extraction + knowledge graph build
     in the background after documents are ingested.
+    Uses workspace fingerprint for stable cache keys.
     """
     try:
-        # 1. Extract entities (with caching)
-        entity_cache_key = make_cache_key("entities", workspace_id, sorted(document_texts.items()))
+        fp = workspace_fingerprint(workspace_id) or make_cache_key(workspace_id, sorted(document_texts.keys()))
+
+        # 1. Extract entities (fingerprint-keyed cache)
+        entity_cache_key = make_cache_key("entities", workspace_id, fp)
         entities = get_cache("entities", entity_cache_key)
         if entities is None:
             entities = extract_entities_from_documents(document_texts)
             set_cache("entities", entity_cache_key, entities)
         update_workspace_entities(workspace_id, entities)
 
-        # 2. Extract relationships (with caching)
-        rel_cache_key = make_cache_key("relationships", workspace_id, sorted(document_texts.items()))
+        # 2. Extract relationships (fingerprint-keyed cache)
+        rel_cache_key = make_cache_key("relationships", workspace_id, fp)
         relationships = get_cache("relationships", rel_cache_key)
         if relationships is None:
             relationships = extract_relationships(document_texts, entities)
             set_cache("relationships", rel_cache_key, relationships)
         update_workspace_relationships(workspace_id, relationships)
+
+        # 3. Persist fingerprint so cross-restart reads skip re-extraction
+        update_workspace_fingerprint(workspace_id, fp)
 
     except Exception as e:
         print(f"[IntelligencePipeline] Error for workspace {workspace_id}: {e}")
@@ -99,21 +106,26 @@ async def _run_intelligence_pipeline(workspace_id: str, document_texts: dict):
 def _run_pipeline_sync(workspace_id: str, document_texts: dict):
     """Synchronous wrapper used by Drive ingestion endpoint."""
     try:
-        # Cached entity extraction
-        entity_cache_key = make_cache_key("entities", workspace_id, sorted(document_texts.items()))
+        fp = workspace_fingerprint(workspace_id) or make_cache_key(workspace_id, sorted(document_texts.keys()))
+
+        # Cached entity extraction (fingerprint-keyed)
+        entity_cache_key = make_cache_key("entities", workspace_id, fp)
         entities = get_cache("entities", entity_cache_key)
         if entities is None:
             entities = extract_entities_from_documents(document_texts)
             set_cache("entities", entity_cache_key, entities)
         update_workspace_entities(workspace_id, entities)
 
-        # Cached relationship extraction
-        rel_cache_key = make_cache_key("relationships", workspace_id, sorted(document_texts.items()))
+        # Cached relationship extraction (fingerprint-keyed)
+        rel_cache_key = make_cache_key("relationships", workspace_id, fp)
         relationships = get_cache("relationships", rel_cache_key)
         if relationships is None:
             relationships = extract_relationships(document_texts, entities)
             set_cache("relationships", rel_cache_key, relationships)
         update_workspace_relationships(workspace_id, relationships)
+
+        # Persist fingerprint for cross-restart cache
+        update_workspace_fingerprint(workspace_id, fp)
         return entities, relationships
     except Exception as e:
         print(f"[IntelligencePipeline] Sync error: {e}")
@@ -130,37 +142,63 @@ async def workspace_create(req: CreateWorkspaceRequest):
     """Create a new workspace (isolated document intelligence environment)."""
     if not req.name or not req.name.strip():
         raise HTTPException(status_code=400, detail="Workspace name is required.")
-    ws = create_workspace(name=req.name.strip(), description=req.description)
-    return JSONResponse({
-        "status":       "created",
-        "workspace":    ws,
-        "message":      f"Workspace '{ws['name']}' created with ID {ws['workspace_id']}",
-    })
+    
+    try:
+        ws = create_workspace(name=req.name.strip(), description=req.description)
+        return JSONResponse({
+            "status":       "created",
+            "workspace":    ws,
+            "message":      f"Workspace '{ws['name']}' created with ID {ws['workspace_id']}",
+        })
+    except Exception as e:
+        logger.error(f"[WorkspaceCreate] Database error: {e}")
+        return JSONResponse({
+            "error": "Database Connection Failed. Please ensure your Supabase instance is active."
+        }, status_code=503)
 
 @router.get("/workspace/list")
 async def workspace_list():
     """List all workspaces."""
-    workspaces = list_workspaces()
-    return JSONResponse({
-        "workspaces": workspaces,
-        "total":      len(workspaces),
-    })
+    try:
+        workspaces = list_workspaces()
+        return JSONResponse({
+            "workspaces": workspaces,
+            "total":      len(workspaces),
+        })
+    except Exception as e:
+        logger.error(f"[WorkspaceList] Database error: {e}")
+        # Return a safe fallback so the frontend UI doesn't crash on load
+        return JSONResponse({
+            "workspaces": [],
+            "total": 0,
+            "error": "Database Connection Failed. Please ensure your Supabase instance is active."
+        }, status_code=503)
 
 @router.delete("/workspace/all")
 async def workspace_delete_all():
     """Delete ALL workspaces and their state entirely."""
-    from services.workspace_manager import clear_workspaces
-    count = clear_workspaces()
-    return JSONResponse({"status": "deleted", "message": f"{count} workspaces deleted."})
+    try:
+        from services.workspace_manager import clear_workspaces
+        count = clear_workspaces()
+        return JSONResponse({"status": "deleted", "message": f"{count} workspaces deleted."})
+    except Exception as e:
+        logger.error(f"[WorkspaceDeleteAll] Database error: {e}")
+        return JSONResponse({"error": "Database Connection Failed. Please ensure your Supabase instance is active."}, status_code=503)
 
 @router.delete("/workspace/{workspace_id}")
 async def workspace_delete(workspace_id: str):
     """Delete a workspace and its state entirely."""
-    from services.workspace_manager import delete_workspace
-    success = delete_workspace(workspace_id)
-    if not success:
-        raise HTTPException(status_code=404, detail="Workspace not found.")
-    return JSONResponse({"status": "deleted", "message": f"Workspace {workspace_id} deleted."})
+    try:
+        from services.workspace_manager import delete_workspace
+        success = delete_workspace(workspace_id)
+        if not success:
+            raise HTTPException(status_code=404, detail="Workspace not found.")
+        return JSONResponse({"status": "deleted", "message": f"Workspace {workspace_id} deleted."})
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"[WorkspaceDelete] Database error: {e}")
+        return JSONResponse({"error": "Database Connection Failed. Please ensure your Supabase instance is active."}, status_code=503)
 
 @router.get("/workspace/{workspace_id}")
 async def workspace_get(workspace_id: str):
@@ -397,16 +435,47 @@ def get_knowledge_graph(
     """
     Build and return the full knowledge graph for a workspace.
     Returns D3-compatible { nodes, edges, stats } JSON.
+
+    Cache strategy (fastest to slowest):
+      1. In-process memory cache (sub-ms, per-worker)
+      2. DB-persisted KG from analysis_metadata (survives restart)
+      3. Re-build from entities/relationships (on new ingestion)
+      4. Re-extract entities/relationships from documents (cold start)
     """
     ws = get_workspace(workspace_id)
     if not ws:
         raise HTTPException(status_code=404, detail=f"Workspace '{workspace_id}' not found.")
 
+    # ── Compute stable fingerprint for this workspace ─────────────────────
+    fp = workspace_fingerprint(workspace_id)
+    kg_cache_key = make_cache_key("kg", workspace_id, min_confidence, max_nodes, fp or "")
+
+    # ── Layer 1: in-process memory cache ─────────────────────────────────
+    cached_graph = get_cache("knowledge_graph", kg_cache_key)
+    if cached_graph is not None:
+        return JSONResponse(
+            {"workspace_id": workspace_id, **cached_graph},
+            headers={"ETag": kg_cache_key[:16]},
+        )
+
+    # ── Layer 2: DB-persisted KG (survives server restart) ───────────────
+    db_fingerprint = ws.get("content_fingerprint")
+    if fp and fp == db_fingerprint:
+        # Fingerprint matches — try to serve from persisted graph
+        persisted_kg = ws.get("kg")
+        if persisted_kg and persisted_kg.get("nodes"):
+            set_cache("knowledge_graph", kg_cache_key, persisted_kg)
+            logger.info(f"[KG] Served from DB-persisted KG for workspace {workspace_id}")
+            return JSONResponse(
+                {"workspace_id": workspace_id, **persisted_kg},
+                headers={"ETag": kg_cache_key[:16]},
+            )
+
     entities      = ws.get("entities", [])
     relationships = ws.get("relationships", [])
 
+    # ── Layer 3/4: extract if needed ──────────────────────────────────────
     if not entities:
-        # Try extracting first (with caching)
         doc_texts = ws.get("document_texts", {})
         if not doc_texts:
             return JSONResponse({
@@ -416,45 +485,64 @@ def get_knowledge_graph(
                 "stats":  {"total_nodes": 0, "total_edges": 0},
                 "message": "No documents found. Ingest documents first.",
             })
-        entity_cache_key = make_cache_key("entities", workspace_id, sorted(doc_texts.items()))
-        entities = get_cache("entities", entity_cache_key)
-        if entities is None:
-            entities = extract_entities_from_documents(doc_texts)
-            set_cache("entities", entity_cache_key, entities)
-        update_workspace_entities(workspace_id, entities)
 
-        rel_cache_key = make_cache_key("relationships", workspace_id, sorted(doc_texts.items()))
-        relationships = get_cache("relationships", rel_cache_key)
-        if relationships is None:
-            relationships = extract_relationships(doc_texts, entities)
-            set_cache("relationships", rel_cache_key, relationships)
-        update_workspace_relationships(workspace_id, relationships)
+        # Check DB fingerprint match before re-extracting
+        if fp and fp == db_fingerprint:
+            logger.info(f"[KG] Fingerprint match — using DB entities/rels for {workspace_id}")
+        else:
+            entity_cache_key = make_cache_key("entities", workspace_id, fp or "")
+            entities = get_cache("entities", entity_cache_key)
+            if entities is None:
+                logger.info(f"[KG] Extracting entities for workspace {workspace_id}")
+                entities = extract_entities_from_documents(doc_texts)
+                set_cache("entities", entity_cache_key, entities)
+            update_workspace_entities(workspace_id, entities)
 
-    # ── Cache check for the full knowledge graph build ────────────────────
-    kg_cache_key = make_cache_key("kg", workspace_id, min_confidence, max_nodes, len(entities), len(relationships))
-    cached_graph = get_cache("knowledge_graph", kg_cache_key)
-    if cached_graph is not None:
-        return JSONResponse({
-            "workspace_id": workspace_id,
-            **cached_graph,
-        })
+            rel_cache_key = make_cache_key("relationships", workspace_id, fp or "")
+            relationships = get_cache("relationships", rel_cache_key)
+            if relationships is None:
+                logger.info(f"[KG] Extracting relationships for workspace {workspace_id}")
+                relationships = extract_relationships(doc_texts, entities)
+                set_cache("relationships", rel_cache_key, relationships)
+            update_workspace_relationships(workspace_id, relationships)
 
-    # Filter by confidence
-    filtered_entities = [e for e in entities if e.get("confidence", 0) >= min_confidence]
+            if fp:
+                update_workspace_fingerprint(workspace_id, fp)
+
+    # ── Build the graph ───────────────────────────────────────────────────
+    filtered_entities = [e for e in entities if e.get("confidence", 0) >= min_confidence][:max_nodes]
     filtered_rels     = [r for r in relationships if r.get("confidence", 0) >= min_confidence]
-
-    # Cap nodes for performance
-    filtered_entities = filtered_entities[:max_nodes]
 
     graph = build_knowledge_graph(filtered_entities, filtered_rels)
 
-    # Cache the built graph
+    # ── Layer 1: store in memory cache ───────────────────────────────────
     set_cache("knowledge_graph", kg_cache_key, graph)
 
-    return JSONResponse({
-        "workspace_id": workspace_id,
-        **graph,
-    })
+    # ── Layer 2: persist to DB for cross-restart caching ─────────────────
+    try:
+        from database.db import SessionLocal
+        from database.repository import Repository
+        db = SessionLocal()
+        try:
+            repo = Repository(db)
+            intel = repo.get_intelligence(workspace_id)
+            if intel:
+                meta = intel.analysis_metadata or {}
+                meta["kg"] = graph
+                intel.analysis_metadata = meta
+                intel.content_fingerprint = fp
+                from datetime import datetime
+                intel.updated_at = datetime.utcnow()
+                db.commit()
+        finally:
+            db.close()
+    except Exception as e:
+        logger.warning(f"[KG] Could not persist graph to DB: {e}")
+
+    return JSONResponse(
+        {"workspace_id": workspace_id, **graph},
+        headers={"ETag": kg_cache_key[:16]},
+    )
 
 @router.get("/workspace/{workspace_id}/entity/{entity_name}/connections")
 async def entity_connections(workspace_id: str, entity_name: str):

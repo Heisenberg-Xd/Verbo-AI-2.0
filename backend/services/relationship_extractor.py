@@ -6,6 +6,28 @@ Detects subject → relationship → object triples from documents.
 import re
 from typing import List, Dict, Any, Set
 
+# ── spaCy singleton ─────────────────────────────────────────────────────────
+# Load spaCy once at module level instead of inside every extraction call.
+_spacy_nlp = None
+_spacy_available: bool = None  # None = not yet checked
+
+
+def _get_spacy():
+    """Return the spaCy model, loading it once and caching globally."""
+    global _spacy_nlp, _spacy_available
+    if _spacy_available is not None and not _spacy_available:
+        return None
+    if _spacy_nlp is not None:
+        return _spacy_nlp
+    try:
+        import spacy
+        _spacy_nlp = spacy.load("en_core_web_sm")
+        _spacy_available = True
+    except Exception:
+        _spacy_available = False
+        _spacy_nlp = None
+    return _spacy_nlp
+
 RELATIONSHIP_VERBS = {
     "acquired", "acquires", "bought", "purchases", "invested", "invests",
     "funded", "funds", "backed", "backs",
@@ -72,10 +94,8 @@ def _extract_with_spacy(
     entities: List[Dict[str, Any]],
     filename: str,
 ) -> List[Dict[str, Any]]:
-    try:
-        import spacy
-        nlp = spacy.load("en_core_web_sm")
-    except Exception:
+    nlp = _get_spacy()  # ← uses singleton, no per-call load
+    if not nlp:
         return []
 
     entity_names: Set[str] = {e["name"].lower() for e in entities}
@@ -206,12 +226,8 @@ def extract_relationships(
 ) -> List[Dict[str, Any]]:
     all_relationships: List[Dict[str, Any]] = []
 
-    try:
-        import spacy
-        spacy.load("en_core_web_sm")
-        use_spacy = True
-    except Exception:
-        use_spacy = False
+    nlp = _get_spacy()  # ← use singleton check, not inline import
+    use_spacy = nlp is not None
 
     for filename, text in document_texts.items():
         if not text or not text.strip():

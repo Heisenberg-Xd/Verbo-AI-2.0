@@ -8,8 +8,9 @@ env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
 load_dotenv(dotenv_path=env_path)
 
 DATABASE_URL = os.getenv("DATABASE_URL")
+
 if not DATABASE_URL:
-    print(f"[DB ERROR] DATABASE_URL empty in env! Path checked: {env_path}")
+    print(f"[DB ERROR] DATABASE_URL overridden/empty! Falling back to local SQLite.")
     DATABASE_URL = "sqlite:///./verbo.db"
 else:
     print(f"[DB CONNECT] Using cloud database: {DATABASE_URL[:15]}...")

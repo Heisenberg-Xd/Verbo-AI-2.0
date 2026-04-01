@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Text, DateTime, ForeignKey, JSON, Boolean
+from sqlalchemy import Column, String, Text, DateTime, ForeignKey, JSON, Boolean, Index
 from sqlalchemy.orm import relationship
 from datetime import datetime
 import uuid
@@ -20,6 +20,7 @@ class Workspace(Base):
     # Relationships
     documents      = relationship("Document", back_populates="workspace", cascade="all, delete-orphan")
     intelligence   = relationship("IntelligenceResult", back_populates="workspace", uselist=False, cascade="all, delete-orphan")
+    chat_messages  = relationship("ChatMessage", back_populates="workspace", cascade="all, delete-orphan")
 
 class Document(Base):
     __tablename__ = "documents"
@@ -39,12 +40,14 @@ class IntelligenceResult(Base):
     id             = Column("id", String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     workspace_id   = Column("workspace_id", String(36), ForeignKey("workspaces.workspace_id"), unique=True, nullable=False)
     
-    entities       = Column("entities", JSON, default=list)      # [{type, text, start, end, ...}]
-    relationships  = Column("relationships", JSON, default=list)      # [{source, target, type, ...}]
-    clusters       = Column("clusters", JSON, default=list)      # [{id, name, documents, ...}]
-    last_scan      = Column("last_scan", JSON, nullable=True)     # Latest contradiction report
-    analysis_metadata = Column("analysis_metadata", JSON, default=dict)      # Store extra metrics (sentiment, scores, etc.)
-    updated_at     = Column("updated_at", DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    entities          = Column("entities", JSON, default=list)         # [{type, text, start, end, ...}]
+    relationships     = Column("relationships", JSON, default=list)     # [{source, target, type, ...}]
+    clusters          = Column("clusters", JSON, default=list)          # [{id, name, documents, ...}]
+    last_scan         = Column("last_scan", JSON, nullable=True)        # Latest contradiction report
+    analysis_metadata = Column("analysis_metadata", JSON, default=dict) # Extra metrics + cached KG
+    # Stable SHA-256 fingerprint of the workspace's document set used for cache invalidation
+    content_fingerprint = Column("content_fingerprint", String(64), nullable=True)
+    updated_at        = Column("updated_at", DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     workspace      = relationship("Workspace", back_populates="intelligence")
 
@@ -56,6 +59,11 @@ class FileHash(Base):
     file_path      = Column("file_path", Text, nullable=True)
     created_at     = Column("created_at", DateTime, default=datetime.utcnow)
 
+    # Composite index for fast workspace-scoped dedup lookups
+    __table_args__ = (
+        Index("ix_file_hashes_ws_hash", "workspace_id", "hash_digest"),
+    )
+
 class OAuthToken(Base):
     __tablename__ = "oauth_tokens"
 
@@ -66,3 +74,15 @@ class OAuthToken(Base):
     
     # Also store the Drive-to-Workspace map as JSON for simplicity
     folder_mappings = Column("folder_mappings", JSON, default=dict) # {folder_id: {workspace_id, folder_name}}
+
+class ChatMessage(Base):
+    __tablename__ = "chat_messages"
+
+    id             = Column("id", String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    workspace_id   = Column("workspace_id", String(36), ForeignKey("workspaces.workspace_id"), nullable=False)
+    role           = Column("role", String(20), nullable=False) # 'user' or 'assistant'
+    content        = Column("content", Text, nullable=False)
+    sources        = Column("sources", JSON, nullable=True)
+    created_at     = Column("created_at", DateTime, default=datetime.utcnow)
+
+    workspace      = relationship("Workspace", back_populates="chat_messages")

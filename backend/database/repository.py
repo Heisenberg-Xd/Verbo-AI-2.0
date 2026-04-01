@@ -1,7 +1,8 @@
 import logging
 from typing import List, Optional, Dict, Any
 from sqlalchemy.orm import Session
-from sqlalchemy import delete
+from sqlalchemy import delete, select
+from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 from .models import Workspace, Document, IntelligenceResult, FileHash, OAuthToken
 from datetime import datetime
 
@@ -89,12 +90,79 @@ class Repository:
 
     # ── Deduplication / Hashing ─────────────────
     def register_hash(self, hash_digest: str, workspace_id: str, file_path: str = ""):
-        fh = FileHash(hash_digest=hash_digest, workspace_id=workspace_id, file_path=file_path)
-        self.db.add(fh)
-        self.db.commit()
+        """Register a single file hash. Silently ignores duplicates."""
+        try:
+            fh = FileHash(hash_digest=hash_digest, workspace_id=workspace_id, file_path=file_path)
+            self.db.add(fh)
+            self.db.commit()
+        except Exception:
+            self.db.rollback()  # Already registered (primary key conflict)
 
     def is_hash_registered(self, hash_digest: str) -> bool:
-        return self.db.query(FileHash).filter(FileHash.hash_digest == hash_digest).count() > 0
+        """Use .first() instead of .count() to short-circuit on first match."""
+        return self.db.query(FileHash.hash_digest).filter(
+            FileHash.hash_digest == hash_digest
+        ).first() is not None
+
+    def bulk_register_hashes(self, entries: List[Dict[str, str]]):
+        """
+        Register multiple hashes in a single round-trip.
+        Each entry: {"hash_digest": str, "workspace_id": str, "file_path": str}
+        Skips already-registered hashes via ON CONFLICT DO NOTHING.
+        """
+        if not entries:
+            return
+        try:
+            # SQLite: INSERT OR IGNORE via sqlite_insert
+            stmt = sqlite_insert(FileHash).prefix_with("OR IGNORE").values(entries)
+            self.db.execute(stmt)
+            self.db.commit()
+        except Exception:
+            # Fallback: insert one-by-one ignoring errors
+            self.db.rollback()
+            for entry in entries:
+                try:
+                    fh = FileHash(**entry)
+                    self.db.add(fh)
+                    self.db.commit()
+                except Exception:
+                    self.db.rollback()
+
+    def get_all_hashes(self) -> Dict[str, Dict]:
+        """Return all registered file hashes as {digest: {path, workspace_id, created_at}}."""
+        rows = self.db.query(FileHash).all()
+        return {
+            row.hash_digest: {
+                "path": row.file_path or "",
+                "workspace_id": row.workspace_id,
+                "ingested_at": row.created_at.isoformat() if row.created_at else "",
+            }
+            for row in rows
+        }
+
+    def bulk_upsert_documents(self, workspace_id: str, docs: List[Dict[str, str]]):
+        """
+        Upsert documents for a workspace in a single batch.
+        Each doc: {"filename": str, "raw_text": str, "file_path": str}
+        """
+        if not docs:
+            return
+        existing = {
+            d.filename: d
+            for d in self.db.query(Document).filter(Document.workspace_id == workspace_id).all()
+        }
+        for doc in docs:
+            fname = doc["filename"]
+            if fname in existing:
+                existing[fname].raw_text = doc.get("raw_text", "")
+            else:
+                self.db.add(Document(
+                    workspace_id=workspace_id,
+                    filename=fname,
+                    raw_text=doc.get("raw_text", ""),
+                    file_path=doc.get("file_path", ""),
+                ))
+        self.db.commit()
 
     # ── OAuth ───────────────────────────────────
     def save_oauth_tokens(self, access: str, refresh: Optional[str], expiry: Optional[datetime], user_id: str = "default_user"):

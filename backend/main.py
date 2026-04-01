@@ -22,6 +22,7 @@ from api.ingestion_routes import router as ingestion_router
 
 from rag_extension import register_rag
 from intelligence_extension import register_intelligence
+from migrations import _safe_migrate
 
 logger = logging.getLogger(__name__)
 
@@ -40,6 +41,12 @@ async def lifespan(app: FastAPI):
         logger.info("Database initialized.")
     except Exception as e:
         logger.error(f"Database initialization failed: {e}")
+
+    # Safe schema migrations (adds new columns/indexes if missing)
+    try:
+        _safe_migrate()
+    except Exception as e:
+        logger.error(f"Schema migration failed: {e}")
 
     # Pre-warm GLiNER so first pipeline run isn't slow
     try:
