@@ -26,6 +26,7 @@ export default function StandaloneWorkspacesPage() {
   const { activeWorkspaceId, setActiveWorkspaceId } = useStore();
   const [workspaces, setWorkspaces] = useState<Workspace[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   
   const [isCreating, setIsCreating] = useState(false);
   const [newWorkspaceName, setNewWorkspaceName] = useState('');
@@ -54,8 +55,14 @@ export default function StandaloneWorkspacesPage() {
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
       });
       setWorkspaces(sorted);
-    } catch (err) {
-      console.error('Failed to load workspaces:', err);
+      if (res.data.error) {
+        setError(res.data.error);
+      } else {
+        setError(null);
+      }
+    } catch (err: any) {
+      console.warn('Failed to load workspaces:', err?.message || 'Network error');
+      setError(err?.response?.data?.error || 'Database connection failed. Please ensure your Supabase instance is active and not paused.');
     } finally {
       setLoading(false);
     }
@@ -69,8 +76,9 @@ export default function StandaloneWorkspacesPage() {
       const res = await api.post(Endpoints.createWorkspace, { name: finalName, description: '' });
       setActiveWorkspaceId(res.data.workspace.workspace_id);
       router.push('/app/upload');
-    } catch (err) {
-      console.error('Failed to create workspace:', err);
+    } catch (err: any) {
+      console.warn('Failed to create workspace:', err?.message || 'Network error');
+      setError(err?.response?.data?.error || 'Database connection failed. Please ensure your Supabase instance is active and not paused.');
     }
   };
 
@@ -96,8 +104,9 @@ export default function StandaloneWorkspacesPage() {
       
       // Refresh list
       loadWorkspaces();
-    } catch (err) {
-      console.error('Failed to delete workspace:', err);
+    } catch (err: any) {
+      console.warn('Failed to delete workspace:', err?.message || 'Network error');
+      setError(err?.response?.data?.error || 'Database connection failed. Please ensure your Supabase instance is active and not paused.');
     }
   };
 
@@ -124,8 +133,9 @@ export default function StandaloneWorkspacesPage() {
       await loadWorkspaces();
       setIsDeletingAll(false);
       setDeleteAllConfirmText('');
-    } catch (err) {
-      console.error('Failed to delete all workspaces:', err);
+    } catch (err: any) {
+      console.warn('Failed to delete all workspaces:', err?.message || 'Network error');
+      setError(err?.response?.data?.error || 'Database connection failed. Please ensure your Supabase instance is active and not paused.');
       setLoading(false);
     }
   };
@@ -231,6 +241,11 @@ export default function StandaloneWorkspacesPage() {
 
           {/* Table Body */}
           <div className="flex flex-col divide-y divide-white/5">
+            {error && (
+              <div className="m-4 px-4 py-3 rounded bg-red-500/10 border border-red-500/20 font-mono text-xs text-red-400">
+                {error}
+              </div>
+            )}
             {loading ? (
               <div className="py-24 flex flex-col items-center justify-center bg-black/20">
                 <SpinnerIcon className="animate-spin mb-4 text-accent-primary" />

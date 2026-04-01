@@ -80,14 +80,17 @@ export default function UploadPage() {
       // 1. Upload files if not already uploaded
       if (files.length > 0) {
         const formData = new FormData();
+        const newPaths = files.map(f => f.name);
         files.forEach(f => formData.append('files', f));
         
-        const uploadRes = await api.post(`${Endpoints.uploadFiles}?workspace_id=${currentWsId}`, formData, {
+        // Optimistic UI Update: Move to verified list immediately for instant feedback
+        pathsToProcess = [...pathsToProcess, ...newPaths];
+        setUploadedPaths(pathsToProcess);
+        setFiles([]); // Clear queue immediately
+        
+        await api.post(`${Endpoints.uploadFiles}?workspace_id=${currentWsId}`, formData, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
-        pathsToProcess = [...pathsToProcess, ...uploadRes.data.file_paths];
-        setUploadedPaths(pathsToProcess);
-        setFiles([]); // Clear queue
       }
 
       // 2. Run Pipeline

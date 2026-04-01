@@ -8,12 +8,30 @@ import { cn } from '@/lib/utils';
 import { LangBadge } from '@/components/ui/LangBadge';
 
 export function ChatTab() {
-  const { chatScope, setChatScope } = useStore();
+  const { activeWorkspaceId, chatScope, setChatScope } = useStore();
   const [messages, setMessages] = useState<any[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [historyLoading, setHistoryLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   
+  // Load History
+  useEffect(() => {
+    async function loadHistory() {
+      if (!activeWorkspaceId) return;
+      try {
+        setHistoryLoading(true);
+        const res = await api.get(Endpoints.ragHistory(activeWorkspaceId));
+        setMessages(res.data.messages || []);
+      } catch (err) {
+        console.warn('Failed to load chat history:', err);
+      } finally {
+        setHistoryLoading(false);
+      }
+    }
+    loadHistory();
+  }, [activeWorkspaceId]);
+
   // Auto-scroll
   useEffect(() => {
     if (scrollRef.current) {
@@ -23,7 +41,7 @@ export function ChatTab() {
 
   const sendQuery = async (e?: React.FormEvent) => {
     e?.preventDefault();
-    if (!input.trim() || loading) return;
+    if (!input.trim() || loading || !activeWorkspaceId) return;
 
     const userQ = input;
     setInput('');
@@ -32,6 +50,7 @@ export function ChatTab() {
 
     try {
       const res = await api.post(Endpoints.ragChat, {
+        workspace_id: activeWorkspaceId,
         query: userQ,
         cluster_filter: chatScope !== 'all' ? chatScope : null,
         top_k: 6

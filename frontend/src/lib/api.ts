@@ -32,6 +32,7 @@ export const Endpoints = {
   ragChat: '/rag/chat',
   ragStatus: '/rag/status',
   ragClusters: '/rag/clusters',
+  ragHistory: (id: string) => `/rag/history/${id}`,
   ragGenerate: '/rag/generate',
   enrichedChatContext: (id: string) => `/workspace/${id}/chat/context`,
   
