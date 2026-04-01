@@ -25,6 +25,11 @@ from intelligence_extension import register_intelligence
 from migrations import _safe_migrate
 
 logger = logging.getLogger(__name__)
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    handlers=[logging.StreamHandler()]
+)
 
 # ─────────────────────────────────────────────
 # Lifespan — startup/shutdown

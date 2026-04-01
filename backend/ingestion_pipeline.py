@@ -73,14 +73,13 @@ def ingest_document(file_path: str, workspace_id: Optional[str] = None) -> dict:
 
         if workspace_id:
             try:
-                from services.workspace_manager import get_workspace
-                ws = get_workspace(workspace_id)
-                if ws and pipeline_file_name not in ws.get("file_names", []):
-                    ws.setdefault("file_names", []).append(pipeline_file_name)
-                    # Persist automatically handled by workspace manager if we implemented a save (or we just modify in-memory)
-                    # For safety, let's call a save if we can, but appending to list modifies the reference.
+                from services.workspace_manager import add_document_to_workspace
+                with open(file_path, "r", encoding="utf-8") as f:
+                    text_content = f.read()
+                
+                add_document_to_workspace(workspace_id, pipeline_file_name, text_content)
             except Exception as ws_err:
-                logger.warning(f"[Ingestion] Workspace update warning: {ws_err}")
+                logger.warning(f"[Ingestion] Workspace DB update warning: {ws_err}")
 
     except Exception as e:
         logger.error(f"[Ingestion] Error adding '{file_name}': {e}")

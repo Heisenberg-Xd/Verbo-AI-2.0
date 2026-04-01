@@ -31,10 +31,16 @@ def run_intelligence_pipeline(file_paths, workspace_id=None):
     embeddings_list    = []
     files_to_encode    = [] # (idx, preprocessed_text, original_fpath, lang, translated_text)
 
+    logger.info(f"🚨 [TRACE 10] run_intelligence_pipeline started with {len(file_paths)} input files. Workspace: {workspace_id}")
+
     # ── Step 1 & 2: Detect → Translate → Preprocess → Embed ────────────────
     for fname in file_paths:
         fpath = os.path.join(UPLOAD_FOLDER, fname)
-        if not (fpath.endswith(".txt") and os.path.exists(fpath)):
+        if not (fpath.endswith(".txt")):
+            logger.warning(f"🚨 [TRACE 10 DROP] Skipping {fname}: Does not end with .txt")
+            continue
+        if not os.path.exists(fpath):
+            logger.warning(f"🚨 [TRACE 10 DROP] Skipping {fname}: File {fpath} does not exist on disk!")
             continue
             
         # ── Fast Path: Document-Level Intelligence Cache ───────────────────

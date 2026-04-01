@@ -1,12 +1,12 @@
 {
-  "cluster_id": 2,
+  "cluster_id": 0,
   "cluster_name": "Bitcoin & Ethereum Sec Analysis",
-  "summary": "Sam Bankman-Fried founded the FTX cryptocurrency exchange in 2019 and built it into one of the world's largest crypto trading platforms before its disastrous collapse in November 2022. Sam Bankman-Fried founded FTX cryptocurrency exchange in 2019 and built it into one of the world's largest crypto trading platforms before its catastrophic collapse in November 2022. A jury found Bankman-Fried guilty on all seven counts in November 2023, and he was sentenced to twenty-five years in federal prison.",
+  "summary": "Sam Bankman-Fried founded the FTX cryptocurrency exchange in 2019 and built it into one of the world's largest crypto trading platforms before its disastrous collapse in November 2022. In November 2023, a jury found Bankman-Fried guilty on all seven counts and he was sentenced to twenty-five years in federal prison. Sam Bankman-Fried founded FTX cryptocurrency exchange in 2019 and built it into one of the world's largest crypto trading platforms before its catastrophic collapse in November 2022.",
   "sentiment": {
-    "positive": 8.3,
-    "negative": 6.0,
-    "neutral": 85.7,
-    "compound": 0.9843
+    "positive": 9.4,
+    "negative": 6.8,
+    "neutral": 83.8,
+    "compound": 0.9902
   },
   "language_distribution": {
     "hi": 1,
@@ -28,8 +28,8 @@
   "document_count": 4,
   "files": [
     "c17.txt",
-    "c16.txt",
     "c15.txt",
-    "c18.txt"
+    "c18.txt",
+    "c16.txt"
   ]
 }

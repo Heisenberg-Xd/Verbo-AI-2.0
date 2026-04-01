@@ -190,6 +190,19 @@ async def trigger_manual_sync():
         try:
             from gdrive_sync import sync_folder
             synced = sync_folder(folder_id, ws_id)
+            if synced:
+                try:
+                    import requests
+                    requests.post(
+                        "http://127.0.0.1:8000/process",
+                        json={"workspace_id": ws_id, "file_paths": []},
+                        timeout=2
+                    )
+                except requests.exceptions.ReadTimeout:
+                    pass
+                except Exception as req_err:
+                    logger.error(f"[Sync] Failed to trigger pipeline for {folder_id}: {req_err}")
+                    
             results[folder_id] = {"status": "ok", "synced_count": len(synced), "files": synced}
         except Exception as e:
             results[folder_id] = {"status": "error", "message": str(e)}

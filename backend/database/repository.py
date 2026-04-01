@@ -3,6 +3,7 @@ from typing import List, Optional, Dict, Any
 from sqlalchemy.orm import Session
 from sqlalchemy import delete, select
 from sqlalchemy.dialects.sqlite import insert as sqlite_insert
+from sqlalchemy.dialects.postgresql import insert as pg_insert
 from .models import Workspace, Document, IntelligenceResult, FileHash, OAuthToken
 from datetime import datetime
 
@@ -112,14 +113,33 @@ class Repository:
         """
         if not entries:
             return
+        dialect = "unknown"
         try:
-            # SQLite: INSERT OR IGNORE via sqlite_insert
-            stmt = sqlite_insert(FileHash).prefix_with("OR IGNORE").values(entries)
+            dialect = self.db.bind.dialect.name
+            if "postgresql" in dialect:
+                # PostgreSQL-specific ON CONFLICT DO NOTHING
+                stmt = pg_insert(FileHash).values(entries).on_conflict_do_nothing(index_elements=['hash_digest'])
+            elif "sqlite" in dialect:
+                # SQLite-specific INSERT OR IGNORE
+                stmt = sqlite_insert(FileHash).prefix_with("OR IGNORE").values(entries)
+            else:
+                # Generic fallback for other dialects
+                logger.info(f"[Repo] Dialect '{dialect}' not optimized; falling back to one-by-one.")
+                for entry in entries:
+                    try:
+                        fh = FileHash(**entry)
+                        self.db.add(fh)
+                        self.db.commit()
+                    except Exception:
+                        self.db.rollback()
+                return
+            
             self.db.execute(stmt)
             self.db.commit()
-        except Exception:
-            # Fallback: insert one-by-one ignoring errors
+        except Exception as e:
+            logger.warning(f"[Repo] Bulk register failed (dialect={dialect}): {e}")
             self.db.rollback()
+            # Fallback: insert one-by-one ignoring errors
             for entry in entries:
                 try:
                     fh = FileHash(**entry)

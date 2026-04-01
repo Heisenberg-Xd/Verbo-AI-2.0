@@ -170,6 +170,7 @@ def sync_folder(folder_id: str, workspace_id: str) -> List[str]:
         logger.error(f"[GDriveSync] Auth error: {e}")
         return []
 
+
     # List files in this folder
     try:
         results = service.files().list(
@@ -181,6 +182,11 @@ def sync_folder(folder_id: str, workspace_id: str) -> List[str]:
     except Exception as e:
         logger.error(f"[GDriveSync] list error for folder {folder_id}: {e}")
         return []
+
+    # Get DB document count before sync
+    from services.workspace_manager import get_workspace
+    ws_before = get_workspace(workspace_id)
+    count_before = len(ws_before.get("file_names", [])) if ws_before else 0
 
     ingested = []
     for f in files:
@@ -198,6 +204,7 @@ def sync_folder(folder_id: str, workspace_id: str) -> List[str]:
             else:
                 content = service.files().get_media(fileId=file_id).execute()
 
+
             text = content.decode("utf-8") if isinstance(content, bytes) else str(content)
             if not text.strip():
                 continue
@@ -214,6 +221,10 @@ def sync_folder(folder_id: str, workspace_id: str) -> List[str]:
 
         except Exception as e:
             logger.warning(f"[GDriveSync] Failed to sync '{file_name}': {e}")
+            
+    # Get DB document count after sync
+    ws_after = get_workspace(workspace_id)
+    count_after = len(ws_after.get("file_names", [])) if ws_after else 0
 
     return ingested
 
@@ -239,7 +250,18 @@ def _sync_loop():
                 try:
                     synced = sync_folder(folder_id, ws_id)
                     if synced:
-                        logger.info(f"[GDriveSync] Synced {len(synced)} new files from folder {folder_id}")
+                        logger.info(f"[GDriveSync] Synced {len(synced)} new files from folder {folder_id}. Triggering merge pipeline...")
+                        try:
+                            import requests
+                            requests.post(
+                                "http://127.0.0.1:8000/process",
+                                json={"workspace_id": ws_id, "file_paths": []},
+                                timeout=2  # Fire and forget; the pipeline takes longer than 2s but we don't need to await it
+                            )
+                        except requests.exceptions.ReadTimeout:
+                            pass # Normal behavior for fire-and-forget
+                        except Exception as req_err:
+                            logger.error(f"[GDriveSync] Failed to trigger pipeline: {req_err}")
                 except Exception as e:
                     logger.warning(f"[GDriveSync] Folder {folder_id} sync error: {e}")
         except Exception as e:
