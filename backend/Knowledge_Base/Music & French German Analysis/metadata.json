@@ -1,18 +1,18 @@
 {
-  "cluster_id": 1,
+  "cluster_id": 4,
   "cluster_name": "Music & French German Analysis",
-  "summary": "French cultural policy plays a structuring role in the national music industry. The German music scene: Between tradition and global pop culture\n\nThe German music industry has been experiencing a remarkable transformation for several years, which is reflected in both sales figures and artistic direction. Latin music and its conquest of the global music market\n\nLatin music has experienced unprecedented expansion in international music markets over the past five years.",
+  "summary": "Latin music and its conquest of the global music market\n\nLatin music has experienced unprecedented expansion in international music markets over the past five years. The German music scene: Between tradition and global pop culture\n\nThe German music industry has been experiencing a remarkable transformation for several years, which is reflected in both sales figures and artistic direction. French cultural policy plays a structuring role in the national music industry.",
   "sentiment": {
-    "positive": 10.9,
-    "negative": 1.9,
-    "neutral": 87.2,
-    "compound": 0.9983
+    "positive": 12.69,
+    "negative": 1.8,
+    "neutral": 85.51,
+    "compound": 0.9991
   },
   "language_distribution": {
-    "en": 1,
-    "fr": 1,
+    "es": 1,
     "de": 1,
-    "es": 1
+    "fr": 1,
+    "en": 1
   },
   "keywords": [
     "music",
@@ -28,9 +28,9 @@
   ],
   "document_count": 4,
   "files": [
-    "drive_music_streaming_en.txt",
-    "drive_music_france_fr.txt",
+    "drive_music_latin_es.txt",
     "drive_music_industry_de.txt",
-    "drive_music_latin_es.txt"
+    "drive_music_france_fr.txt",
+    "drive_music_streaming_en.txt"
   ]
 }
