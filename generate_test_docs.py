@@ -54,7 +54,7 @@ domains = {
         "Arbitration must take place within the state of Delaware in the event of an operational dispute.",
         "Vendors must prove compliance with SOC2 Type II standards before signing final SLA agreements.",
         "Indemnification limits are capped at the total amount paid by the client within the last calendar year.",
-        "The Board of Directors holds final veto power regarding unexpected structural acquisitions."
+        "Alr The Board of Directors holds final veto power regarding unexpected structural acquisitions."
     ]
 }
 
