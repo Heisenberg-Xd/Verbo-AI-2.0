@@ -58,7 +58,7 @@ domains = {
     ]
 }
 
-
+# Explicit contradictions for the anomaly scanner
 contradictions = [
     ("HR_Update_2026_Contradiction.txt", "Effective immediately, the mandatory 3-day office rule is completely abolished. The company is transitioning to a 100% remote workforce and all employees may work from home permanently."),
     ("Finance_Budget_Correction.txt", "Disregard previous projections; Q3 revenue actually shrank by 4%, leading to strict hiring freezes across the board."),
