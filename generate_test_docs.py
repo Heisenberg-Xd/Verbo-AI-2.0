@@ -77,7 +77,7 @@ def generate_document(domain, idx, sentences):
         
     return content
 
-
+# Generate 150 unique files
 print("Generating 150 synthetic documents across 5 distinct domains...")
 file_count = 0
 for domain in domains.keys():

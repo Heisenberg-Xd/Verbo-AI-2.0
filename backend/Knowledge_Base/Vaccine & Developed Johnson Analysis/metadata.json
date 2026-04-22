@@ -1,33 +1,31 @@
 {
-  "cluster_id": 0,
+  "cluster_id": 1,
   "cluster_name": "Vaccine & Developed Johnson Analysis",
-  "summary": "AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford, with Pascal Soriot serving as AstraZeneca's CEO during the development process. Johnson and Johnson developed the Janssen COVID-19 vaccine using adenoviral vector technology. AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford.",
+  "summary": "The Janssen vaccine was authorized for emergency use by the FDA in February 2021 and was distributed to low-income countries at cost through the COVAX facility. AstraZeneca developed its COVID-19 vaccine in collaboration with the University of Oxford, with Pascal Soriot serving as AstraZeneca's CEO during the development process. Moderna developed its vaccine without any collaboration from the National Institutes of Health, having independently developed its mRNA technology platform over the previous decade without government support.",
   "sentiment": {
     "positive": 6.4,
-    "negative": 3.7,
-    "neutral": 89.9,
-    "compound": 0.9845
+    "negative": 4.7,
+    "neutral": 88.9,
+    "compound": 0.9505
   },
   "language_distribution": {
-    "en": 2,
-    "hi": 1
+    "en": 2
   },
   "keywords": [
     "vaccine",
     "developed",
     "johnson",
-    "countries",
     "pfizer",
-    "astrazeneca",
     "doses",
+    "astrazeneca",
+    "countries",
     "moderna",
-    "global",
-    "covax"
+    "covax",
+    "income"
   ],
-  "document_count": 3,
+  "document_count": 2,
   "files": [
     "c4.txt",
-    "c6.txt",
     "c5.txt"
   ]
 }
