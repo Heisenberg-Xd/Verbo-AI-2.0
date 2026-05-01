@@ -45,7 +45,7 @@ With integrated **AI Chat (RAG)**, **Zero-Shot Named Entity Recognition**, **Rel
 
 ---
 
-## ✨ Key Features
+## ✨The Key Features
 
 | Feature | Description |
 |---|---|
